@@ -11,7 +11,8 @@ Integrantes del grupo:
 Pedro Zarza
 Johan Diaz
 Juan Bautista Climent
-
+Ignacio Ripoll
+Ines Magnanini
 
 
 
