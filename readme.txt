@@ -1,6 +1,8 @@
 referencias principales:
 https://tienda.havanna.com.ar/
 https://rapanui.com.ar/envio_a_todo_el_pais/
+https://bonafide.com.ar/categoria-producto/chocolate/
+https://www.mamuschka.com/
 --------------------------------------------------------------
 otras de donde sacar pequeñas cosas:
 https://www.despegar.com.ar/
