@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -11,3 +12,7 @@ app.get('/404', (req, res) =>
 res.send("Error página no encontrada")
 )
 
+=======
+console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+console.log("hola soy johan")
+>>>>>>> d251118f150ff655f0d9c71e46c513bcccecd290
