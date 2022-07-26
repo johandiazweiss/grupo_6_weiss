@@ -8,7 +8,9 @@ Mayor facilidad de acceso a productos arteasanales más refinados, así como es 
 
 Integrantes del grupo: 
 
-
+Pedro Zarza
+Johan Diaz
+Juan Bautista Climent
 
 
 
