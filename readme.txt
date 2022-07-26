@@ -10,6 +10,7 @@ Integrantes del grupo:
 
 Pedro Zarza
 Johan Diaz
+Juan Bautista Climent
 
 
 
