@@ -2,7 +2,7 @@
 Temática-objetivo
 ideas para el diseño:
 El sitio es el eCommerce de un emprendimiento familiar de productos ahumados y de almacen gourmet. (4/5 categorías de productos)
-Mantener una estética simple que refleje bien la esencia de un emprendimiento cuyos productos están elaborados de forma más artesanal que industrial, haciendo hincapié en dejar espacios en la página para explicar la elaboración de cada producto y lo que hay detras de cada uno. 
+Mantener una estética simple que refleje bien la esencia de un emprendimiento cuyos productos están elaborados de forma más artesanal que industrial, haciendo hincapié en dejar espacios en la página para explicar la elaboración de cada producto y las novedades que hay detras de cada uno. 
 Apuntar a un público que se interesa por los productos artesanales, pero que no sabe dónde conseguirlos, para que pueda acceder a ellos facilmente comprando por internet. 
 Mayor facilidad de acceso a productos arteasanales más refinados, así como lo es para los productos de origen industrial en cualquier página/supermercado. 
 
