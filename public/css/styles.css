@@ -3,9 +3,62 @@
  /*------header--------*/
 
 
-
   /*------main----------*/
 
 
 
  /*-------footer--------*/
+ footer{
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 1px;
+ }
+ .logo{
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 0px auto;
+ }
+ .h2-footer{
+  font-size: 14px;
+  text-align: center;
+ }
+ .h3mail{
+  font-size: 14px;
+  text-align: center;
+ }
+a{
+  color: #1c1c1b;
+}
+ .red-social-logo{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+ }
+ .redesSociales{
+  display: flex;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    background-color: white;
+    margin-right: 30px;
+    
+ }
+.logoY{
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  padding-top: 10px;
+  border-top: solid 1px grey;
+  padding-top: 15px;
+}
+.enlacesFooter{
+  color: #1c1c1b;
+  
+}
+.border{
+  padding-top: 10px;
+  border-top: solid 1px grey;
+}
