@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles_login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <title>Document</title>
 </head>
 <body>
@@ -20,15 +21,27 @@
                 <li><a href="/registro">Registro</a></li>
             </ul>
         </nav>
-
     </header>
-    <body>
-        
-    </body>
+    <main>
+        <form class="formFormulario" action="" method="POST" id="form">
+            <div class="form">
+                <h1>Ingresar</h1>
+                <div class="grupo">
+                    <input class="inputForm" type="text" name="nombre" id="nombre" required><span class="barra"></span>
+                    <label for="nombre">Nombre o Email</label>
+                </div>
+                <div class="grupo">
+                    <input class="inputForm" type="password" name="Contraseña" id="Contraseña" required><span class="barra"></span>
+                    <label for="Contraseña">Contraseña</label>
+                </div>
+                <button type="submit">Ingresar</button>
+            </div>
+        </form>
+
+
+    </main>
     <footer>
         
-    </footer>
-    
-    
-</body>
+    </footer> 
+    </body>
 </html>

@@ -1,4 +1,5 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Roboto:wght@100;400&display=swap');
+
  
  
  /*------header--------*/
@@ -7,6 +8,87 @@
 
   /*------main----------*/
 
+  :root{
+    --colorTextos: #49454567;
+ }
+ ::before,
+ ::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ body{
+    font-family: 'nunito';
+    margin: auto;
+    background-color: #ebebeb;
+    box-sizing: border-box; 
+ }
+ main{
+    width: 90%;
+    margin: auto;
+    background: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ h1{
+    text-align: center;
+ }
+ .formFomulario{
+    padding: 40px 0;
+ }
+ .form{
+    width: 90%;
+    margin: auto;
+ }
+ .grupo{
+    position: relative;
+    margin: 20px;
+ }
+ .inputForm{
+       background: none;
+       color: #c6c6c6;
+       display: block;
+       width: 100%;
+       border: none;
+       border-bottom: 1px solid var(--colorTextos);
+       
+ }
+ .inputForm:focus{
+    outline: none;
+    color: #5e5d5d;
+ }
+ label{
+    color: var(--colorTextos);
+    font-size: 14px;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    transition: 0.3s ease-in-out all;
+    pointer-events: none;
+ }
+
+ input:focus~label,
+ input:valid~label{
+   top: -15px;
+   font-size: 12px;
+   color: #1259c3;
+ }
+ .barra{
+   position: relative;
+   display: block;
+   width: 100%;
+ }
+ button{
+   font-family: 'nunito';
+   border: none;
+   display: block;
+   margin: 10px auto;
+   height: 20px;
+   font-size: 14px;
+   cursor: pointer;
+ }
 
 
  /*-------footer--------*/
