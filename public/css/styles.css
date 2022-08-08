@@ -1,11 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Roboto:wght@100;400&display=swap');
 
- /*------header--------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*------header--------*/
+
+.navbar-list{
+    list-style-type: none;
+    display: flex;
+    font-size: 20px;
+    
+    
+    
+
+}
+.navbar-list li{
+    height: 60%;
+    padding: 45px 25px 25px 25px; 
+    
+    border-bottom: #6E6B6A solid 2px;
+}
+
+.navbar-list li a{
+    text-decoration: none;
+    color: #6E6B6A;
+   
+
+}
+
+.above-navbar{
+
+    display: flex;
+    justify-content: space-between;
+    background-color: #050505;
+    color: #FFFFFF;
+    height: 50px;
+    padding: 15px;
+
+}
+
+nav{
+    display: flex; 
+    justify-content: center;
+}
+
+
+.weiss-logo{
+    text-align: center;
+    max-width: 200px;
+    
+}
 
 
 
-  /*------main----------*/
 
 
+/*------main----------*/
 
- /*-------footer--------*/
+
+/*-------footer--------*/
