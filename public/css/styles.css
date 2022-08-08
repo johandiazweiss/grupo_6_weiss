@@ -1,59 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&family=Roboto:wght@100;400&display=swap');
 
 
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 
 /*------header--------*/
 
-.navbar-list{
-    list-style-type: none;
-    display: flex;
-    font-size: 20px;
-    
-    
-    
-
-}
-.navbar-list li{
-    height: 60%;
-    padding: 45px 25px 25px 25px; 
-    
-    border-bottom: #6E6B6A solid 2px;
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  font-size: 20px;
 }
 
-.navbar-list li a{
-    text-decoration: none;
-    color: #6E6B6A;
-   
+.navbar-list li {
+  height: 60%;
+  padding: 45px 25px 25px 25px;
 
+  border-bottom: #6E6B6A solid 2px;
 }
 
-.above-navbar{
+.navbar-list li a {
+  text-decoration: none;
+  color: #6E6B6A;
+}
 
-    display: flex;
-    justify-content: space-between;
-    background-color: #050505;
-    color: #FFFFFF;
-    height: 50px;
-    padding: 15px;
+.above-navbar {
+
+  display: flex;
+  justify-content: space-between;
+  background-color: #050505;
+  color: #FFFFFF;
+  height: 50px;
+  padding: 15px;
 
 }
 
-nav{
-    display: flex; 
-    justify-content: center;
+nav {
+  display: flex;
+  justify-content: center;
 }
 
 
-.weiss-logo{
-    text-align: center;
-    max-width: 200px;
-    
+.weiss-logo {
+  text-align: center;
+  max-width: 200px;
+
 }
 
 
@@ -63,4 +58,73 @@ nav{
 /*------main----------*/
 
 
+
+/*------main----------*/
+
+
+
 /*-------footer--------*/
+
+/* footer {
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 1px;
+}
+
+.logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.h2-footer {
+  font-size: 14px;
+  text-align: center;
+}
+
+.h3mail {
+  font-size: 14px;
+  text-align: center;
+}
+
+a {
+  color: #1c1c1b;
+}
+
+.red-social-logo {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.redesSociales {
+  display: flex;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  background-color: white;
+  margin-right: 30px;
+
+}
+
+.logoY {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  padding-top: 10px;
+  border-top: solid 1px grey;
+  padding-top: 15px;
+}
+
+.enlacesFooter {
+  color: #1c1c1b;
+
+}
+
+.border {
+  padding-top: 10px;
+  border-top: solid 1px grey;
+} */
