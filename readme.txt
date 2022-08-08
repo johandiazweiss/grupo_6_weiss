@@ -14,6 +14,8 @@ Juan Bautista Climent
 Ignacio Ripoll
 Ines Magnanini
 
+El tablero de trabajo se creo en Trello
+https://trello.com/b/AvPJ5Gqn/trello-weiss
 
 
 referencias principales:
