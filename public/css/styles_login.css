@@ -1,10 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&family=Bellota:ital,wght@0,300;0,400;1,300;1,400&family=Buda&family=Cagliostro&family=Lato:ital,wght@0,300;0,400;1,300&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Nunito:ital,wght@0,200;0,300;1,200;1,300&family=Port+Lligat+Sans&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600&family=Shanti&display=swap');
 
 * {
-   box-sizing: border-box;
-   margin: 0px;
-   padding: 0px;
- }
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+
+/*------header--------*/
+
+header {
+  font-family: 'Baloo Bhaijaan 2', sans-serif;
+ 
+  
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  font-size: 20px;
+}
+
+.navbar-list li {
+  height: 60%;
+  padding: 45px 25px 25px 25px;
+  border-bottom: #6E6B6A solid 2px;
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  color: #6E6B6A;
+}
+
+.above-navbar {
+
+  display: flex;
+  justify-content: space-between;
+  background-color: #050505;
+  color: #FFFFFF;
+  height: 50px;
+  padding: 0px 15px;
+
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+
+.weiss-logo {
+  text-align: center;
+  max-width: 200px;
+  
+
+}
+
+
+li i {
+  font-size: 15px;
+  color: #6E6B6A;
+}
+
+
+
+.search-bar {
+  width: 50%;
+
+}
+
+
+.search-bar input {
+  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  font-style: italic;
+  margin-top: 8px;
+  height: 35px;
+  width: 60%;
+  font-size: 15px;
+  padding: 3px;
+  border: none;
+  color: #FFFFFF;
+  background-color: #050505;
+  border-right: #FFFFFF 1px solid;
+}
+
+.search-bar p label {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+
+
+.wishlist-account-cart{
+  display: flex;
+  list-style: none;
+}
+
+.wishlist-account-cart li{
+   padding: 12px;
+   margin: 0px 2px;
+}
+
+.wishlist-account-cart li a{
+  text-decoration: none;
+  color: #6E6B6A;
+  font-style: italic;
+}
+
+.wishlist-account-cart li a i{
+  margin: 0px 2px;
+  color:  rgba(229, 191, 134, 0.892);
+
+}
+
 
 
 
