@@ -36,3 +36,8 @@ app.get("/registro", function (req, res){
     res.sendFile(path.join(__dirname, "views/registro.html"))
 
 });
+app.get("/nuestras-politicas", function (req, res){
+
+    res.sendFile(path.join(__dirname, "views/nuestras-politicas.html"))
+
+});

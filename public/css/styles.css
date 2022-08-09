@@ -18,12 +18,16 @@ header {
   list-style-type: none;
   display: flex;
   font-size: 20px;
+  margin: 5px auto;
+  text-align: center;
 }
 
 .navbar-list li {
-  height: 60%;
-  padding: 45px 25px 25px 25px;
+  height: 30px;
+  padding: 5px;
   border-bottom: #6E6B6A solid 2px;
+  display: flex;
+  text-align: center;
 }
 
 .navbar-list li a {
@@ -39,8 +43,24 @@ header {
   background-color: #050505;
   color: #FFFFFF;
   height: 50px;
+  width: 320px;
   padding: 0px 15px;
+  text-align: center;
 
+}
+.menu-columna{
+  display: flex;
+  flex-direction: column;
+}
+.logo-nav{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  margin-top: 7px;
+}
+.weiss-logo {
+  text-align: center;
 }
 
 nav {
@@ -48,23 +68,13 @@ nav {
   justify-content: left;
 }
 
-
-.weiss-logo {
-  text-align: center;
-  max-width: 200px;
-  
-
-}
 .weiss-logo img{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 
-li i {
-  font-size: 15px;
-  color: #6E6B6A;
-}
+
 
 
 
@@ -101,8 +111,9 @@ li i {
 }
 
 .wishlist-account-cart li{
-   padding: 12px;
-   margin: 0px 2px;
+   padding: 2px;
+   font-size: 13px;
+   text-align: center;
 }
 
 .wishlist-account-cart li a{
@@ -196,5 +207,4 @@ a {
   text-align: center;
   flex-direction: column;
 } 
-
 
