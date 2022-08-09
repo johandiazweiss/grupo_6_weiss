@@ -43,7 +43,6 @@ header {
   background-color: #050505;
   color: #FFFFFF;
   height: 50px;
-  width: 320px;
   padding: 0px 15px;
   text-align: center;
 
@@ -112,7 +111,7 @@ nav {
 
 .wishlist-account-cart li{
    padding: 2px;
-   font-size: 13px;
+   font-size: 12px;
    text-align: center;
 }
 
