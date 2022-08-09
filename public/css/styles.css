@@ -12,8 +12,6 @@
 
 header {
   font-family: 'Baloo Bhaijaan 2', sans-serif;
- 
-  
 }
 
 .navbar-list {
@@ -33,6 +31,7 @@ header {
   color: #6E6B6A;
 }
 
+
 .above-navbar {
 
   display: flex;
@@ -46,7 +45,7 @@ header {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 
@@ -197,3 +196,5 @@ a {
   text-align: center;
   flex-direction: column;
 } 
+
+
