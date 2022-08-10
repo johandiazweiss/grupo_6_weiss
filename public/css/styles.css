@@ -12,13 +12,15 @@
 
 header {
   font-family: 'Baloo Bhaijaan 2', sans-serif;
- 
-  
+  margin-bottom: 50px;
+  border-bottom: solid 2px  rgba(229, 191, 134, 0.892);
+
+
 }
 
 .navbar-list {
   list-style-type: none;
-  display: flex;
+  display: none;
   font-size: 20px;
 }
 
@@ -33,6 +35,7 @@ header {
   color: #6E6B6A;
 }
 
+
 .above-navbar {
 
   display: flex;
@@ -44,19 +47,22 @@ header {
 
 }
 
-nav {
+.nav-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+
 }
 
 
 .weiss-logo {
   text-align: center;
-  max-width: 200px;
-  
+  width: 135px;
+
 
 }
-.weiss-logo img{
+
+.weiss-logo img {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -96,46 +102,89 @@ li i {
 
 
 
-.wishlist-account-cart{
+.wishlist-account-cart {
   display: flex;
   list-style: none;
 }
 
-.wishlist-account-cart li{
-   padding: 12px;
-   margin: 0px 2px;
+.wishlist-account-cart li {
+  padding: 12px 3px 12px 3px;
+  margin: 0px 2px;
 }
 
-.wishlist-account-cart li a{
+.wishlist-account-cart li a {
   text-decoration: none;
   color: #6E6B6A;
   font-style: italic;
 }
 
-.wishlist-account-cart li a i{
+.wishlist-account-cart li a i {
   margin: 0px 2px;
-  color:  rgba(229, 191, 134, 0.892);
+  color: rgba(229, 191, 134, 0.892);
 
+}
+
+.mini-home a{
+  padding: 10px 10px 10px 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: #6E6B6A;
+  margin-left: 10px;
+
+
+}
+
+.mini-menu a{
+  padding: 10px 10px 10px 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: #6E6B6A;
+  margin-right: 10px;
+}
+
+.mini-menu{
+  border-right: 3px solid rgba(229, 191, 134, 0.892);
+  
+
+}
+
+.mini-home{
+  border-left: 3px solid rgba(229, 191, 134, 0.892);
+  
+  
+}
+
+.mini-home a i{
+  margin-left: 3px;
+ 
+}
+.mini-menu a i{
+  margin-right: 3px;
 }
 
 
 
 
 
+
 /*------main----------*/
-.foto-producto{
+.foto-producto {
   width: 200px;
   height: 200px;
 }
-
-
 /*------main----------*/
+
+
+
+
 
 
 
 /*-------footer--------*/
 
- footer {
+footer {
   width: 100%;
   background-color: whitesmoke;
   padding: 1px;
@@ -196,4 +245,67 @@ a {
   border-top: solid 1px grey;
   text-align: center;
   flex-direction: column;
-} 
+}
+
+
+/*------------------Queries-----------*/
+
+@media (min-width: 340px) {}
+
+@media (min-width: 768px) {
+
+  .wishlist-item::before{
+    content: "Lista de deseos";
+  }
+  .account-item::before{
+    content: "Cuenta";
+  }
+  .cart-item::before{
+    content: "Tu carrito";
+  }
+
+  .weiss-logo{
+    width: 150px;
+  }
+
+  
+ 
+
+
+
+  
+}
+
+
+
+@media (min-width: 1024px) {
+  .navbar-list {
+    display: flex;
+  }
+
+  .wishlist-account-cart li {
+    padding: 12px;
+  }
+
+  .weiss-logo{
+    width: 200px;
+  }
+
+  .mini-menu, .mini-home{
+    display: none;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+  }
+
+  header {
+
+    border-bottom: none;
+  
+  
+  }
+
+}
