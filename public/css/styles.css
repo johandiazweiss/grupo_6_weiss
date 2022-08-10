@@ -123,7 +123,10 @@ li i {
 
 
 /*------main----------*/
-
+.foto-producto{
+  width: 200px;
+  height: 200px;
+}
 
 
 /*------main----------*/
@@ -180,18 +183,17 @@ a {
 .logoY {
   display: flex;
   flex-direction: row;
-  margin-left: 0px;
-  padding-top: 10px;
+  margin: 0 auto;
   border-top: solid 1px grey;
   padding-top: 15px;
-}
-
-.enlacesFooter {
-  color: #1c1c1b;
-
+  text-align: center;
 }
 
 .border {
+  display: flex;
   padding-top: 10px;
+  padding-bottom: 10px;
   border-top: solid 1px grey;
+  text-align: center;
+  flex-direction: column;
 } 
