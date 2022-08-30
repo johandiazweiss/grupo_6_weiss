@@ -18,9 +18,9 @@ app.get("/", function (req, res){
     res.render("./home_weiss.ejs");
 
 });
-app.get("/carrito_compras", function (req, res){
+app.get("/carrito", function (req, res){
 
-    res.render( "./carrito_compras.ejs");
+    res.render( "./shoppingCart_weiss.ejs");
 
 });
 app.get("/productos", function (req, res){
@@ -36,5 +36,11 @@ app.get("/login", function (req, res){
 app.get("/registro", function (req, res){
 
     res.render("./registro.ejs");
+
+})
+
+app.get("/aaa", function (req, res){
+
+    res.render("./nuestras-politicas.ejs");
 
 })

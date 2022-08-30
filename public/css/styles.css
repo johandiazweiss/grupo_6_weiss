@@ -15,8 +15,6 @@ header {
   margin-bottom: 50px;
   border-bottom: solid 2px  rgba(229, 191, 134, 0.892);
   background-image: url();
-
-
 }
 
 .navbar-list {
@@ -171,11 +169,104 @@ li i {
 
 
 /*------main----------*/
+main{
+  width: 90%;
+}
+
 .foto-producto {
   width: 200px;
   height: 200px;
 }
-/*------main----------*/
+
+/*-----------login/register styles-------*/
+
+
+:root {
+  --colorTextos: #49454567;
+}
+
+.main_loginForm {
+
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  background-color: #ebebeb;
+  
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.formFomulario {
+  padding: 40px 0;
+}
+
+.form {
+  width: 90%;
+  margin: auto;
+}
+
+.grupo {
+  position: relative;
+  margin: 20px;
+}
+
+.inputForm {
+  background: none;
+  color: #c6c6c6;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--colorTextos);
+
+}
+
+.inputForm:focus {
+  outline: none;
+  color: #5e5d5d;
+}
+
+.loginForm_label {
+  color: var(--colorTextos);
+  font-size: 14px;
+  position: absolute;
+  left: 5px;
+  top: -1px;
+  transition: 0.3s ease-in-out all;
+  pointer-events: none;
+  
+}
+
+input:focus~label,
+input:valid~label {
+  top: -15px;
+  font-size: 12px;
+  color: rgba(229, 191, 134, 0.892);
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.loginForm_button {
+  font-family: 'nunito';
+  border: none;
+  display: block;
+  margin: 10px auto;
+  height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+
 
 
 
@@ -188,8 +279,7 @@ li i {
 footer {
   background-color: whitesmoke ;
   font-family: 'Baloo Bhaijaan 2', sans-serif;
-  position: relative;
-  bottom: 0px;
+
 }
 
 .logo {
