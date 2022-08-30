@@ -4,6 +4,8 @@ const path = require("path");
 
 //---------------Recursos estáticos----
 app.use(express.static("public"));
+//---------------Ejs config--------
+app.set("view engine", "ejs");
 
 //---------------Servidor local-----
 
@@ -13,31 +15,26 @@ app.listen(3000, ()=>console.log ("Server running on port 3000"));
 
 app.get("/", function (req, res){
 
-    res.sendFile(path.join(__dirname, "views/home_weiss.html"))
+    res.render("./home_weiss.ejs");
 
 });
 app.get("/carrito_compras", function (req, res){
 
-    res.sendFile(path.join(__dirname, "views/carrito_compras.html"))
+    res.render( "./carrito_compras.ejs");
 
 });
 app.get("/productos", function (req, res){
 
-    res.sendFile(path.join(__dirname, "views/productos.html"))
+    res.render("./productos.ejs")
 
 });
 app.get("/login", function (req, res){
 
-    res.sendFile(path.join(__dirname, "views/login.html"))
+    res.render("./login.ejs")
 
 });
 app.get("/registro", function (req, res){
 
-    res.sendFile(path.join(__dirname, "views/registro.html"))
+    res.render("./registro.ejs");
 
-});
-app.get("/nuestras-politicas", function (req, res){
-
-    res.sendFile(path.join(__dirname, "views/nuestras-politicas.html"))
-
-});
+})

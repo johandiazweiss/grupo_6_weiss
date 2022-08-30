@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="icon" href="/img productos_weiss/logo-weiss.png" type="image/icon type">
     <title>Weiss Home</title>
 </head>
 
 <body>
-    <header>
+    <header id="top">
         <div class="above-navbar">
             <div class="search-bar">
                 <p><label for="searchbar"><i class="fa-solid fa-magnifying-glass"></i></label> <input type="text"
@@ -31,7 +32,7 @@
                 <li><a href="/">Home</a></li>
             </ul>
             <div class="weiss-logo">
-                <img width="70%" src="/img productos_weiss/logo-weiss (cortado).png" alt="logo-weiss">
+                <a href="/"><img width="70%" src="/img productos_weiss/logo-weiss (cortado).png" alt="logo-weiss"></a>
             </div>
             <ul class="navbar-list">
                 <li><a href="">Nosotros</a></li>
@@ -79,45 +80,65 @@
         </article>
 
     </main>
-
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 
     <footer>
-        <img class="logo" src="/img productos_weiss/logo-weiss.png" alt="logo-weiss">
-        <h2 class="h2-footer">© 2020 A. WEISS</h2>
-        <h3 class="h3mail">Contactenos: ventas@ahumaderoweiss.com</h3>
-        <nav class="border">
-            <h3>Acerca</h3>
-            <ul class="enlacesFooter">
-                <li><a href="/pagos">Pagos</a></li>
-                <li><a href="/empresas">Empresas</a></li>
-                <li><a href="/Terminos-y-condiciones">Terminos y condiciones</a></li>
-                <li><a href="/nuestras-politicas">Nuestras politicas</a></li>
-            </ul>
+        <nav class="footer_nav">
+            <div class="footer_logo-copyright">
+                <a href="#top"><img class="logo" width="80px" src="/img productos_weiss/logo-weiss (cortado).png" alt="logo-weiss"></a>
+                <p id="footer_copyright-text1"> Copyright 2020 © A. WEISS</p>
+            </div>
+
+            <div class="footer_sec1">
+                <h3 class="footer_titles">Conocenos</h3>
+                <ul class="footer_nav-lists">
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Sucursales</a></li>
+                    <li><a href="">Terminos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_sec2">
+                <h3 class="footer_titles">Comprá en nuestra tienda</h3>
+                <ul class="footer_nav-lists">
+                    <li><a href="">Envíos</a></li>
+                    <li><a href="">Productos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_sec3">
+                <h3 class="footer_titles">Contactanos</h3>
+                <ul class="footer_nav-lists">
+                    <li><i class="fa-regular fa-envelope"></i> Mail de ventas: <a href="" target="_blank">ventas@ahumaderoweiss.com</a>
+                    </li>
+                    <li><i class="fa-brands fa-whatsapp"></i> Whatsapp: <a
+                            href="https://wa.me/+5492944509149?text=Aumadero%20Weiss" target="_blank">+54 9 294 450-9149</a></li>
+                </ul>
+            </div>
         </nav>
-        <ul class="logoY">
-            <li class="redesSociales">
-                <a href="https://wa.me/+5492944509149?text=Aumadero%20Weiss"><img class="red-social-logo"
-                        src="./img productos_weiss/whatsapp.png" alt=""></a>
-            </li>
-            <li class="redesSociales">
-                <a href="https://www.instagram.com/ahumaderoweiss/"><img class="red-social-logo"
-                        src="./img productos_weiss/instagram.png" alt=""></a>
-            </li>
-            <li class="redesSociales">
-                <a href="https://www.facebook.com/Ahumadero-Weiss-207202692952"><img class="red-social-logo"
-                        src="./img productos_weiss/facebook.png" alt=""></a>
-            </li>
-            <li class="redesSociales">
-                <a href="https://twitter.com/AhumaderoWeiss"><img class="red-social-logo"
-                        src="./img productos_weiss/twitter.png" alt=""></a>
-            </li>
-            <li class="redesSociales">
-                <a href="https://www.youtube.com/watch?v=ZOJCtfcIQwk&ab_channel=TurismoInteroce%C3%A1nico"><img
-                        class="red-social-logo" src="./img productos_weiss/youtube.png" alt=""></a>
-            </li>
-        </ul>
+        <div class="footer_socialMedia">
+            <ul class="logoY">
+    
+                <li class="redesSociales">
+                    <a href="https://www.instagram.com/ahumaderoweiss/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li class="redesSociales">
+                    <a href="https://www.facebook.com/Ahumadero-Weiss-207202692952" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                </li>
+                <li class="redesSociales">
+                    <a href="https://twitter.com/AhumaderoWeiss" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li class="redesSociales">
+                    <a href="https://www.youtube.com/watch?v=ZOJCtfcIQwk&ab_channel=TurismoInteroce%C3%A1nico" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+            </ul>
+            <p id="footer_copyright-text2">Copyright 2020 © A. WEISS- Todos los derechos reservados.</p>
+        </div>
     </footer>
 
 </body>
