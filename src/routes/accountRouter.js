@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/login", );
-router.get("/registro", );
+const accountController = require("../controllers/accountController.js");
+
+router.get("/login", accountController.loginView);
+router.get("/register", accountController.registerView);
 
 
 module.exports = router;

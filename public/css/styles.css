@@ -23,6 +23,8 @@ header {
   font-size: 20px;
 }
 
+
+
 .navbar-list li {
   height: 60%;
   padding: 45px 25px 25px 25px;
@@ -163,8 +165,43 @@ li i {
   margin-right: 3px;
 }
 
+/*drop-menus---*/
+.dropdown-menu_toggle{
+  position: relative;
+  
+}
+.dropdown-menu{
+  position: absolute;
+  top: 105px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  box-shadow: 2px 0px 29px -7px rgba(100,100,100,1);
+  padding: 10px;
+  width: 160px;
+  font-size: 16px;
+  transition: visibility 0ms, transform 400ms, opacity 300ms;
+  opacity: 0;
+  visibility: hidden;
+   /* display: none;  */
+  
+  
+}
 
+.dropdown-menu li{
+  height: auto;
+  padding: 10px;
+  border: none;
+  list-style: none;
+}
 
+.dropdown-menu_toggle:hover .dropdown-menu{
+ /*   display: block;  */
+  visibility: visible;
+  transform: translateY(-10px);
+  opacity: 1;
+  
+  
+}
 
 
 
@@ -356,6 +393,7 @@ footer {
 
 .footer_sec1 li, .footer_sec2 li, .footer_sec3 li{
   font-size: 18px;
+  color:#6E6B6A;
 }
 
 #footer_copyright-text1{

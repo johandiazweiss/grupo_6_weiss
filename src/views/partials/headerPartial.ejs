@@ -6,7 +6,7 @@
         </div>
         <ul class="wishlist-account-cart">
             <li><a class="wishlist-item" href="/lista-de-deseos"> <i class="fa-solid fa-heart"></i></a></li>
-            <li><a class="account-item" href="/login"> <i class="fa-solid fa-circle-user"></i></a></li>
+            <li><a class="account-item" href="/cuenta/login"> <i class="fa-solid fa-circle-user"></i></a></li>
             <li><a class="cart-item" href="/carrito"> <i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </div>
@@ -14,7 +14,15 @@
         <div class="mini-menu"><a href=""><i class="fa-solid fa-bars"></i> MENU</a></div>
         <ul class="navbar-list">
             <li><a href="/envios">Envíos</a></li>
-            <li><a href="/productos">Productos <i class="fa-solid fa-angle-down"></i></a></li>
+            <li class="dropdown-menu_toggle"><a href="/productos">Productos <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/productos/categoria1">categoria 1</a></li>
+                    <li><a href="/productos/categoria2">categoria 2</a></li>
+                    <li><a href="/productos/categoria3">categoria 3</a></li>
+                    <li><a href="/productos/categoria4">categoria 4</a></li>
+                    <li><a href="/productos/categoria5">categoria 5</a></li>
+                </ul>
+            </li>
             <li><a href="/">Home</a></li>
         </ul>
         <div class="weiss-logo">
@@ -23,7 +31,12 @@
         <ul class="navbar-list">
             <li><a href="/nosotros">Nosotros</a></li>
             <li><a href="">Contacto</a></li>
-            <li><a href="">Sucursales <i class="fa-solid fa-angle-down"></i></a></li>
+            <li class="dropdown-menu_toggle"><a href="">Sucursales <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="">Sucursal 1</a></li>
+                    <li><a href="">Sucursal 2</a></li>
+                </ul>
+            </li>
         </ul>
         <div class="mini-home"><a href="/">HOME <i class="fa-solid fa-house-chimney"></i></a></div>
     </nav>
