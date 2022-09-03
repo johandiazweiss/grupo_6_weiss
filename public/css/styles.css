@@ -21,6 +21,7 @@ header {
   list-style-type: none;
   display: none;
   font-size: 20px;
+  
 }
 
 
@@ -29,11 +30,14 @@ header {
   height: 60%;
   padding: 45px 25px 25px 25px;
   border-bottom: #6E6B6A solid 2px;
+  transition: all 50ms;
 }
 
 .navbar-list li a {
   text-decoration: none;
   color: #6E6B6A;
+  transition: all 150ms;
+ 
 }
 
 
@@ -66,12 +70,17 @@ header {
 .weiss-logo img {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  
 }
 
 
-li i {
+.navbar-list li i {
   font-size: 15px;
   color: #6E6B6A;
+}
+
+.fa-angle-down{
+  transition: all 450ms;
 }
 
 
@@ -111,6 +120,7 @@ li i {
 .wishlist-account-cart li {
   padding: 12px 3px 12px 3px;
   margin: 0px 2px;
+  transition: all 200ms;
 }
 
 .wishlist-account-cart li a {
@@ -165,6 +175,9 @@ li i {
   margin-right: 3px;
 }
 
+
+
+
 /*drop-menus---*/
 .dropdown-menu_toggle{
   position: relative;
@@ -189,18 +202,69 @@ li i {
 
 .dropdown-menu li{
   height: auto;
-  padding: 10px;
+  padding: 3px;
   border: none;
+  margin: 12px 0px;
   list-style: none;
+  transition: all 200ms;
 }
+
+/*----------animaciones-header----*/
 
 .dropdown-menu_toggle:hover .dropdown-menu{
  /*   display: block;  */
   visibility: visible;
   transform: translateY(-10px);
   opacity: 1;
+}
+
+
+.navbar-list li:hover{
+  border-bottom: #6E6B6A solid 4px;
   
-  
+}
+
+.navbar-list li:hover  .fa-angle-down{
+  transform: rotateX(180deg);
+}
+
+.navbar-list li a:hover {
+  color: rgba(229, 191, 134, 0.892);
+
+}  
+
+.navbar-list li:hover .dropdown-menu_titles{
+  color:rgba(229, 191, 134, 0.892);
+}
+
+.dropdown-menu li a:hover {
+  color: #050505;
+}
+
+
+.dropdown-menu li:hover{
+  border-left: 4px rgba(229, 191, 134, 0.892) solid;
+  border-bottom: none;
+  padding-left: 8px;
+
+}
+
+.wishlist-account-cart li:hover{
+  background-color: rgb(30, 30, 30);
+}
+
+
+.fa-cart-shopping, .fa-circle-user, .fa-heart {
+  transition: all 350ms;
+}
+.wishlist-account-cart li:hover .fa-circle-user{
+  transform: rotateY(-360deg);
+}
+.wishlist-account-cart li:hover .fa-heart{
+  transform: rotateY(360deg);
+}
+.wishlist-account-cart li:hover .fa-cart-shopping{
+  transform: rotateY(360deg);
 }
 
 
@@ -384,9 +448,10 @@ footer {
   color: #6E6B6A;
 }
 
-.footer_sec3 i{
+.fa-whatsapp, .fa-envelope{
   color:#050505;
 }
+
 .footer_sec3 a{
   font-weight: bold;
 }
@@ -409,6 +474,19 @@ footer {
 .footer_nav-lists{
   list-style: none;
 }
+
+.footer_nav-lists li a{
+  transition: all 200ms;
+}
+
+
+
+.footer_nav-lists li a:hover{
+  color: #050505;
+
+
+}
+
 
 
 
@@ -469,6 +547,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: normal;
+    
   }
 
   header {
