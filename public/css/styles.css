@@ -21,7 +21,7 @@ header {
   list-style-type: none;
   display: none;
   font-size: 20px;
-  
+ 
 }
 
 
@@ -61,7 +61,7 @@ header {
 
 
 .weiss-logo {
-  text-align: center;
+  text-align: center; 
   width: 135px;
 
 
@@ -70,6 +70,7 @@ header {
 .weiss-logo img {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  
   
 }
 
@@ -272,6 +273,8 @@ header {
 /*------main----------*/
 main{
   width: 90%;
+
+  margin: auto;
 }
 
 .foto-producto {
