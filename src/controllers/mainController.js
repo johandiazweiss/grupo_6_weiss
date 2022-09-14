@@ -1,19 +1,19 @@
 const mainController = {
     homeView: (req, res) => {
-        res.render("./home_weiss.ejs");
+        res.render("./mainViews/home_weiss.ejs", {title: "Home | Weiss ahumados"});
     },
     enviosView: (req, res) => {
-        res.render("./envios_weiss.ejs");
+        res.render("./mainViews/envios_weiss.ejs", {title: "Envíos a todo el país | Weiss Ahumados"});
     },
     wishlistView: (req, res) => {
-        res.render("./wishlist_weiss.ejs");
+        res.render("./shoppingViews/wishlist_weiss.ejs", {title: "Tus deseos | Weiss Ahumados"});
     },
 
     nosotrosView: (req, res) => {
-        res.render("./nosotros_weiss.ejs");
+        res.render("./mainViews/nosotros_weiss.ejs", {title: "¿Quiénes somos? | Weiss Ahumados"});
     }, 
     terminos_condicionesView: (req, res) =>{
-        res.render("./terms-conditions_weiss.ejs");
+        res.render("./mainViews/terms-conditions_weiss.ejs", {title: "Terminos & condiciones | Weiss Ahumados"});
 
     },
 

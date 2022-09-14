@@ -368,9 +368,30 @@ input:valid~label {
   cursor: pointer;
 }
 
+/*---------------------Creat-product--form styles-----------*/
 
+.productCreate_form{
+  display: flex;
+  flex-direction: column;
+}
 
+.productCreate_form input, .productCreate_form select{
+  margin: 20px;
+  width: 40%;
 
+}
+
+.productCreate_form textarea{
+  margin: 20px;
+  width: 60%;
+}
+
+.productCreate_form button{
+  margin: 10px auto;
+  padding: 20px;
+
+  
+}
 
 
 

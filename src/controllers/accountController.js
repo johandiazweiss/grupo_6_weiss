@@ -1,10 +1,10 @@
 const accountController = {
     loginView: (req, res)=>{
-        res.render ("./login_weiss.ejs");
+        res.render ("./accountViews/login_weiss.ejs", {title: "Login | Weiss Ahumados"} );
 
     },
     registerView: (req, res)=>{
-        res.render ("./registro_weiss.ejs");
+        res.render ("./accountViews/registro_weiss.ejs", {title: "Registro | Weiss Ahumados"});
 
     }
 

@@ -1,6 +1,6 @@
 const shoppingController = {
     shoppingCartView: (req, res)=>{
-        res.render ("./shoppingCart_weiss.ejs");
+        res.render ("./shoppingViews/shoppingCart_weiss.ejs", {title: "Tu carrito | Weiss Ahumados"});
 
     }
 

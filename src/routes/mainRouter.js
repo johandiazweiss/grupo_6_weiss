@@ -11,6 +11,6 @@ router.get("/nosotros", mainController.nosotrosView);
 router.get("/contacto", mainController.contacto);
 router.get("/sucursales",mainController.sucursales);
 router.get("/terminosycondiciones", mainController.terminos_condicionesView);
-router.post("/", mainController.search);  
+router.get("/search", mainController.search);  
 
 module.exports = router;
