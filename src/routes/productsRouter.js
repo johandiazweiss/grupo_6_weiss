@@ -39,7 +39,7 @@ router.get("/admin/create", productsController.productsCreateView);
 router.post("/admin/create", upload.single("product_image"), productsController.createProduct);
 
 router.get("/detalle/:id/admin/edit", productsController.productsEditView);
-router.post("/detalle/:id/admin/edit",);
+router.put("/detalle/:id/admin/edit",);
 
 
 module.exports = router;

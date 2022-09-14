@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "title": "aaaaaaaaaaaa",
+        "price": "dfsafdsfdsfasd",
+        "description": "dasasdfsdafafds",
+        "image": "product-img148202235024bridge.jpg",
+        "category": "categoria2",
+        "offers": "safds",
+        "crafting": "afdsafdsfasdf",
+        "addinfo": "asdfdasfasdf"
+    },
+    {
+        "id": 2,
+        "title": "Un producto",
+        "price": "$400000",
+        "description": "producto",
+        "image": "default.jpg",
+        "category": "categoria2",
+        "offers": "",
+        "crafting": "descripcion de producto",
+        "addinfo": "descripcion de producto"
+    }
+]

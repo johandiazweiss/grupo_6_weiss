@@ -69,6 +69,11 @@ const productsController = {
 
     productsEditView: (req, res)=>{
         res.render("./productsViews/editProductForm_weiss.ejs", {title: "admin"});
+    },
+
+    editProduct: (req, res)=>{
+        
+
     }
 }
 
