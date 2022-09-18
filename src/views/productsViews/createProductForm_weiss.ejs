@@ -7,15 +7,17 @@
         <%- include("../partials/headerPartial.ejs") %>
             <main>
                 <h2>Crear producto nuevo</h2>
-                <form class="productCreate_form" action="/productos/admin/create" method="post" enctype="multipart/form-data">
-                    
+                <form class="productCreate_form" action="/productos/admin/create" method="post"
+                    enctype="multipart/form-data">
 
-                    <input type="text" name="product_title"  placeholder="Nombre del producto" required>
+
+                    <input type="text" name="product_title" placeholder="Nombre del producto" required>
                     <input type="file" name="product_image">
                     <textarea name="product_description" placeholder="Descripción del producto"></textarea required>
                     <textarea name="product_crafting" placeholder="Elaboración del producto"></textarea required>
                     <textarea name="product_additionalInfo" placeholder="Información adicional del producto"></textarea required>
                     <select name="product_category">
+                        <option selected>Elija una categoría</option>
                         <option value="categoria1">Categoria 1</option>
                         <option value="categoria2">Categoria 2</option>
                         <option value="categoria3">Categoria 3</option>

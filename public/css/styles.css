@@ -282,6 +282,21 @@ main{
   height: 200px;
 }
 
+
+
+/*-----------productDetail----------*/
+article{
+  font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+.detailTemp1{
+  margin: 15px;
+  padding: 3px;
+}
+.detailTemp2{
+  margin: 15px;
+  padding: 3px;
+}
+
 /*-----------login/register styles-------*/
 
 

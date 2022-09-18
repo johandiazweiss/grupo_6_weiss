@@ -8,12 +8,29 @@ let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/product
 
 const productsController = {
     productsView: (req, res) => {
-        res.render("./productsViews/productos_weiss.ejs", {title: "Nuestros Productos | Weiss Ahumados"});
+        res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados" });
     },
+
+
+
     productDetailView: (req, res) => {
+        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
         let productId = req.params.id;
-        res.render("./productsViews/productDetail_weiss.ejs", { text: "DETALLE DEL PRODUCTO " + productId, title: "Producto | Weiss Ahumados"});
+        let productList;
+        productosJSON == "" ? productList = [] : productList = JSON.parse(productosJSON);
+        let productFinded = productList.find(product => product.id == productId);
+        if (productFinded == undefined) {
+            res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos", title: "Undefined" });
+        }
+        else {
+            res.render("./productsViews/productDetail_weiss.ejs", { productFinded, title: productFinded.title + " | Weiss Ahumados" });
+        }
     },
+
+
+
+
+
     productsCategoryView: (req, res) => {
         let productsCategory = req.params.categoria;
         res.render("./productsViews/productsCategory_weiss.ejs", { text: "AQUÍ IRAN LOS PRODUCTOS DE LA CATEGORÍA " + productsCategory, title: "Categoría | Weiss Ahumados" });
@@ -22,18 +39,18 @@ const productsController = {
 
 
     productsCreateView: (req, res) => {
-        res.render("./productsViews/createProductForm_weiss.ejs", {title: "admin"});
+        res.render("./productsViews/createProductForm_weiss.ejs", { title: "admin" });
     },
 
     createProduct: (req, res) => {
         let productData = req.body;
         let productList;
         let imageFileName;
-        req.file == undefined? imageFileName = "default.jpg": imageFileName = req.file.filename;
-        
+        req.file == undefined ? imageFileName = "default.png" : imageFileName = req.file.filename;
+
         if (productosJSON == "") {
             productList = [];
-            let newProduct= {
+            let newProduct = {
                 id: 1,
                 title: productData.product_title,
                 price: productData.product_price,
@@ -48,10 +65,10 @@ const productsController = {
             fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(productList));
             res.redirect("/productos");
         }
-        else{
+        else {
             productList = JSON.parse(productosJSON);
-            let newProduct= {
-                id: productList.length+1,
+            let newProduct = {
+                id: productList.length + 1,
                 title: productData.product_title,
                 price: productData.product_price,
                 description: productData.product_description,
@@ -67,12 +84,55 @@ const productsController = {
         }
     },
 
-    productsEditView: (req, res)=>{
-        res.render("./productsViews/editProductForm_weiss.ejs", {title: "admin"});
+    productsEditView: (req, res) => {
+        let productId = req.params.id;
+        let productList;
+        productosJSON == "" ? productList = [] : productList = JSON.parse(productosJSON);
+        let productFinded = productList.find(product => product.id == productId);
+        res.render("./productsViews/editProductForm_weiss.ejs", { title: "admin", productId, productFinded });
     },
 
-    editProduct: (req, res)=>{
-        
+    editProduct: (req, res) => {
+        let productId = req.params.id;
+        let productsList = JSON.parse(productosJSON);
+        let productEditData = req.body;
+
+        let productToEdit = productsList.find(product => product.id == productId);
+        productToEdit = {
+            id: productToEdit.id,
+            title: productEditData.edit_title,
+            price: productEditData.edit_price,
+            description: productEditData.edit_description,
+            image: req.file == undefined ? productToEdit.image : req.file.filename,
+            category: productEditData.edit_category,
+            offers: productEditData.edit_offers,
+            crafting: productEditData.edit_crafting,
+            addinfo: productEditData.edit_additionalInfo
+        }
+
+        productsList[productToEdit.id - 1] = productToEdit;
+        fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(productsList));
+        res.redirect("/productos/detalle/"+ productId);
+        /* 
+                let newProductsList = productsList.map(product => {
+                    if (product.id == productToEdit.id) {
+                        return product = {...productToEdit};
+                    }
+                    else{
+                        return product;
+                    }
+                }) */
+    },
+    deleteProduct: (req, res)=>{
+        let productId = req.params.id;
+        let productsList = JSON.parse(productosJSON);
+        let updatedProductList = productsList.filter(product=>product.id != productId);
+        for(let i = 0; i < updatedProductList.length ; i++){
+            updatedProductList[i].id = i + 1;
+        }
+        fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(updatedProductList));
+        res.redirect("/productos/detalle/"+ productId);
+
 
     }
 }

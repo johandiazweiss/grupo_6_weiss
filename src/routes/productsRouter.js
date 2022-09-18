@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
     filename: function (req, file, callback){
         let date = new Date();
-        let imageName =  "product-img"+date.getDate()+date.getMonth()+date.getFullYear()+date.getHours()+date.getMinutes()+date.getSeconds()+file.originalname;
+        let imageName =  "product-img"+date.getDate()+(date.getMonth()+1)+date.getFullYear()+date.getHours()+date.getMinutes()+date.getSeconds()+file.originalname;
         callback(null, imageName);
     }
 });
@@ -39,7 +39,9 @@ router.get("/admin/create", productsController.productsCreateView);
 router.post("/admin/create", upload.single("product_image"), productsController.createProduct);
 
 router.get("/detalle/:id/admin/edit", productsController.productsEditView);
-router.put("/detalle/:id/admin/edit",);
+router.put("/detalle/:id/admin/edit",  upload.single("edit_image") , productsController.editProduct);
+
+router.delete("/detalle/:id/admin/delete", productsController.deleteProduct);
 
 
 module.exports = router;

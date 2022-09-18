@@ -6,15 +6,21 @@
 <body>
     <%- include("../partials/headerPartial.ejs") %> 
     <main>
-        <h1 class="main_loginForm"><%=text%></h1>
+        <article>
+            <img class="foto-producto" src="/img productos_weiss/productosImages/<%= productFinded.image %>" alt="imagenProducto">
+            <div>
+                <h3 class="detailTemp1"> <%= productFinded.title %> </h3>
+                <h3 class="detailTemp1"><%= productFinded.price %> </h3>
+                <h3 class="detailTemp1"><%= productFinded.offers %> </h3>
+                <p class="detailTemp2"><%= productFinded.description %></p>
+                <p class="detailTemp2"><%= productFinded.crafting%></p>
+            </div>
+        </article>
         <br>
-        <br> 
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
+
     </main>
     
     

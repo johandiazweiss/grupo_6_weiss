@@ -1,24 +1,35 @@
 [
     {
         "id": 1,
-        "title": "aaaaaaaaaaaa",
-        "price": "dfsafdsfdsfasd",
-        "description": "dasasdfsdafafds",
-        "image": "product-img148202235024bridge.jpg",
+        "title": "Salmón",
+        "price": "$400",
+        "description": "salmón ahumado en aceite",
+        "image": "product-img189202218550salmon-ahumado.jpg",
         "category": "categoria2",
-        "offers": "safds",
-        "crafting": "afdsafdsfasdf",
-        "addinfo": "asdfdasfasdf"
+        "offers": "25%",
+        "crafting": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "addinfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         "id": 2,
-        "title": "Un producto",
-        "price": "$400000",
-        "description": "producto",
-        "image": "default.jpg",
+        "title": "Ciervo",
+        "price": "U$S 40",
+        "description": "ciervo ahumado en aceite",
+        "image": "product-img1892022185547ciervo.jpg",
+        "category": "categoria3",
+        "offers": "10%",
+        "crafting": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "addinfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 3,
+        "title": "Queso",
+        "price": "$1100",
+        "description": "filet de queso ahumado",
+        "image": "product-img1892022185648QuesoAhumado.JPG",
         "category": "categoria2",
         "offers": "",
-        "crafting": "descripcion de producto",
-        "addinfo": "descripcion de producto"
+        "crafting": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "addinfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
 ]
