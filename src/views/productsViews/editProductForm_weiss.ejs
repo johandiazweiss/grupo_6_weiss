@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/headPartial.ejs") %> 
+<%- include("../partials/headPartial.ejs") %>
 
-<body>
-    <%- include("../partials/headerPartial.ejs") %> 
-    <main>
-        <h2>Editar producto: <%= productId %></h2>
-        <form class="productCreate_form" action="/productos/detalle/<%=productId%>/admin/edit?_method=PUT" method="post" enctype="multipart/form-data">
-            
+    <body>
+        <%- include("../partials/headerPartial.ejs") %>
+            <main>
+                <div class="page_content">
+                    <h2>Editar producto: <%= productId %>
+                    </h2>
+                    <form class="productCreate_form" action="/productos/detalle/<%=productId%>/admin/edit?_method=PUT"
+                        method="post" enctype="multipart/form-data">
 
-            <input type="text" name="edit_title"  placeholder="Nombre del producto" value=<%= productFinded.title %>  required>
-            <input type="file" name="edit_image">
-            <textarea name="edit_description" placeholder="Descripción del producto"><%= productFinded.description%></textarea required>
-            <textarea name="edit_crafting" placeholder="Elaboración del producto"><%= productFinded.crafting %></textarea required>
-            <textarea name="edit_additionalInfo" placeholder="Información adicional del producto"><%= productFinded.addinfo %></textarea required>
-            <select name="edit_category" required>
-                <% if (productFinded.category == "categoria1") { %>
 
-                    <option>Elija una categoría</option>
-                    <option value="categoria1" selected>Categoria 1</option>
-                    <option value="categoria2">Categoria 2</option>
-                    <option value="categoria3">Categoria 3</option>
+                        <input type="text" name="edit_title" placeholder="Nombre del producto"
+                            value=<%=productFinded.title %> required>
+                        <input type="file" name="edit_image">
+                        <textarea name="edit_description" placeholder="Descripción del producto"><%= productFinded.description%></textarea required>
+                        <textarea name="edit_crafting" placeholder="Elaboración del producto"><%= productFinded.crafting %></textarea required>
+                        <textarea name="edit_additionalInfo" placeholder="Información adicional del producto"><%= productFinded.addinfo %></textarea required>
+                        <select name="edit_category" required>
+                        <% if (productFinded.category == "categoria1") { %>
 
-                <% }  else if(productFinded.category == "categoria2") {%>
-                    <option selected>Elija una categoría</option>
-                    <option value="categoria1" >Categoria 1</option>
-                    <option value="categoria2" selected>Categoria 2</option>
-                    <option value="categoria3">Categoria 3</option>
-                <% }  else{  %>
-                    <option selected>Elija una categoría</option>
-                    <option value="categoria1" >Categoria 1</option>
-                    <option value="categoria2" >Categoria 2</option>
-                    <option value="categoria3"selected>Categoria 3</option>
-                <% } %>
+                            <option>Elija una categoría</option>
+                            <option value="categoria1" selected>Categoria 1</option>
+                            <option value="categoria2">Categoria 2</option>
+                            <option value="categoria3">Categoria 3</option>
 
-            </select>
-            <input type="text" name="edit_price" placeholder="$$precio" value=<%= productFinded.price%> required>
-            <input type="text" name="edit_offers" placeholder="Ofertas/descuentos" value=<%= productFinded.offers%>>
-            <button type="submit">Guardar producto</button>
-            <button type="reset">Resetear campos</button>
-        </form>
-        <form  class="productCreate_form" action="/productos/detalle/<%=productId%>/admin/delete?_method=DELETE" method="post">
-            <button type="submit">BORRAR producto</button>
-        </form>
-    </main>
-    
-    
-    <%- include("../partials/footerPartial.ejs") %> 
-</body>
+                        <% }  else if(productFinded.category == "categoria2") {%>
+                            <option selected>Elija una categoría</option>
+                            <option value="categoria1" >Categoria 1</option>
+                            <option value="categoria2" selected>Categoria 2</option>
+                            <option value="categoria3">Categoria 3</option>
+                        <% }  else{  %>
+                            <option selected>Elija una categoría</option>
+                            <option value="categoria1" >Categoria 1</option>
+                            <option value="categoria2" >Categoria 2</option>
+                            <option value="categoria3"selected>Categoria 3</option>
+                        <% } %>
+
+                        </select>
+                        <input type="text" name="edit_price" placeholder="$$precio" value=<%= productFinded.price%> required>
+                        <input type="text" name="edit_offers" placeholder="Ofertas/descuentos" value=<%= productFinded.offers%>>
+                        <button type="submit">Guardar producto</button>
+                        <button type="reset">Resetear campos</button>
+                    </form>
+                    <form  class="productCreate_form" action="/productos/detalle/<%=productId%>/admin/delete?_method=DELETE" method="post">
+                        <button type="submit">BORRAR producto</button>
+                    </form>
+        
+                </div>
+            </main>
+        <%- include("../partials/footerPartial.ejs") %>
+    </body>
+
 </html>

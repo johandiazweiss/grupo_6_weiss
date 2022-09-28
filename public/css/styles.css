@@ -17,23 +17,35 @@ header {
   background-image: url();
 }
 
-.navbar-list {
+.navbar-list1 {
   list-style-type: none;
   display: none;
   font-size: 20px;
+  width: 420px;
+ 
+}
+
+
+.navbar-list2 {
+  list-style-type: none;
+  display: none;
+  font-size: 20px;
+  width: 420px;
  
 }
 
 
 
-.navbar-list li {
+.navbar-list1 li, .navbar-list2 li {
   height: 60%;
-  padding: 45px 25px 25px 25px;
+  padding: 45px 22px 25px 22px;
   border-bottom: #6E6B6A solid 2px;
   transition: all 50ms;
 }
 
-.navbar-list li a {
+
+
+.navbar-list1 li a, .navbar-list2 li a {
   text-decoration: none;
   color: #6E6B6A;
   transition: all 150ms;
@@ -63,6 +75,8 @@ header {
 .weiss-logo {
   text-align: center; 
   width: 135px;
+  margin: 0px 7px;
+ 
 
 
 }
@@ -75,7 +89,7 @@ header {
 }
 
 
-.navbar-list li i {
+.navbar-list1 li i, .navbar-list2 li i {
   font-size: 15px;
   color: #6E6B6A;
 }
@@ -220,23 +234,39 @@ header {
 }
 
 
-.navbar-list li:hover{
+.navbar-list1 li:hover{
+  border-bottom: #6E6B6A solid 4px;
+  
+}
+.navbar-list2 li:hover{
   border-bottom: #6E6B6A solid 4px;
   
 }
 
-.navbar-list li:hover  .fa-angle-down{
+.navbar-list1 li:hover  .fa-angle-down{
+  transform: rotateX(180deg);
+}
+.navbar-list2 li:hover  .fa-angle-down{
   transform: rotateX(180deg);
 }
 
-.navbar-list li a:hover {
+
+.navbar-list1 li a:hover {
   color: rgba(229, 191, 134, 0.892);
 
-}  
+} 
+.navbar-list2 li a:hover {
+  color: rgba(229, 191, 134, 0.892);
 
-.navbar-list li:hover .dropdown-menu_titles{
+}   
+
+.navbar-list1 li:hover .dropdown-menu_titles{
   color:rgba(229, 191, 134, 0.892);
 }
+.navbar-list2 li:hover .dropdown-menu_titles{
+  color:rgba(229, 191, 134, 0.892);
+}
+
 
 .dropdown-menu li a:hover {
   color: #050505;
@@ -271,16 +301,60 @@ header {
 
 
 /*------main----------*/
-main{
+.page_title{
+  width: 100%;
+}
+.page_content{
   width: 90%;
-
   margin: auto;
 }
 
-.foto-producto {
-  width: 200px;
-  height: 200px;
+
+/*-----------productsArticles----------*/
+.articles{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+.product_article{
+  width: 300px;
+  margin: 6px;
+  padding: 8px;
+}
+.product_article a{
+  text-decoration: none;
+  color: #050505;
+}
+
+.article_name{
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.product_price p{
+  font-size: 17px;
+  text-decoration: line-through;
+
+}
+.article_price{
+  
+  color:#5e5d5d;
+  font-size: 18px;
+  
+}
+
+
+.article_img{
+  width: 100%;
+  
+  
+}
+.article_category{
+  color: #6E6B6A;
+  font-size: 15px;
+
+}
+
 
 
 
@@ -318,6 +392,7 @@ article{
 
 h1 {
   text-align: center;
+  font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
 
 .formFomulario {
@@ -566,9 +641,15 @@ footer {
 
 
 @media (min-width: 1024px) {
-  .navbar-list {
+  .navbar-list1{
     display: flex;
+    justify-content: flex-end;
   }
+  .navbar-list2{
+    display: flex;
+    justify-content: flex-start;
+  }
+
 
   .wishlist-account-cart li {
     padding: 12px;
@@ -615,3 +696,6 @@ footer {
   }
 
 }
+
+
+

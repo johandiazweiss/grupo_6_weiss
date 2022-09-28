@@ -8,7 +8,26 @@ let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/product
 
 const productsController = {
     productsView: (req, res) => {
-        res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados" });
+        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
+        let productsList;
+        productosJSON == "" ? productsList = [] : productsList = JSON.parse(productosJSON);
+        if (productsList == "") {
+            res.render("./mainViews/undefinedView_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos" });
+        }
+        else{
+            productsList.sort(function (a, b){
+                if (a.title.toLowerCase() > b.title.toLowerCase()){
+                    return +1;
+                }
+                else if(a.title.toLowerCase() < b.title.toLowerCase()){
+                    return -1;
+                }
+                else{
+                    return 0;
+                }
+            })
+            res.render("./productsViews/productos_weiss.ejs", {productsList, title: "Nuestros Productos | Weiss Ahumados"});
+        }
     },
 
 
@@ -112,7 +131,7 @@ const productsController = {
 
         productsList[productToEdit.id - 1] = productToEdit;
         fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(productsList));
-        res.redirect("/productos/detalle/"+ productId);
+        res.redirect("/productos/detalle/" + productId);
         /* 
                 let newProductsList = productsList.map(product => {
                     if (product.id == productToEdit.id) {
@@ -123,15 +142,15 @@ const productsController = {
                     }
                 }) */
     },
-    deleteProduct: (req, res)=>{
+    deleteProduct: (req, res) => {
         let productId = req.params.id;
         let productsList = JSON.parse(productosJSON);
-        let updatedProductList = productsList.filter(product=>product.id != productId);
-        for(let i = 0; i < updatedProductList.length ; i++){
+        let updatedProductList = productsList.filter(product => product.id != productId);
+        for (let i = 0; i < updatedProductList.length; i++) {
             updatedProductList[i].id = i + 1;
         }
         fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(updatedProductList));
-        res.redirect("/productos/detalle/"+ productId);
+        res.redirect("/productos/detalle/" + productId);
 
 
     }
