@@ -210,6 +210,7 @@ header {
   transition: visibility 0ms, transform 400ms, opacity 300ms;
   opacity: 0;
   visibility: hidden;
+  z-index: 1000;
    /* display: none;  */
   
   
@@ -286,7 +287,7 @@ header {
 
 
 .fa-cart-shopping, .fa-circle-user, .fa-heart {
-  transition: all 350ms;
+  transition: transform 350ms;
 }
 .wishlist-account-cart li:hover .fa-circle-user{
   transform: rotateY(-360deg);
@@ -331,6 +332,11 @@ header {
   font-weight: 300;
 }
 
+.article_offer{
+  color: rgb(136, 102, 173);
+
+ 
+}
 .product_price p{
   font-size: 17px;
   text-decoration: line-through;
@@ -346,6 +352,7 @@ header {
 
 .article_img{
   width: 100%;
+ 
   
   
 }
@@ -354,6 +361,93 @@ header {
   font-size: 15px;
 
 }
+
+.product_image{
+  position: relative;
+}
+
+.article_addCart{
+  position: absolute;
+  background-color: #FFFFFF;
+  box-shadow: 2px 0px 29px -7px rgba(100,100,100,1);
+  opacity: 0;
+  font-size: 21px;
+  width: 42px;
+  top: 225px;
+  left: 250px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  visibility: hidden;
+  transition: all 200ms;
+
+}
+
+.article_offerRibbon{
+  position: absolute;
+  width: 60px;
+  color: #FFFFFF;
+  background-color: rgb(136, 102, 173);
+  box-shadow: 2px 0px 29px -7px rgba(100,100,100,1);
+  top: 15px;
+  left: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 8px 80px 8px 10px;
+  transition: all 250ms;
+}
+
+
+.article_addWish{
+  position: absolute;
+  background-color: #FFFFFF;
+  box-shadow: 2px 0px 29px -7px rgba(100,100,100,1);
+  opacity: 0;
+  font-size: 21px;
+  width: 42px;
+  top: 16px;
+  left: 250px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  visibility: hidden;
+  transition: all 200ms;
+}
+
+
+
+.article_addWish a i{
+  margin: 10px 3px 0px 8px;
+  transition: all 150ms;
+ 
+}
+.article_addCart a i{
+  margin: 10px 3px 0px 7px;
+}
+
+/*------animation---*/
+
+.article_addCart a:hover{
+  color: rgb(136, 102, 173);
+
+}
+
+.article_addWish a:hover{
+  color: #c40e0e;
+
+}
+
+.product_article:hover .article_addCart, .product_article:hover .article_addWish{
+  visibility: visible;
+  transform: translateX(-8px);
+  opacity: 1;
+  
+}
+
+.product_article:hover .article_offerRibbon{
+  transform: scaleY(1.05);
+  transform: scaleX(1.05);
+  
+}
+
 
 
 

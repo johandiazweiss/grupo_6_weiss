@@ -3,7 +3,7 @@ const path = require("path");
 
 let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
 
-
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productsController = {
@@ -26,7 +26,7 @@ const productsController = {
                     return 0;
                 }
             })
-            res.render("./productsViews/productos_weiss.ejs", {productsList, title: "Nuestros Productos | Weiss Ahumados"});
+            res.render("./productsViews/productos_weiss.ejs", {productsList, title: "Nuestros Productos | Weiss Ahumados", toThousand});
         }
     },
 
@@ -108,7 +108,7 @@ const productsController = {
         let productList;
         productosJSON == "" ? productList = [] : productList = JSON.parse(productosJSON);
         let productFinded = productList.find(product => product.id == productId);
-        res.render("./productsViews/editProductForm_weiss.ejs", { title: "admin", productId, productFinded });
+        res.render("./productsViews/editProductForm_weiss.ejs", {  title: "admin",  productId, productFinded });
     },
 
     editProduct: (req, res) => {

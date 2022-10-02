@@ -16,6 +16,11 @@
 
                         <article class="product_article">
                             <div class="product_image">
+                                <div class="article_addCart"><a href=""><i class="fa-solid fa-cart-plus"></i></a></div>
+                                <div class="article_addWish"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                <% if (product.offers != "") {%>
+                                    <h4 class="article_offerRibbon">¡OFERTA!</h4> 
+                                <% } %> 
                                 <a href="/productos/detalle/<%= product.id %>"><img class="article_img" src="/img productos_weiss/productosImages/<%= product.image %>"  alt="imagen-producto"></a>
                             </div>
                             <div>
@@ -24,8 +29,22 @@
                                     <p class="article_name"><%= product.title %></p>
                                 </a>
                                 <div class="product_price">
-                                    <p></p>
-                                    <h5 class="article_price"><%= product.price %></h5>
+                                    <% if (product.offers == "") { %>
+                                        <h5 class="article_price">$<%= toThousand(product.price) %></h5>
+                                    <% } else if (isNaN(product.offers)) { %>
+                                        <h5 class="article_offer"><%=product.offers%></h5> 
+                                        <h5 class="article_price">$<%= toThousand(product.price) %></h5>
+                                    <% } else { %>
+                                        <h5 class="article_offer"><%=product.offers%> % OFF</h5>
+                                        <p>$<%= toThousand(product.price) %></p>
+                                        <h5 class="article_price">$<%= toThousand(product.price-(product.price*product.offers/100)) %></h5>
+                                    <% } %> 
+                                     
+                                     
+                                
+                                    
+                                   
+                                    
                                 </div>
                             </div>
                         </article>

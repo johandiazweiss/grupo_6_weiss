@@ -13,8 +13,7 @@
                         method="post" enctype="multipart/form-data">
 
 
-                        <input type="text" name="edit_title" placeholder="Nombre del producto"
-                            value=<%=productFinded.title %> required>
+                        <input type="text" name="edit_title" placeholder="Nombre del producto" value="<%=productFinded.title %>" required>
                         <input type="file" name="edit_image">
                         <textarea name="edit_description" placeholder="Descripción del producto"><%= productFinded.description%></textarea required>
                         <textarea name="edit_crafting" placeholder="Elaboración del producto"><%= productFinded.crafting %></textarea required>
@@ -40,8 +39,8 @@
                         <% } %>
 
                         </select>
-                        <input type="text" name="edit_price" placeholder="$$precio" value=<%= productFinded.price%> required>
-                        <input type="text" name="edit_offers" placeholder="Ofertas/descuentos" value=<%= productFinded.offers%>>
+                        <input type="text" name="edit_price" placeholder="$$precio" value="<%= productFinded.price%>" required>
+                        <input type="text" name="edit_offers" placeholder="Ofertas/descuentos" value="<%= productFinded.offers%>">
                         <button type="submit">Guardar producto</button>
                         <button type="reset">Resetear campos</button>
                     </form>
