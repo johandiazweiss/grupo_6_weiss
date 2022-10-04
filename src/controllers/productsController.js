@@ -52,8 +52,29 @@ const productsController = {
 
     productsCategoryView: (req, res) => {
         let productsCategory = req.params.categoria;
-        res.render("./productsViews/productsCategory_weiss.ejs", { text: "AQUÍ IRAN LOS PRODUCTOS DE LA CATEGORÍA " + productsCategory, title: "Categoría | Weiss Ahumados" });
-
+        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
+        let productsList;
+        productosJSON == "" ? productsList = [] : productsList = JSON.parse(productosJSON);
+        let productsOfCategory = productsList.filter(product=>{
+            return product.category == productsCategory;
+        })
+        if (productsOfCategory == "") {
+            res.render("./mainViews/undefinedView_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos" });
+        }
+        else{
+            productsOfCategory.sort(function (a, b){
+                if (a.title.toLowerCase() > b.title.toLowerCase()){
+                    return +1;
+                }
+                else if(a.title.toLowerCase() < b.title.toLowerCase()){
+                    return -1;
+                }
+                else{
+                    return 0;
+                }
+            })
+            res.render("./productsViews/productsCategory_weiss.ejs", { productsOfCategory, productsCategory, title: productsCategory+" | Weiss Ahumados", toThousand });
+        }
     },
 
 

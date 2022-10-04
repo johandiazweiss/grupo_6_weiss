@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/headPartial.ejs") %>
+    <%- include("../partials/headPartial.ejs") %>
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
             <main>
+
                 <div class="page_title">
                     <h1 class="main_loginForm">Productos</h1>
 
                 </div>
+
                 <div class="page_content">
                     <div class="articles">
                         <% for (product of productsList){%> 
@@ -38,13 +40,7 @@
                                         <h5 class="article_offer"><%=product.offers%> % OFF</h5>
                                         <p>$<%= toThousand(product.price) %></p>
                                         <h5 class="article_price">$<%= toThousand(product.price-(product.price*product.offers/100)) %></h5>
-                                    <% } %> 
-                                     
-                                     
-                                
-                                    
-                                   
-                                    
+                                    <% } %>     
                                 </div>
                             </div>
                         </article>
