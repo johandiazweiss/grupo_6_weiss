@@ -7,7 +7,7 @@ const accountController = {
 
     },
     registerView: (req, res) => {
-        res.render("./accountViews/registro_weiss.ejs", { title: "Registro | Weiss Ahumados" });
+        res.render("./accountViews/registro_weiss.ejs", { title: "Registrarse | Weiss Ahumados" });
 
     },
 
