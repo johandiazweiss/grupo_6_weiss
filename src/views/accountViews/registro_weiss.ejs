@@ -2,57 +2,83 @@
 <html lang="en">
 
 <%-include("../partials/headPartial.ejs")%>
+
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-            <main  class="main_loginForm">
-                <form class="formFormulario" action="" method="POST" id="form">
-                    <div class="form">
-                        <h1>Registrate</h1>
-                        <div class="grupo">
-                            <input class="inputForm" type="text" name="nombre" id="nombre" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="nombre">Nombre y apellido</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="text" name="usuario" id="usuario" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="usuario">Usuario</label>
+            <main class="main_loginForm">
+                <div class="page_title">
+                    <h1 class="main_titles">Registrarse</h1>
+                </div>
+                <div class="page_content">
+
+                    <form action="/cuenta/register" method="POST" id="form">
+                        <div class="formRegister">
+                            <section class="register_sec1">
+                                <h4 class="main_subtitles">Información personal</h4>
+                                <div class="grupo">
+
+                                    <input class="form_inputs_reg" type="text" name="firstName_register" id="nombre">
+                                    <label class="form_labels_reg" for="nombre">Nombre</label>
+
+                                </div>
+
+                                <div class="grupo">
+                                    <input class="form_inputs_reg" type="text" name="lastName_register" id="nombre">
+                                    <label class="form_labels_reg" for="nombre">Apellidos</label>
 
 
+
+                                </div>
+
+                                <div class="grupo">
+                                    <input class="form_inputs_reg" type="date" name="birthDate_register">
+                                    <label class="form_labels_reg">Fecha de nacimiento</label>
+
+
+                                </div>
+                            </section>
+
+                            <section class="register_sec2">
+                                <h4 class="main_subtitles">Información de inicio de sesión</h4>
+                                <div class="grupo">
+                                    <input class="form_inputs_reg" type="email" name="email_register" id="email">
+                                    <label class="form_labels_reg" for="email">Email</label>
+
+
+                                </div>
+
+                                <div class="grupo">
+                                    <input class="form_inputs_reg" type="password" name="password_register"
+                                        id="password">
+                                    <label class="form_labels_reg" for="password">Contraseña</label>
+
+                                </div>
+
+                                <div class="grupo">
+                                    <input class="form_inputs_reg" type="password" name="passwordCheck_retgister"
+                                        id="password2">
+                                    <label class="form_labels_reg" for="password2">Confirmar contraseña</label>
+
+
+                                </div>
+
+                                <div class="grupo">
+                                    <label><input type="checkbox" name="newsletter_register" value="newsletterTrue">
+                                        Deseo
+                                        recibir
+                                        el newsletter en mi casilla de correo</label>
+                                </div>
+                            </section>
                         </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="password" name="password" id="password" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="password">Password</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="password" name="password2" id="password2" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="password2">Confirmar contraseña</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="email" name="email" id="email" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="email">Email</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="number" name="telefono" id="telefono" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="telefono">Telefono</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="number" name="edad" id="edad" required><span
-                                class="barra"></span>
-                            <label class="loginForm_label" for="edad">Edad</label>
-                        </div>
-                        <div class="grupo">
-                            <input class="inputForm" type="date" name="fecha" id="fecha">
-                            <label class="loginForm_label" for="fecha"></label>
-                        </div>
-                        <button class="loginForm_button" type="reset">Borrar</button>
-                        <button class="loginForm_button" type='submit'>Enviar</button>
-                    </div>
-                </form>
+                        
+                        <button class="form_button_reg" type='submit'>CREAR CUENTA</button>
+
+                    </form>
+
+                </div>
+
+
+
             </main>
             <%- include("../partials/footerPartial.ejs") %>
     </body>

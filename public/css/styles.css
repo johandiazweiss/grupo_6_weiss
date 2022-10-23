@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&family=Bellota:ital,wght@0,300;0,400;1,300;1,400&family=Buda&family=Cagliostro&family=Lato:ital,wght@0,300;0,400;1,300&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Nunito:ital,wght@0,200;0,300;1,200;1,300&family=Port+Lligat+Sans&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300;400;500;600&family=Shanti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Baloo+Bhaijaan+2:wght@400;500;600&family=Bellota:ital,wght@0,300;0,400;1,300;1,400&family=Buda&family=Cagliostro&family=Inter:wght@300;400;500&family=Lato:ital,wght@0,300;0,400;1,300&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Nunito:ital,wght@0,200;0,300;1,200;1,300&family=Port+Lligat+Sans&family=Source+Sans+Pro:ital,wght@0,600;1,300;1,400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,16 +12,17 @@
 /*------header--------*/
 
 header {
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
-  margin-bottom: 50px;
-  border-bottom: solid 2px  rgba(229, 191, 134, 0.892);
-  background-image: url();
+  font-family:  'Assistant', sans-serif; /*'Baloo Bhaijaan 2', sans-serif; */
+  /*margin-bottom: 50px;*/
+
+ 
 }
 
 .navbar-list1 {
   list-style-type: none;
   display: none;
   font-size: 20px;
+  font-weight: 400; 
   width: 420px;
  
 }
@@ -30,6 +32,7 @@ header {
   list-style-type: none;
   display: none;
   font-size: 20px;
+  font-weight: 400;
   width: 420px;
  
 }
@@ -68,6 +71,7 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border-bottom: #E4E4E4 solid 1px;
 
 }
 
@@ -75,15 +79,15 @@ header {
 .weiss-logo {
   text-align: center; 
   width: 135px;
-  margin: 0px 7px;
+  margin: 0px -7px;
  
 
 
 }
 
 .weiss-logo img {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
   
   
 }
@@ -107,7 +111,7 @@ header {
 
 
 .search-bar input {
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  font-family: "Assistant", sans-serif;/* 'Baloo Bhaijaan 2', sans-serif; */
   font-style: italic;
   margin-top: 8px;
   height: 35px;
@@ -426,7 +430,7 @@ header {
 /*------animation---*/
 
 .article_addCart a:hover{
-  color: rgb(136, 102, 173);
+  color: #8866ad;
 
 }
 
@@ -452,9 +456,9 @@ header {
 
 
 
-/*-----------productDetail----------*/
+/*-----------productDetail-------(temps: reglas temporales)---*/
 article{
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  font-family: "Assistant", sans-serif;/* 'Baloo Bhaijaan 2', sans-serif; */
 }
 .detailTemp1{
   margin: 15px;
@@ -467,90 +471,127 @@ article{
 
 /*-----------login/register styles-------*/
 
-
-:root {
-  --colorTextos: #49454567;
-}
-
 .main_loginForm {
 
-  margin: 50px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
-  background-color: #ebebeb;
+  margin: 0px auto 50px auto;
+  font-family: "Assistant", sans-serif;/* 'Baloo Bhaijaan 2', sans-serif; */
+
   
 }
 
 
-h1 {
+.main_titles {
+  font-size: 48px;
+  padding: 50px;
   text-align: center;
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  font-weight: 500;
+  height: 160px;
+  font-family:  "Assistant";
+
 }
 
-.formFomulario {
-  padding: 40px 0;
+
+
+
+.main_subtitles{
+  font-size: 25px;
+  font-weight: 600;
+  
 }
 
-.form {
-  width: 90%;
-  margin: auto;
+.register_sec1{
+  width: 390px;
+  margin: 20px 15px 20px 20px;
+  padding: 30px;
+  
+  
 }
+.register_sec2{
+  width: 390px;
+  margin: 20px 20px 20px 15px;
+  padding: 30px;
+  
+
+}
+
+
+.formRegister {
+  border-left:  1.5px #E4E4E4 solid;
+  border-right:  1.5px #E4E4E4 solid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+  
+
+}
+
+
 
 .grupo {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column-reverse;
   position: relative;
-  margin: 20px;
 }
 
-.inputForm {
-  background: none;
-  color: #c6c6c6;
-  display: block;
+
+
+.form_inputs_reg {
   width: 100%;
-  border: none;
-  border-bottom: 1px solid var(--colorTextos);
+  padding: 12px;
+  border: 3px solid #dfdfdf;
+  border-style: solid;
+  position: relative;
 
-}
-
-.inputForm:focus {
-  outline: none;
-  color: #5e5d5d;
-}
-
-.loginForm_label {
-  color: var(--colorTextos);
-  font-size: 14px;
-  position: absolute;
-  left: 5px;
-  top: -1px;
-  transition: 0.3s ease-in-out all;
-  pointer-events: none;
   
-}
+} 
 
-input:focus~label,
-input:valid~label {
-  top: -15px;
-  font-size: 12px;
-  color: rgba(229, 191, 134, 0.892);
-}
-
-.barra {
+.form_labels_reg {
+  display: block;
+  font-size: 16px;
+  margin: 3px 0px 3px 0px;
   position: relative;
+  transition: all 150ms;
+
+} 
+
+.form_inputs_reg:focus + .form_labels_reg {
+  color: #5256d0e3;
+  transform: translateY(-4px);
+}
+/*colors posibles:
+#8866ad(violeta)
+#5ea489(verde)
+#4565e7(azul)*/
+
+
+
+
+.form_button_reg {
+  width: 250px;
+  padding: 12px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  background-color: #5ea489;
+  border: #5ea489 3px solid;
+  border-style: solid;
+  font-size: 16px;
+  color: #FFFFFF;
   display: block;
-  width: 100%;
+  margin: 0px auto;
+  cursor: pointer;
+  transition: all 200ms;
 }
 
-.loginForm_button {
-  font-family: 'nunito';
-  border: none;
-  display: block;
-  margin: 10px auto;
-  height: 20px;
-  font-size: 14px;
-  cursor: pointer;
+.form_button_reg:hover{
+  background-color: #FFFFFF;
+  color: #5ea489;
+  transform: scaleX(1.02)
 }
+
+
+
 
 /*---------------------Creat-product--form styles-----------*/
 
@@ -587,7 +628,7 @@ input:valid~label {
 
 footer {
   background-color: whitesmoke ;
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
+  font-family: "Assistant", sans-serif;/* 'Baloo Bhaijaan 2', sans-serif; */
 
 }
 
@@ -595,7 +636,7 @@ footer {
   display: block;
   text-align: center;
   margin: 5px auto;
-  border-radius: 4px;
+  border-radius: 1px;
 }
 
 .footer_socialMedia{
@@ -666,6 +707,7 @@ footer {
 
 .footer_sec1 li, .footer_sec2 li, .footer_sec3 li{
   font-size: 18px;
+  margin: 6px 0px 6px 0px;
   color:#6E6B6A;
 }
 
@@ -722,6 +764,10 @@ footer {
     font-size: 12px;
   }
 
+  
+    
+  
+
 
 
   
@@ -751,8 +797,10 @@ footer {
 
   .weiss-logo{
     width: 200px;
+    margin: 0px 7px;
   }
 
+ 
   .mini-menu, .mini-home{
     display: none;
   }
