@@ -134,18 +134,21 @@ header {
 .wishlist-account-cart {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 .wishlist-account-cart li {
-  padding: 12px 3px 12px 3px;
+  
   margin: 0px 2px;
-  transition: all 200ms;
+  transition: all 300ms;
 }
 
 .wishlist-account-cart li a {
+  padding: 12px 3px 12px 3px;
   text-decoration: none;
   color: #6E6B6A;
   font-style: italic;
+  font-weight: 600;
 }
 
 .wishlist-account-cart li a i {
@@ -287,11 +290,14 @@ header {
 
 .wishlist-account-cart li:hover{
   background-color: rgb(30, 30, 30);
+  
 }
 
 
+
+
 .fa-cart-shopping, .fa-circle-user, .fa-heart {
-  transition: transform 350ms;
+  transition: transform 550ms;
 }
 .wishlist-account-cart li:hover .fa-circle-user{
   transform: rotateY(-360deg);
@@ -471,8 +477,7 @@ article{
 
 /*-----------login/register styles-------*/
 
-.main_loginForm {
-
+.main_Form {
   margin: 0px auto 50px auto;
   font-family: "Assistant", sans-serif;/* 'Baloo Bhaijaan 2', sans-serif; */
 
@@ -501,14 +506,14 @@ article{
 
 .register_sec1{
   width: 390px;
-  margin: 20px 15px 20px 20px;
+  margin: 20px 15px 0px 20px;
   padding: 30px;
   
   
 }
 .register_sec2{
   width: 390px;
-  margin: 20px 20px 20px 15px;
+  margin: 20px 20px 0px 15px;
   padding: 30px;
   
 
@@ -528,7 +533,7 @@ article{
 
 
 
-.grupo {
+.form_group_reg {
   margin: 20px 0px 20px 0px;
   display: flex;
   flex-direction: column-reverse;
@@ -565,9 +570,6 @@ article{
 #5ea489(verde)
 #4565e7(azul)*/
 
-
-
-
 .form_button_reg {
   width: 250px;
   padding: 12px;
@@ -584,11 +586,83 @@ article{
   transition: all 200ms;
 }
 
-.form_button_reg:hover{
+.form_button_reg:hover, .form_button_login:hover{
   background-color: #FFFFFF;
   color: #5ea489;
   transform: scaleX(1.02)
 }
+
+/*-----------------------login--*/
+
+.formLogin{
+ 
+ padding: 0px 50px 25px 50px;
+ margin: auto;
+ border-left:  1.5px #E4E4E4 solid;
+ border-right:  1.5px #E4E4E4 solid;
+ display: flex;
+ justify-content: center;
+ 
+}
+
+.login_sec{
+  width: 390px;
+}
+
+
+.form_group_login {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+}
+
+.form_textUnderButton{
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.form_textUnderButton a{
+  text-decoration: none;
+  color: #5e5d5d;
+  font-weight: 700;
+  transition: all 200ms;
+  
+}
+
+.form_textUnderInput:hover{
+  text-decoration: underline;
+}
+.form_textUnderButton a:hover{
+  color: #050505;
+  transform: scaleX(1.02);
+}
+
+.form_textUnderInput {
+  color: #5e5d5d;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 5px 0px 5px 0px;
+}
+
+.form_button_login {
+  width: 100%;
+  padding: 12px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 600;
+  background-color: #5ea489;
+  border: #5ea489 3px solid;
+  border-style: solid;
+  font-size: 16px;
+  color: #FFFFFF;
+  display: block;
+  margin: 0px auto;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+
 
 
 
@@ -792,7 +866,7 @@ footer {
 
 
   .wishlist-account-cart li {
-    padding: 12px;
+    padding: 15px 3px 15px 3px;
   }
 
   .weiss-logo{

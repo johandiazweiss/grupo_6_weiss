@@ -8,7 +8,9 @@ router.get("/register", accountController.registerView);
 
 
 router.post("/register", accountController.createUser);
-router.post("/login", );
+router.post("/login", (req, res)=>{
+    res.send(req.body)
+} );
 
 
 

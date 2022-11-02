@@ -5,73 +5,62 @@
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-            <main class="main_loginForm">
+            <main class="main_Form">
+                
                 <div class="page_title">
                     <h1 class="main_titles">Registrarse</h1>
                 </div>
-                <div class="page_content">
 
+                <div class="page_content">
                     <form action="/cuenta/register" method="POST" id="form">
                         <div class="formRegister">
                             <section class="register_sec1">
                                 <h4 class="main_subtitles">Información personal</h4>
-                                <div class="grupo">
-
+                                <div class="form_group_reg">
                                     <input class="form_inputs_reg" type="text" name="firstName_register" id="nombre">
                                     <label class="form_labels_reg" for="nombre">Nombre</label>
-
                                 </div>
 
-                                <div class="grupo">
+                                <div class="form_group_reg">
                                     <input class="form_inputs_reg" type="text" name="lastName_register" id="nombre">
                                     <label class="form_labels_reg" for="nombre">Apellidos</label>
-
-
-
                                 </div>
 
-                                <div class="grupo">
+                                <div class="form_group_reg">
                                     <input class="form_inputs_reg" type="date" name="birthDate_register">
                                     <label class="form_labels_reg">Fecha de nacimiento</label>
-
-
                                 </div>
                             </section>
 
                             <section class="register_sec2">
                                 <h4 class="main_subtitles">Información de inicio de sesión</h4>
-                                <div class="grupo">
+                                <div class="form_group_reg">
                                     <input class="form_inputs_reg" type="email" name="email_register" id="email">
                                     <label class="form_labels_reg" for="email">Email</label>
-
-
                                 </div>
 
-                                <div class="grupo">
+                                <div class="form_group_reg">
                                     <input class="form_inputs_reg" type="password" name="password_register"
                                         id="password">
                                     <label class="form_labels_reg" for="password">Contraseña</label>
-
                                 </div>
 
-                                <div class="grupo">
-                                    <input class="form_inputs_reg" type="password" name="passwordCheck_retgister"
+                                <div class="form_group_reg">
+                                    <input class="form_inputs_reg" type="password" name="passwordCheck_register"
                                         id="password2">
                                     <label class="form_labels_reg" for="password2">Confirmar contraseña</label>
-
-
                                 </div>
 
-                                <div class="grupo">
-                                    <label><input type="checkbox" name="newsletter_register" value="newsletterTrue">
-                                        Deseo
-                                        recibir
-                                        el newsletter en mi casilla de correo</label>
+                                <div class="form_group_reg">
+                                    <label><input type="checkbox" name="newsletter_register" value="newsletterTrue" checked> Deseo recibir el newsletter en mi casilla de correo</label>
                                 </div>
                             </section>
                         </div>
                         
                         <button class="form_button_reg" type='submit'>CREAR CUENTA</button>
+                        <p class="form_textUnderButton">¿Ya tenés cuenta?<a href="/cuenta/login">
+                            Ingresá</a>
+                    </p>
 
                     </form>
 
