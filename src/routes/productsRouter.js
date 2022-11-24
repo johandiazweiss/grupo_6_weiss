@@ -4,6 +4,8 @@ const router = express.Router();
 const path = require("path");
 const multer = require("multer");
 
+const adminAuthMiddleware = require("../middlewares/adminAuthMiddleware.js");
+
 
 
 
@@ -35,13 +37,14 @@ router.get("/", productsController.productsView);
 router.get("/:categoria", productsController.productsCategoryView);
 router.get("/detalle/:id", productsController.productDetailView);
 
-router.get("/admin/create", productsController.productsCreateView);
+router.get("/admin/create", adminAuthMiddleware, productsController.productsCreateView);
 router.post("/admin/create", upload.single("product_image"), productsController.createProduct);
 
-router.get("/detalle/:id/admin/edit", productsController.productsEditView);
+router.get("/detalle/:id/admin/edit", adminAuthMiddleware, productsController.productsEditView);
 router.put("/detalle/:id/admin/edit",  upload.single("edit_image") , productsController.editProduct);
 
 router.delete("/detalle/:id/admin/delete", productsController.deleteProduct);
+
 
 
 module.exports = router;

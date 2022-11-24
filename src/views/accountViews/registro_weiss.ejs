@@ -6,28 +6,35 @@
     <body>
         <%- include("../partials/headerPartial.ejs") %>
             <main class="main_Form">
-                
+
                 <div class="page_title">
-                    <h1 class="main_titles">Registrarse</h1>
+                    <h1 class="main_titles" id="form"><a href="/cuenta/login"> Ingresar </a>| Registrarse</h1>
                 </div>
 
                 <div class="page_content">
-                    <form action="/cuenta/register" method="POST" id="form">
+                    <form action="/cuenta/register/#form" method="POST">
                         <div class="formRegister">
                             <section class="register_sec1">
                                 <h4 class="main_subtitles">Información personal</h4>
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="text" name="firstName_register" id="nombre">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.firstName_register ? "form_invalidInputs" : "form_inputs_reg" %>"   type="text" name="firstName_register" id="nombre" value="<%= locals.persisted && persisted.firstName_register ? persisted.firstName_register : ""%>">
                                     <label class="form_labels_reg" for="nombre">Nombre</label>
+                                    <% if (locals.errorsMapped && errorsMapped.firstName_register) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
+                                    
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="text" name="lastName_register" id="nombre">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.lastName_register ? "form_invalidInputs" : "form_inputs_reg" %>"  type="text" name="lastName_register" id="nombre" value="<%= locals.persisted && persisted.lastName_register ? persisted.lastName_register : ""%>">
                                     <label class="form_labels_reg" for="nombre">Apellidos</label>
+                                    <% if (locals.errorsMapped && errorsMapped.lastName_register) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="date" name="birthDate_register">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.birthDate_register ? "form_invalidInputs" : "form_inputs_reg" %>" type="date" name="birthDate_register" value="<%= locals.persisted && persisted.birthDate_register ? persisted.birthDate_register : ""%>">
                                     <label class="form_labels_reg">Fecha de nacimiento</label>
                                 </div>
                             </section>
@@ -35,36 +42,73 @@
                             <section class="register_sec2">
                                 <h4 class="main_subtitles">Información de inicio de sesión</h4>
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="email" name="email_register" id="email">
+                                    <input class="<%= (locals.errorsMapped && errorsMapped.email_register)||(locals.errorsMapped && errorsMapped.emailAlreadyRegistered) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_register" id="email" value="<%= locals.persisted && persisted.email_register ? persisted.email_register : ""%>">
                                     <label class="form_labels_reg" for="email">Email</label>
+                                    <% if ((locals.errorsMapped && errorsMapped.email_register)||(locals.errorsMapped && errorsMapped.emailAlreadyRegistered)) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="password" name="password_register"
-                                        id="password">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.password_register ? "form_invalidInputs" : "form_inputs_reg" %>" type="password" name="password_register" id="password" value="<%= locals.persisted && persisted.password_register ? persisted.password_register : ""%>">
                                     <label class="form_labels_reg" for="password">Contraseña</label>
+                                    <% if (locals.errorsMapped && errorsMapped.password_register) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <input class="form_inputs_reg" type="password" name="passwordCheck_register"
-                                        id="password2">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.passwordCheck_register ? "form_invalidInputs" : "form_inputs_reg" %>" type="password" name="passwordCheck_register" id="password2" value="<%= locals.persisted && persisted.passwordCheck_register ? persisted.passwordCheck_register : ""%>">
                                     <label class="form_labels_reg" for="password2">Confirmar contraseña</label>
+                                    <% if (locals.errorsMapped && errorsMapped.passwordCheck_register) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <label><input type="checkbox" name="newsletter_register" value="newsletterTrue" checked> Deseo recibir el newsletter en mi casilla de correo</label>
+                                    <label><input type="checkbox" name="newsletter_register" value= "true"    checked> Deseo recibir el newsletter en mi casilla de correo</label>
                                 </div>
+
                             </section>
+
                         </div>
-                        
+
                         <button class="form_button_reg" type='submit'>CREAR CUENTA</button>
                         <p class="form_textUnderButton">¿Ya tenés cuenta?<a href="/cuenta/login">
-                            Ingresá</a>
-                    </p>
+                                Ingresá</a>
+                        </p>
 
                     </form>
 
+                    <div class="pageContent_footer">
+                        <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+                    </div>
+
+
                 </div>
+                <% if (locals.errorsMapped) { %>
+                    <div class="validationError">
+                        <% if (errorsMapped.emailAlreadyRegistered) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.emailAlreadyRegistered.msg %></p>
+                        <% } else if (errorsMapped.firstName_register) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.firstName_register.msg %> </p>
+                        <% } else if (errorsMapped.lastName_register) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.lastName_register.msg %> </p>
+                        <% } else if (errorsMapped.birthDate_register) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.birthDate_register.msg %> </p>
+                        <% } else if (errorsMapped.email_register) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.email_register.msg %> </p>
+                        <% } else if (errorsMapped.password_register) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.password_register.msg %> </p>
+                        <% } else { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.passwordCheck_register.msg %></p>
+                        <% } %> 
+
+                        
+                        
+                        
+                    </div>
+                    <% } %>
 
 
 

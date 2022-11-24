@@ -1,1 +1,55 @@
-[{"id":1,"first_name":"Pedro","last_name":"Zarza","birth_date":"","email":"pedrozarza08@gmail.com"},{"id":2,"first_name":"jorge","last_name":"aaaaaaaaaa","birth_date":"2022-10-03","email":"pedrozarza08@gmail.com"},{"id":3,"first_name":"gdfgdfsg","last_name":"gdfsgsdfgds","birth_date":"2022-10-09","email":"gfdsg@dsfadfas"},{"id":4,"first_name":"Pedro","last_name":"Zarza","birth_date":"","email":"pedrozarza08@gmail.com","newsletter":"newsletterTrue"},{"id":5,"first_name":"","last_name":"","birth_date":"","email":""},{"id":6,"first_name":"Pedro","last_name":"Zarza","birth_date":"","email":"pedrozarza08@gmail.com"},{"id":7,"first_name":"","last_name":"dfsadfsafsd","birth_date":"","email":""},{"id":8,"first_name":"","last_name":"","birth_date":"","email":""},{"id":9,"first_name":"","last_name":"","birth_date":"","email":"","newsletter":"newsletterTrue"},{"id":10,"first_name":"Pedro","last_name":"Zarza","birth_date":"2022-01-03","email":"pedrozarza08@gmail.com","newsletter":"newsletterTrue"}]
+[
+    {
+        "id": 1,
+        "first_name": "Pedro",
+        "last_name": "Zarza",
+        "birth_date": "2022-10-30",
+        "email": "pedrozarza08@gmail.com",
+        "password": "$2a$12$r0wI76h7G4Gw17jI1UgJFOs6cZxKsGCoA8a.rOJBEmM9JbNGez/9."
+    },
+    {
+        "id": 2,
+        "first_name": "Pedro",
+        "last_name": "Zarza",
+        "birth_date": "2022-11-08",
+        "email": "pedrozarza08@gmail.com",
+        "password": "$2a$12$n51/kpRUpeYzHxSJ2wkQ3.N2u5gAhh4ckwuVYAXpZ6KQIDZ4YdMF2",
+        "newsletter": "newsletterTrue"
+    },
+    {
+        "id": 3,
+        "first_name": "Pedro",
+        "last_name": "Zarza",
+        "birth_date": "2022-11-21",
+        "email": "pedrozarza08@gmail.com",
+        "password": "$2a$12$SlhRDyhAt37VFxWFvzzlB.9aaG3z4tjyWixIaEz6EpDuj.PfD2qxa",
+        "newsletter": "newsletterTrue"
+    },
+    {
+        "id": 4,
+        "first_name": "jorge",
+        "last_name": "Martin",
+        "birth_date": "199999-05-04",
+        "email": "jorge@gmail.com",
+        "password": "$2a$12$DyfJ3BR9g0rvTqDj5OxsyOvZbH9Q38ZuTu9ug3zVjpbyXtvZKopfO",
+        "newsletter": "newsletterTrue"
+    },
+    {
+        "id": 5,
+        "first_name": "Pedro",
+        "last_name": "Zarza",
+        "birth_date": "2132-05-04",
+        "email": "pedrozarza08@gmail.com",
+        "password": "$2a$12$OI4ekIt9m6Iwh5.z1XlvRu67g6z1frB.DT2ofy3XmMzH4WU2SdjMW",
+        "newsletter": "newsletterTrue"
+    },
+    {
+        "id": 6,
+        "first_name": "Pedro",
+        "last_name": "Zarza",
+        "birth_date": "0003-07-06",
+        "email": "pedrozarza08@gmail.com",
+        "password": "$2a$12$BArd1mgH/ifa1FTTobk20.IKNzFU5r36JlMahfg8Sd6.QRqX/Ul92",
+        "newsletter": "newsletterTrue"
+    }
+]

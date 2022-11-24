@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+const methodOverride = require("method-override");
+const session = require("express-session");
+const cookieParser = require('cookie-parser')
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
+const userInCookieMiddleware = require("./middlewares/userInCookieMiddleware.js");
+
 //---------------Recursos estáticos----
 app.use(express.static(path.resolve (__dirname , "../public")));
 //---------------Ejs config--------
@@ -12,13 +18,18 @@ app.set("views", "./src/views/");
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 //----------------------method-override------
-const methodOverride = require("method-override");
+
 app.use(methodOverride ("_method"));
 
 
 //---------------Servidor local-----
 
 app.listen(process.env.PORT || 3000, ()=>console.log ("Server running on port 3000"));
+
+//----------Middlewares (los más importantes)----*/
+
+
+
 
 //---------------Routing-----
 
@@ -27,10 +38,21 @@ const productsRouter = require("./routes/productsRouter");
 const accountRouter = require("./routes/accountRouter");
 const shoppingRouter = require("./routes/shoppingRouter");
 
+app.use(cookieParser());
+app.use(session({secret: "weissEcommerce", saveUninitialized: false, resave: false}));
+app.use(userInCookieMiddleware);
+
+
+app.use(userLoggedMiddleware);
+
+
 app.use("/", mainRouter);
 app.use("/productos", productsRouter);
 app.use("/cuenta", accountRouter);
 app.use("/carrito", shoppingRouter);
+
+
+
 
 //----------------error (404)--------------------------
 

@@ -6,7 +6,7 @@
         <%- include("../partials/headerPartial.ejs") %>
             <main class="main_Form">
                 <div class="page_title">
-                    <h1 class="main_titles">Ingresar</h1>
+                   <h1 class="main_titles">Ingresar |<a href="/cuenta/register"> Registrarse</a></h1>
                 </div>
                 <div class="page_content">
 
@@ -14,30 +14,53 @@
                         <div class="formLogin">
                             <section class="login_sec">
                                 <div class="form_group_login">
-                                    <input class="form_inputs_reg" type="text" name="email_login" id="nombre">
+                                    <input class="<%= (locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_login" id="nombre" value="<%= locals.persisted && persisted.email_login ? persisted.email_login : ""%>">
                                     <label class="form_labels_reg" for="nombre">Email</label>
+                                    <% if ((locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError)) { %>
+                                        <span class="material-symbols-outlined" id="errorIcon">error</span>
+                                    <% } %>
                                 </div>
 
                                 <div class="form_group_login">
                                     <a class="form_textUnderInput" href="">¿Olvidaste tu contraseña?</a>
-                                    <input class="form_inputs_reg" type="password" name="password_login"
-                                        id="Contraseña">
+                                    <input class="<%= (locals.errorsMapped && errorsMapped.password_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="password" name="password_login" id="Contraseña" value="<%= locals.persisted && persisted.password_login ? persisted.password_login : ""%>">
                                     <label class="form_labels_reg" for="Contraseña">Contraseña</label>
+                                    <% if ((locals.errorsMapped && errorsMapped.password_login) || (locals.errorsMapped && errorsMapped.loginError)) { %>
+                                        <span class="material-symbols-outlined" id="errorIconCorrection">error</span>
+                                    <% } %>
                                 </div>
                                 <div class="form_group_login">
-                                    <label><input type="checkbox" value="true"> Recordar mi usuario</label>
+                                    <label><input type="checkbox" value="on" name="rememberUser_login"> Recordar mi usuario</label>
                                 </div>
                                 <button class="form_button_login" type="submit">INGRESAR</button>
                                 <p class="form_textUnderButton">¿No tenés cuenta?<a href="/cuenta/register">
                                         Registrate</a>
                                 </p>
                             </section>
+                            
 
-                        </div>
+                        </div> 
+                       
 
                     </form>
-
+                   <div class="pageContent_footer">
+                    <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+                   </div>
+                
                 </div>
+
+                <% if (locals.errorsMapped) { %>
+                    <div class="validationError">
+                        <% if (errorsMapped.email_login) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.email_login.msg %> </p>
+                        <% } else if(errorsMapped.password_login){ %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.password_login.msg %> </p>
+                        <% } else { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.loginError.msg %> </p>
+                        <% } %>
+
+                    </div>
+                <% } %>
 
             </main>
             <%- include("../partials/footerPartial.ejs") %>

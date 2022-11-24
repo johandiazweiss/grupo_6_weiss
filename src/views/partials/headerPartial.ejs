@@ -3,10 +3,22 @@
         <div class="search-bar">
             <p><label for="searchbar"><i class="fa-solid fa-magnifying-glass"></i></label> <input type="text" name="searchbar" id="searchbar" placeholder="Buscar..."></p>
         </div>
-        <ul class="wishlist-account-cart">
-            <li><a class="wishlist-item" href="/lista-de-deseos"> <i class="fa-solid fa-heart"></i></a></li>
-            <li><a class="account-item" href="/cuenta/login"> <i class="fa-solid fa-circle-user"></i></a></li>
-            <li><a class="cart-item" href="/carrito"> <i class="fa-solid fa-cart-shopping"></i></a></li>
+        <ul class="wishlist-account-cart"> 
+            
+            <% if (locals.currentUser) { %>
+                <li class="login_toggle"><a class="account-item" href="/cuenta/userActual"><span><%=currentUser.first_name%></span><i class="fa-solid fa-circle-user"></i></a>
+                    <ul class="login_dropdown">
+                        <li id="login_dropdownOptions"><a href="/cuenta/userActual">Mi cuenta</a></li>
+                        <li id="login_dropdownOptions"><a href="/cuenta/logout">Salir <span class="material-symbols-outlined">
+                            logout
+                            </span></a></li>
+                    </ul>
+                </li>
+            <% } else { %>
+                <li><a class="account-item" href="/cuenta/login"><span>INGRESAR</span><i class="fa-solid fa-circle-user"></i></a></li>
+            <% } %> 
+            <li><a class="wishlist-item" href="/lista-de-deseos"><span>LISTA DE DESEOS</span><i class="fa-solid fa-heart"></i></a></li> 
+            <li><a class="cart-item" href="/carrito"><span>CARRITO / $0,00</span><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </div>
     <nav class="nav-header">
@@ -29,13 +41,14 @@
         </div>
         <ul class="navbar-list2">
             <li><a href="/nosotros">Nosotros</a></li>
-            <li><a href="">Contacto</a></li>
             <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="">Sucursales <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="">Sucursal 1</a></li>
                     <li><a href="">Sucursal 2</a></li>
                 </ul>
             </li>
+            <li><a href="">Contacto</a></li>
+            
         </ul>
         <div class="mini-home"><a href="/">HOME <i class="fa-solid fa-house-chimney"></i></a></div>
     </nav>

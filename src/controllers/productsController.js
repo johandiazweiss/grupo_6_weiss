@@ -164,6 +164,7 @@ const productsController = {
                 }) */
     },
     deleteProduct: (req, res) => {
+        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
         let productId = req.params.id;
         let productsList = JSON.parse(productosJSON);
         let updatedProductList = productsList.filter(product => product.id != productId);
@@ -172,7 +173,7 @@ const productsController = {
         }
         fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(updatedProductList));
         res.redirect("/productos/detalle/" + productId);
-
+ 
 
     }
 }

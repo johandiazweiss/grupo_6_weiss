@@ -1,0 +1,46 @@
+createUser: (req, res) => {
+        let validationErrors = validationResult(req);
+        let usersJson = fs.readFileSync(path.resolve(__dirname, "../database/usersData.json"), { encoding: "utf-8" });
+        let usersList;
+        let formData = req.body
+        usersJson == "" ? usersList = [] : usersList = JSON.parse(usersJson);
+        if(validationErrors.isEmpty()){
+            if (usersList == "") {
+                let newUser = {
+                    id: 1,
+                    first_name: formData.firstName_register,
+                    last_name: formData.lastName_register,
+                    birth_date: formData.birthDate_register,
+                    email: formData.email_register,
+                    password: bcrypt.hashSync(formData.password_register, 12),
+                    newsletter: formData.newsletter
+                }
+                usersList.push(newUser);
+                fs.writeFileSync(path.resolve(__dirname, "../database/usersData.json"), JSON.stringify(usersList));
+                res.redirect("/");
+            }
+    
+            else {
+                let newUser = {
+                    id: usersList.length + 1,
+                    first_name: formData.firstName_register,
+                    last_name: formData.lastName_register,
+                    birth_date: formData.birthDate_register,
+                    email: formData.email_register,
+                    password: bcrypt.hashSync(formData.password_register, 12),
+                    newsletter: formData.newsletter_register
+                }
+                req.session.userLogged = newUser;
+                
+                //fs.writeFileSync(path.resolve(__dirname, "../database/usersData.json"), JSON.stringify(usersList));
+                res.redirect("/");
+            }
+            
+
+        }
+        else{
+            let errorsMapped = validationErrors.mapped();
+            let persisted = req.body
+            res.render("./accountViews/registro_weiss.ejs", { title: "Registrarse | Weiss Ahumados", errorsMapped, persisted});
+        }
+    },
