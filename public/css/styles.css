@@ -595,37 +595,51 @@ header {
 article {
   font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
+.linea_principal{
+border-top: solid 2px black;
+}
 .Img_descripcion{
   display: flex;
   flex-wrap: wrap;
+  padding-top: 30px;
+ 
 }
 .img_product{
   display: flex;
   flex-wrap: wrap;
-width: 400px;
-}
-.linea_letras{
-  display: flex;
-  flex-wrap: wrap;
-}
-.linea_letras hr{
-  
+width: 500px;
 }
 .detail_product{
-  margin: 30px;
+  margin: 30px 80px; 
 }
+.detail_product p{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 .detailTitle {
- 
+  font-size: 35px;
+  margin-bottom: 30px;
 }
 .precio{
   display: flex;
+  margin-bottom: 20px;
 }
 .detailPrice{
-
+  font-size: 30px;
 }
 .detailOffers{
+  position: relative;
   color: #39b54a;
   margin-left: 6px;
+  font-size: 20px;
+  top: 0.3em;
+}
+.carrito{
+
 }
 .agregar_carrito{
   font-size: 20px;
@@ -634,30 +648,91 @@ width: 400px;
   color: white;
   border: solid 1px black;
   background-color: #4d4b4a;
-  transition: all 500ms;
+  transition: all 300ms;
+  
 }
 .agregar_carrito:hover{
   background-color: white;
   color: #4d4b4a;
 
 }
+.limites_lorem{
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+}
 .detailDescription{
-  margin-top: 20px;
-  padding-top: 5px;
-border-top: solid 1px black;
+  display: block;
+  font-size: 20px;
+  padding-top: 20px;
+  border-top: solid 2px black;
+  
+}
+.centrar_efectoLinea{
+  display: block;
+  text-align: left;
+  margin-left: 105px;
+  margin-top: 80px;
+}
+.efecto_linea1{
+  display: inline-block;
+  position: relative;
+  color: #4d4b4a;
+  margin: 20px 0px;
+  font-size: 25px;
+  
+}
+.efecto_linea1::after{
+  content: '';
+  position: absolute;
+  width: 840%;
+  height: 2px;
+  background-color: black;
+  top: 0.6em;
+  right: -850%;
+}
+.efecto_linea1::before{
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: black;
+  top: 0.6em;
+  left: -105px;
+}
+.efecto_linea2{
+  display: inline-block;
+  position: relative;
+  color: #4d4b4a;
+  margin: 20px 0px;
+  font-size: 25px;
+}
+.efecto_linea2::after{
+  content: '';
+  position: absolute;
+  width: 420%;
+  height: 2px;
+  background-color: black;
+  top: 0.6em;
+  right: -424%;
+}
+.efecto_linea2::before{
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: black;
+  top: 0.6em;
+  left: -105px;
 }
 .detailCrafting{
-  
-
-}
-.detail_product h3 {
-  font-size: 30px;
-}
-.detail_product a {
+  font-size: 20px;
+  margin-bottom: 40px;
   
 }
 .detailAddinfo{
-
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 

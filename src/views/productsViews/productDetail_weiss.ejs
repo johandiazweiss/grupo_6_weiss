@@ -5,7 +5,7 @@
 
 <body>
     <%- include("../partials/headerPartial.ejs") %> 
-    <main>
+    <main class="linea_principal">
         <div class="page_title">
         </div>
         <div class="page_content">
@@ -19,22 +19,20 @@
                     <h3 class="detailPrice"><%= productFinded.price %> </h3>
                     <h3 class="detailOffers"><%= productFinded.offers %> </h3>
                    </div>
+                   <div class="carrito">
                    <a class="agregar_carrito" href="">Agregar al carrito</a>
+                    <input type="number"> 
+                   </div>
+                   <div class="limites_lorem">
                     <p class="detailDescription"><%= productFinded.description %></p>
                 </div>
-            </article>
-            <div>
-                <div class="linea_letras">
-                   
-                <h3>Elaboración</h3>
-               
-                <p class="detailCrafting"><%= productFinded.crafting%></p>
                 </div>
-                <h3>Información adicional</h3>
-                
+            </article>
+            <div class="centrar_efectoLinea">
+                <h3 class="efecto_linea1">Elaboración</h3>
+                <p class="detailCrafting"><%= productFinded.crafting%></p>
+                <h3 class="efecto_linea2">Información adicional</h3>
                 <p class="detailAddinfo"><%= productFinded.addinfo%> </p>
-                
-                <hr>
             </div>
             </article>
             <br>

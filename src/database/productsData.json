@@ -1,1 +1,278 @@
-[{"id":1,"title":"guiso","price":"500","description":"aaaaaaaaaaaaaaaaaaaaaaa","image":"product-img1511202231720product-img21020224356QuesoAhumado.JPG","category":"categoria2","offers":"30","crafting":"aaaaaaaaaaaaaaaaa","addinfo":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},{"id":2,"title":"guiso","price":"2000","description":"aaaaaaaaaaaaaaaaaa","image":"product-img1511202231851default.png","category":"categoria2","offers":"50","crafting":"aaaaaaaaaaaaaaaa","addinfo":"aaaaaaaaaaaaaaaaaaa"},{"id":3,"title":"aaaaaaaaaaaa","price":"343","description":"asdasfdasf","image":"default.png","category":"categoria2","offers":"434","crafting":"asfasfd","addinfo":"safdsfasfd"}]
+[
+    {
+        "id": 1,
+        "title": "Queso Ahumado Feteado",
+        "price": "$ 500",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus ea voluptatibus a placeat officiis eveniet vero quia doloremque. Consectetur saepe accusantium possimus voluptates consequatur a dicta iure perferendis incidunt!",
+        "image": "default.png",
+        "category": "categoria1",
+        "offers": "30% OFF",
+        "crafting": "Queso dambo ahumado en cedro",
+        "addinfo": "100g"
+    },
+    {
+        "id": 1,
+        "title": "Queso Ahumado Feteado",
+        "price": "$ 500",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus ea voluptatibus a placeat officiis eveniet vero quia doloremque. Consectetur saepe accusantium possimus voluptates consequatur a dicta iure perferendis incidunt!",
+        "image": "default.png",
+        "category": "categoria1",
+        "offers": "30% OFF",
+        "crafting": "Queso dambo ahumado en cedro",
+        "addinfo": "100g"
+    },
+    {
+        "id": 1,
+        "title": "Queso Ahumado Feteado",
+        "price": "$ 500",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus ea voluptatibus a placeat officiis eveniet vero quia doloremque. Consectetur saepe accusantium possimus voluptates consequatur a dicta iure perferendis incidunt!",
+        "image": "default.png",
+        "category": "categoria1",
+        "offers": "30% OFF",
+        "crafting": "Queso dambo ahumado en cedro",
+        "addinfo": "100g"
+    },
+    {
+        "id": 1,
+        "title": "Queso Ahumado Feteado",
+        "price": "$ 500",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus ea voluptatibus a placeat officiis eveniet vero quia doloremque. Consectetur saepe accusantium possimus voluptates consequatur a dicta iure perferendis incidunt!",
+        "image": "default.png",
+        "category": "categoria1",
+        "offers": "30% OFF",
+        "crafting": "Queso dambo ahumado en cedro",
+        "addinfo": "100g"
+    },
+    {
+        "id": 2,
+        "title": "guiso",
+        "price": "2000",
+        "description": "aaaaaaaaaaaaaaaaaa",
+        "image": "product-img1511202231851default.png",
+        "category": "categoria2",
+        "offers": "50",
+        "crafting": "aaaaaaaaaaaaaaaa",
+        "addinfo": "aaaaaaaaaaaaaaaaaaa"
+    },
+    {
+        "id": 2,
+        "title": "guiso",
+        "price": "2000",
+        "description": "aaaaaaaaaaaaaaaaaa",
+        "image": "product-img1511202231851default.png",
+        "category": "categoria2",
+        "offers": "50",
+        "crafting": "aaaaaaaaaaaaaaaa",
+        "addinfo": "aaaaaaaaaaaaaaaaaaa"
+    },
+    {
+        "id": 2,
+        "title": "guiso",
+        "price": "2000",
+        "description": "aaaaaaaaaaaaaaaaaa",
+        "image": "product-img1511202231851default.png",
+        "category": "categoria2",
+        "offers": "50",
+        "crafting": "aaaaaaaaaaaaaaaa",
+        "addinfo": "aaaaaaaaaaaaaaaaaaa"
+    },
+    {
+        "id": 2,
+        "title": "guiso",
+        "price": "2000",
+        "description": "aaaaaaaaaaaaaaaaaa",
+        "image": "product-img1511202231851default.png",
+        "category": "categoria2",
+        "offers": "50",
+        "crafting": "aaaaaaaaaaaaaaaa",
+        "addinfo": "aaaaaaaaaaaaaaaaaaa"
+    },
+    {
+        "id": 2,
+        "title": "guiso",
+        "price": "2000",
+        "description": "aaaaaaaaaaaaaaaaaa",
+        "image": "product-img1511202231851default.png",
+        "category": "categoria2",
+        "offers": "50",
+        "crafting": "aaaaaaaaaaaaaaaa",
+        "addinfo": "aaaaaaaaaaaaaaaaaaa"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria3",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria3",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria3",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria3",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria4",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria4",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria4",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria4",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria4",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+     {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    },
+    {
+        "id": 3,
+        "title": "aaaaaaaaaaaa",
+        "price": "343",
+        "description": "asdasfdasf",
+        "image": "default.png",
+        "category": "categoria5",
+        "offers": "434",
+        "crafting": "asfasfd",
+        "addinfo": "safdsfasfd"
+    }
+
+]
