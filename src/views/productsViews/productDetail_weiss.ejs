@@ -9,15 +9,33 @@
         <div class="page_title">
         </div>
         <div class="page_content">
-            <article>
-                <img class="foto-producto" width="300px" src="/img productos_weiss/productosImages/<%= productFinded.image %>" alt="imagenProducto">
-                <div>
-                    <h3 class="detailTemp1"> <%= productFinded.title %> </h3>
-                    <h3 class="detailTemp1"><%= productFinded.price %> </h3>
-                    <h3 class="detailTemp1"><%= productFinded.offers %> </h3>
-                    <p class="detailTemp2"><%= productFinded.description %></p>
-                    <p class="detailTemp2"><%= productFinded.crafting%></p>
+            <article class="Img_descripcion">
+              
+                <img class="img_product" src="/img productos_weiss/productosImages/<%= productFinded.image %>" alt="imagenProducto">
+                
+                <div class="detail_product">
+                    <h3 class="detailTitle"> <%= productFinded.title %> </h3>
+                    <div class="precio">
+                    <h3 class="detailPrice"><%= productFinded.price %> </h3>
+                    <h3 class="detailOffers"><%= productFinded.offers %> </h3>
+                   </div>
+                   <a class="agregar_carrito" href="">Agregar al carrito</a>
+                    <p class="detailDescription"><%= productFinded.description %></p>
                 </div>
+            </article>
+            <div>
+                <div class="linea_letras">
+                   
+                <h3>Elaboración</h3>
+               
+                <p class="detailCrafting"><%= productFinded.crafting%></p>
+                </div>
+                <h3>Información adicional</h3>
+                
+                <p class="detailAddinfo"><%= productFinded.addinfo%> </p>
+                
+                <hr>
+            </div>
             </article>
             <br>
             <br>

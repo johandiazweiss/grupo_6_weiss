@@ -595,16 +595,71 @@ header {
 article {
   font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
+.Img_descripcion{
+  display: flex;
+  flex-wrap: wrap;
+}
+.img_product{
+  display: flex;
+  flex-wrap: wrap;
+width: 400px;
+}
+.linea_letras{
+  display: flex;
+  flex-wrap: wrap;
+}
+.linea_letras hr{
+  
+}
+.detail_product{
+  margin: 30px;
+}
+.detailTitle {
+ 
+}
+.precio{
+  display: flex;
+}
+.detailPrice{
 
-.detailTemp1 {
-  margin: 15px;
-  padding: 3px;
+}
+.detailOffers{
+  color: #39b54a;
+  margin-left: 6px;
+}
+.agregar_carrito{
+  font-size: 20px;
+  text-decoration-line: none;
+  padding: 0px 3px;
+  color: white;
+  border: solid 1px black;
+  background-color: #4d4b4a;
+  transition: all 500ms;
+}
+.agregar_carrito:hover{
+  background-color: white;
+  color: #4d4b4a;
+
+}
+.detailDescription{
+  margin-top: 20px;
+  padding-top: 5px;
+border-top: solid 1px black;
+}
+.detailCrafting{
+  
+
+}
+.detail_product h3 {
+  font-size: 30px;
+}
+.detail_product a {
+  
+}
+.detailAddinfo{
+
 }
 
-.detailTemp2 {
-  margin: 15px;
-  padding: 3px;
-}
 
 /*-----------login/register styles-------*/
 
