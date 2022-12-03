@@ -888,8 +888,135 @@ article {
 
 }
 
+/*---------------myaccount-------------------*/
+
+.myAccount_main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 0px 50px 0px;
+  border-left: #E4E4E4 solid 1.5px;
+  border-right: #E4E4E4 solid 1.5px;
+  font-family: "Assistant", sans-serif;
+
+}
+.myAccount_menu{
+  padding: 0px 30px 10px 30px;
+  width: 200px;
+  font-size: 21px;
+  font-weight: 600;
+  
+}
+.myAccount_form{
+  width: 600px;
+  padding: 10px 30px 10px 30px;
+
+}
+
+.myAccount_menu a{
+  list-style-type: none;
+  text-decoration: none;
+  color: rgba(156, 156, 156, 0.892);
+}
+.myAccount_menu li{
+  padding: 18px 0px 18px 0px;
+  height: 65px;
+  transition: all 250ms ; 
+}
 
 
+
+
+
+.myAccount_editInput{
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #dfdfdf;
+  border-style: solid;
+  position: relative;
+  outline: none;
+}
+
+.myAccount_passwordFieldset{
+  margin: 18px 0px 0px 0px;
+  padding: 25px 15px 25px 15px;
+  border: #E4E4E4 2px solid;
+}
+
+.myAccount_subtitles{
+  font-size: 22px;
+  font-weight: 500;
+}
+.myAccount_fieldsetLegend{
+  padding: 6px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.buttonDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.myAccount_button {
+  width: 60%;
+  padding: 9px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  background-color: /*#5ea489*/#5a77ed;
+  border-style: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  display: block;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.myAccount_button:hover{
+  box-shadow: 136px -5px 5px 164px rgba(54,54,54,0.63) inset;
+}
+
+
+.myAccount_deleteButton {
+  width: 50%;
+  padding: 9px;
+  margin: 10px 0px 10px 0px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  background-color: #a91616;
+  border-style: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  display: block;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.myAccount_deleteButton:hover{
+  box-shadow: 136px -5px 5px 164px rgba(54,54,54,0.63) inset;
+}
+
+.myAccount_deleteForm{
+  padding: 30px 0px 30px 0px;
+}
+
+.myAccount_menu li:hover{
+  border-bottom: #E4E4E4 1px solid;
+  color: #050505;
+}
+
+.edit_toggle{
+  border-bottom: #E4E4E4 1px solid;
+  color: #050505;
+}
+
+.form_invalidEditInputs {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d51515;
+  border-style: solid;
+  position: relative;
+  outline: none;
+}
 
 
 /*---------------------Creat-product--form styles-----------*/
@@ -1049,13 +1176,20 @@ footer {
 
 /*------------------Queries-----------------------------------------------------------------------------------------------------*/
 
-@media (min-width: 340px) {}
+@media (min-width: 340px) {
+  
+  
+}
 
 @media (min-width: 425px) {
 
   #errorIcon,
   #errorIconCorrection {
     display: block;
+  }
+  .buttonDiv{
+    display: flex;
+    justify-content: flex-end;
   }
 
 }
@@ -1076,6 +1210,10 @@ footer {
 
   .main_titles {
     font-size: 50px;
+  }
+
+  .myAccount_menu{
+    border-right: #E4E4E4 solid 1px;
   }
 }
 

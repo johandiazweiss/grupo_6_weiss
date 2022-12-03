@@ -59,7 +59,7 @@ const accountController = {
         }
         else{
             let errorsMapped = validationErrors.mapped(); 
-            let persisted = req.body
+            let persisted = req.body;
             res.render("./accountViews/registro_weiss.ejs", { title: "Registrarse | Weiss Ahumados", errorsMapped, persisted});
         }
     },
@@ -109,7 +109,33 @@ const accountController = {
         req.session.destroy();
         res.clearCookie("userEmail");
         res.redirect("/cuenta/login"); 
-    } 
+    },
+    accountDetailsView: (req, res)=>{
+        res.render("./accountViews/myAccount_weiss.ejs", { title: "Mi cuenta | Weiss Ahumados"});
+    },
+
+    editAccount: (req, res)=>{
+        let formData = req.body;
+        let validationErrors = validationResult(req);
+        if(validationErrors.isEmpty()){
+            return res.send("user info edited");
+        }
+        let errorsMapped = validationErrors.mapped(); 
+        let persisted = req.body;
+        res.render("./accountViews/myAccount_weiss.ejs", { title: "Mi cuenta | Weiss Ahumados", errorsMapped, persisted});
+    },
+
+
+
+
+    
+    changePassword: (req, res)=>{
+        res.send("put change password");
+    },
+    deleteAccount: (req, res)=>{
+        res.send("delete account");
+    }
+
 }
 
 module.exports = accountController;

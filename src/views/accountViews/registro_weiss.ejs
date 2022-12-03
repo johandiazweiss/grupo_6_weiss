@@ -43,7 +43,7 @@
                                 <h4 class="main_subtitles">Información de inicio de sesión</h4>
                                 <div class="form_group_reg">
                                     <input class="<%= (locals.errorsMapped && errorsMapped.email_register)||(locals.errorsMapped && errorsMapped.emailAlreadyRegistered) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_register" id="email" value="<%= locals.persisted && persisted.email_register ? persisted.email_register : ""%>">
-                                    <label class="form_labels_reg" for="email">Email</label>
+                                    <label class="form_labels_reg" for="email">Dirección de correo electrónico</label>
                                     <% if ((locals.errorsMapped && errorsMapped.email_register)||(locals.errorsMapped && errorsMapped.emailAlreadyRegistered)) { %>
                                         <span class="material-symbols-outlined" id="errorIcon">error</span>
                                     <% } %>

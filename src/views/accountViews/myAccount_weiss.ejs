@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/headPartial.ejs") %>
+
+    <body>
+        <%- include("../partials/headerPartial.ejs") %>
+            <main>
+                <div class="page_title">
+                    <h1 class="main_titles">Mi cuenta</h1>
+                </div>
+                <div class="page_content">
+                    <div class="myAccount_main">
+                        <div class="myAccount_menu">
+                            <ul>
+                                <a href="/lista-de-deseos">
+                                    <li>Lista de deseos</li>
+                                </a>
+                                <a href="/carrito">
+                                    <li>Carrito</li>
+                                </a>
+                               
+                                <a href="/cuenta/detalles/#form">
+                                    <li class="edit_toggle">Editar detalles</li>
+                                </a> 
+                                <a href="/cuenta/logout">
+                                    <li>Salir</li>
+                                </a> 
+                            </ul>
+
+                        </div>
+                        <div class="myAccount_form">
+                            <legend id="form" class="myAccount_subtitles">Modificar información de la cuenta</legend>
+                            <form  action="/cuenta/detalles/editar-cuenta?_method=PUT" method="post">
+                                <div class="editPersonalInfo">
+                                    <div class="form_group_reg">
+                                        <input class="<%= locals.errorsMapped && errorsMapped.firstName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="firstName_edit"
+                                            id="password" value="<%= currentUser.first_name %>">
+                                        <label class="form_labels_reg" for="password">Nombre</label>
+
+                                    </div>
+                                    <div class="form_group_reg">
+                                        <input class="<%= locals.errorsMapped && errorsMapped.lastName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="lastName_edit"
+                                            id="password" value="<%= currentUser.last_name %>">
+                                        <label class="form_labels_reg" for="password">Apellido</label>
+
+                                    </div>
+                                </div>
+
+                                <div class="form_group_reg">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.birthDate_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="date" name="birthDate_edit"
+                                        id="password" value="<%= currentUser.birth_date %>">
+                                    <label class="form_labels_reg" for="password">Fecha de nacimiento</label>
+                                </div>
+
+                                <div class="form_group_reg">
+                                    <input class="<%= locals.errorsMapped && errorsMapped.email_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="email_edit"
+                                        id="password" value="<%= locals.persisted && persisted.email_edit? persisted.email_edit : currentUser.email %>">
+                                    <label class="form_labels_reg" for="password">Dirección de correo
+                                        electrónico</label>
+                                </div>
+                                <div class="buttonDiv">
+                                    <button class="myAccount_button" type='submit'>GUARDAR CAMBIOS</button>
+                                </div>
+                            </form>
+
+
+                            <fieldset class="myAccount_passwordFieldset">
+                                <legend class="myAccount_fieldsetLegend">Cambiar contraseña</legend>
+                                <form action="/cuenta/detalles/change-password?_method=PUT" method="post">
+                                    <div class="form_group_reg">
+                                        <input class="myAccount_editInput" type="password" name="oldPassword_edit"
+                                            id="password" value="">
+                                        <label class="form_labels_reg" for="password">Contraseña anterior</label>
+                                    </div>
+                                    <div class="form_group_reg">
+                                        <input class="myAccount_editInput" type="password" name="newPassword_edit"
+                                            id="password" value="">
+                                        <label class="form_labels_reg" for="password">Nueva contraseña</label>
+                                    </div>
+                                    <div class="form_group_reg">
+                                        <input class="myAccount_editInput" type="password" name="newPasswordCheck_edit"
+                                            id="password" value="">
+                                        <label class="form_labels_reg" for="password">Confirmar nueva contraseña</label>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <button class="myAccount_button" type='submit'>GUARDAR NUEVA CONTRASEÑA</button>
+                                    </div>
+                                </form>
+                            </fieldset>
+                            <div class="myAccount_deleteForm">
+                                <legend class="myAccount_subtitles">Eliminar la cuenta</legend>
+                                <p>Si eliminas tu cuenta perderás toda la información y no podrás acceder.</p>
+                                <form action="/cuenta/detalles/eliminar-cuenta?_method=DELETE" method="post">
+                                    <button class="myAccount_deleteButton" type='submit'>ELIMINAR CUENTA</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+            <%- include("../partials/footerPartial.ejs") %>
+    </body>
+
+</html>

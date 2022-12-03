@@ -13,12 +13,18 @@ const db = require("../database/models/index.js");
 
 router.get("/login", guestMiddleware ,accountController.loginView);
 router.get("/register", guestMiddleware, accountController.registerView);
-router.get("/configuración",  );
+
 
 
 router.post("/register", formValidations.registerValidations, accountController.createUser);
 router.post("/login",formValidations.loginValidations, accountController.login);
 router.get("/logout", authMiddleware, accountController.logout);
+
+router.get("/detalles", authMiddleware, accountController.accountDetailsView);
+router.put("/detalles/editar-cuenta", formValidations.editAccountValidations, accountController.editAccount);
+router.put("/detalles/change-password", accountController.changePassword);
+router.delete("/detalles/eliminar-cuenta", accountController.deleteAccount);
+
 
 
 
