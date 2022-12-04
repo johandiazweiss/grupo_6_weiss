@@ -11,6 +11,8 @@ router.get("/lista-de-deseos", authMiddleware, mainController.wishlistView);
 router.get("/nosotros", mainController.nosotrosView);
 router.get("/contacto", mainController.contacto);
 router.get("/sucursales",mainController.sucursales);
+router.get("/sucursal-1",mainController.sucursal1);
+router.get("/sucursal-2",mainController.sucursal2);
 router.get("/terminosycondiciones", mainController.terminos_condicionesView);
 router.get("/search", mainController.search);  
 
