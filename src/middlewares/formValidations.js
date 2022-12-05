@@ -32,7 +32,7 @@ const formValidations = {
         check("birthDate_edit").notEmpty().withMessage("Este campo es obligatorio"),
         check("email_edit").notEmpty().withMessage("Este campo es obligatorio").isEmail().withMessage("Ingrese un correo electrónico válido"),
     ],
-    changePasswordValidations: [
+  /*   changePasswordValidations: [
         check("password_edit").notEmpty().withMessage("Este campo es obligatorio").isLength({min: 8}).withMessage("La contraseña debe tener un mínimo de 8 caracteres"),
         check("passwordCheck_edit").notEmpty().withMessage("Este campo es obligatorio").custom((value, {req})=>{
             let formData = req.body;
@@ -43,7 +43,7 @@ const formValidations = {
                 return true
             }
         })
-    ]
+    ] */
 
 
 } 

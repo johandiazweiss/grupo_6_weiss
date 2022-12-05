@@ -1015,19 +1015,39 @@ display: block;
   top: 36.2%;
   left: 90%;
   display: none;
+}
 
+#errorIcon1 {
+  position: absolute;
+  color: #d51515;
+  top: 51%;
+  left: 90%;
+  display: none;
+}
+
+#errorIconCorrection1 {
+  position: absolute;
+  color: #d51515;
+  top: 36.2%;
+  left: 90%;
+  display: none;
 }
 
 /*---------------myaccount-------------------*/
 
-.myAccount_main{
+.main_myAccount{
+  margin: 0px auto 90px auto;
+  font-family: "Assistant", sans-serif;
+}
+
+.myAccount_all{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0px 0px 50px 0px;
   border-left: #E4E4E4 solid 1.5px;
   border-right: #E4E4E4 solid 1.5px;
-  font-family: "Assistant", sans-serif;
+ 
 
 }
 .myAccount_menu{
@@ -1148,6 +1168,36 @@ display: block;
   outline: none;
 }
 
+.myAccount_form_successMsg{
+  position: relative;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #4ba156;
+  padding: 12px;
+  margin: 0px 0px 12px 0px;
+  opacity: 0;
+  visibility: hidden;
+  animation: successMsgAnim 200ms 1 forwards ease-in-out;
+}
+
+.myAccount_form_successMsg p{ 
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0px 0px 0px 26px;
+}
+.myAccount_form_successMsg span{
+  font-size: 22px;
+  position: absolute;
+}
+
+
+
+@keyframes successMsgAnim{
+  100%{
+    visibility: visible;
+    opacity: 1
+  }
+}
 
 /*---------------------Creat-product--form styles-----------------------------------------------------------------------------------------------------*/
 
@@ -1314,7 +1364,8 @@ footer {
 @media (min-width: 425px) {
 
   #errorIcon,
-  #errorIconCorrection {
+  #errorIconCorrection, #errorIcon1,
+  #errorIconCorrection1  {
     display: block;
   }
   .buttonDiv{
@@ -1344,6 +1395,10 @@ footer {
 
   .myAccount_menu{
     border-right: #E4E4E4 solid 1px;
+  }
+
+  #errorIcon1  {
+    left: 93%;
   }
 }
 

@@ -5,12 +5,12 @@
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-            <main>
+            <main class="main_myAccount">
                 <div class="page_title">
                     <h1 class="main_titles">Mi cuenta</h1>
                 </div>
                 <div class="page_content">
-                    <div class="myAccount_main">
+                    <div class="myAccount_all">
                         <div class="myAccount_menu">
                             <ul>
                                 <a href="/lista-de-deseos">
@@ -37,12 +37,18 @@
                                         <input class="<%= locals.errorsMapped && errorsMapped.firstName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="firstName_edit"
                                             id="password" value="<%= currentUser.first_name %>">
                                         <label class="form_labels_reg" for="password">Nombre</label>
+                                        <% if (locals.errorsMapped && errorsMapped.firstName_edit) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
 
                                     </div>
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && errorsMapped.lastName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="lastName_edit"
                                             id="password" value="<%= currentUser.last_name %>">
-                                        <label class="form_labels_reg" for="password">Apellido</label>
+                                        <label class="form_labels_reg" for="password">Apellidos</label>
+                                        <% if (locals.errorsMapped && errorsMapped.lastName_edit) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
 
                                     </div>
                                 </div>
@@ -58,7 +64,16 @@
                                         id="password" value="<%= locals.persisted && persisted.email_edit? persisted.email_edit : currentUser.email %>">
                                     <label class="form_labels_reg" for="password">Dirección de correo
                                         electrónico</label>
+                                        <% if (locals.errorsMapped && errorsMapped.email_edit) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
                                 </div>
+                                <% if (locals.updateSuccessMsg) { %>
+                                    <div class="myAccount_form_successMsg">
+                                        <span class="material-symbols-outlined">check_circle</span><p><%= updateSuccessMsg %></p>
+                                    </div> 
+                                <% } %>
+                                
                                 <div class="buttonDiv">
                                     <button class="myAccount_button" type='submit'>GUARDAR CAMBIOS</button>
                                 </div>
@@ -98,6 +113,29 @@
                         </div>
                     </div>
                 </div>
+            
+
+                <% if (locals.errorsMapped) { %>
+                    <div class="validationError">
+                        <% if (errorsMapped.emailAlreadyRegistered) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.emailAlreadyRegistered.msg %></p>
+                        <% } else if (errorsMapped.firstName_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.firstName_edit.msg %> </p>
+                        <% } else if (errorsMapped.lastName_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.lastName_edit.msg %> </p>
+                        <% } else if (errorsMapped.birthDate_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.birthDate_edit.msg %> </p>
+                        <% } else if (errorsMapped.email_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.email_edit.msg %> </p>
+                        <% } else if (errorsMapped.password_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.password_edit.msg %> </p>
+                        <% } else { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.passwordCheck_edit.msg %></p>
+                        <% } %>  
+                    </div>
+                <% } %>
+
+
             </main>
 
 
