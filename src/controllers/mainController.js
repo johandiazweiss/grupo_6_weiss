@@ -25,14 +25,6 @@ const mainController = {
         res.render("./mainViews/sucursales.ejs", {title: "Sucursales | Weiss Ahumados"})
     },
 
-    sucursal1: (req, res) => {
-        res.render("./mainViews/local.ejs", {title: "Local | Weiss Ahumados"})
-    },
-
-    sucursal2: (req, res) => {
-        res.render("./mainViews/Beer&Burgers.ejs", {title: "Beer&Burgers | Weiss Ahumados"})
-    },
-
     search: (req, res) => {},
 
 }

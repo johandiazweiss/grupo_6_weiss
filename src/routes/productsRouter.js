@@ -47,4 +47,16 @@ router.delete("/detalle/:id/admin/delete", productsController.deleteProduct);
 
 
 
+//---------------------temp----------------------------------------------------
+const db = require("../database/models/index.js");
+
+router.get("/prueba/aaa", (req, res)=>{
+    db.Products.findAll({
+        include: [{association: "categories"}],
+    })
+    .then(products=>{
+        res.send(products)
+    })
+})
+
 module.exports = router;
