@@ -23,7 +23,7 @@ router.get("/logout", authMiddleware, accountController.logout);
 
 router.get("/detalles", authMiddleware, accountController.accountDetailsView);
 router.put("/detalles/editar-cuenta", formValidations.editAccountValidations, accountController.editAccount);
-router.put("/detalles/change-password", accountController.changePassword);
+router.put("/detalles/change-password", formValidations.changePasswordValidations, accountController.changePassword);
 router.delete("/detalles/eliminar-cuenta", accountController.deleteAccount);
 
 

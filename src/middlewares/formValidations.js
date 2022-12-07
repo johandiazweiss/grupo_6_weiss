@@ -32,18 +32,20 @@ const formValidations = {
         check("birthDate_edit").notEmpty().withMessage("Este campo es obligatorio"),
         check("email_edit").notEmpty().withMessage("Este campo es obligatorio").isEmail().withMessage("Ingrese un correo electrónico válido"),
     ],
-  /*   changePasswordValidations: [
-        check("password_edit").notEmpty().withMessage("Este campo es obligatorio").isLength({min: 8}).withMessage("La contraseña debe tener un mínimo de 8 caracteres"),
-        check("passwordCheck_edit").notEmpty().withMessage("Este campo es obligatorio").custom((value, {req})=>{
+    changePasswordValidations: [
+
+        check("oldPassword_edit").notEmpty().withMessage("Debes llenar todos los campos para cambiar la contraseña"),
+        check("newPassword_edit").notEmpty().withMessage("Debes llenar todos los campos para cambiar la contraseña").isLength({min: 8}).withMessage("La contraseña debe tener un mínimo de 8 caracteres"),
+        check("newPasswordCheck_edit").notEmpty().withMessage("Debes llenar todos los campos para cambiar la contraseña").custom((value, {req})=>{
             let formData = req.body;
-            if (formData.password_edit != formData.passwordCheck_edit){
+            if (formData.newPassword_edit != formData.newPasswordCheck_edit){
                 throw new Error("Las contraseñas no coinciden");
             }
             else{
                 return true
             }
         })
-    ] */
+    ] 
 
 
 } 

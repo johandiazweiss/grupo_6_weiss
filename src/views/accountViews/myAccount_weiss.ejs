@@ -60,11 +60,11 @@
                                 </div>
 
                                 <div class="form_group_reg">
-                                    <input class="<%= locals.errorsMapped && errorsMapped.email_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="email_edit"
+                                    <input class="<%= locals.errorsMapped && (errorsMapped.email_edit || errorsMapped.emailAlreadyRegistered)? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="email_edit"
                                         id="password" value="<%= locals.persisted && persisted.email_edit? persisted.email_edit : currentUser.email %>">
                                     <label class="form_labels_reg" for="password">Dirección de correo
                                         electrónico</label>
-                                        <% if (locals.errorsMapped && errorsMapped.email_edit) { %>
+                                        <% if (locals.errorsMapped && (errorsMapped.email_edit || errorsMapped.emailAlreadyRegistered)) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>
                                 </div>
@@ -84,20 +84,34 @@
                                 <legend class="myAccount_fieldsetLegend">Cambiar contraseña</legend>
                                 <form action="/cuenta/detalles/change-password?_method=PUT" method="post">
                                     <div class="form_group_reg">
-                                        <input class="myAccount_editInput" type="password" name="oldPassword_edit"
-                                            id="password" value="">
-                                        <label class="form_labels_reg" for="password">Contraseña anterior</label>
+                                        <input class="<%= locals.errorsMapped && (errorsMapped.oldPassword_edit || errorsMapped.oldPasswordError)? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="oldPassword_edit"
+                                            id="password" value="<%= locals.persisted && persisted.oldPassword_edit? persisted.oldPassword_edit : "" %>">
+                                        <label class="form_labels_reg" for="password">Contraseña actual</label>
+                                        <% if (locals.errorsMapped && (errorsMapped.oldPassword_edit || errorsMapped.oldPasswordError)) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
                                     </div>
                                     <div class="form_group_reg">
-                                        <input class="myAccount_editInput" type="password" name="newPassword_edit"
-                                            id="password" value="">
+                                        <input class="<%= locals.errorsMapped && errorsMapped.newPassword_edit? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="newPassword_edit"
+                                            id="password" value="<%= locals.persisted && persisted.newPassword_edit? persisted.newPassword_edit : "" %>">
                                         <label class="form_labels_reg" for="password">Nueva contraseña</label>
+                                        <% if (locals.errorsMapped && errorsMapped.newPassword_edit) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
                                     </div>
                                     <div class="form_group_reg">
-                                        <input class="myAccount_editInput" type="password" name="newPasswordCheck_edit"
-                                            id="password" value="">
+                                        <input class="<%= locals.errorsMapped && errorsMapped.newPasswordCheck_edit? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="newPasswordCheck_edit"
+                                            id="password" value="<%= locals.persisted && persisted.newPasswordCheck_edit? persisted.newPasswordCheck_edit : "" %>">
                                         <label class="form_labels_reg" for="password">Confirmar nueva contraseña</label>
+                                        <% if (locals.errorsMapped && errorsMapped.newPasswordCheck_edit) { %>
+                                            <span class="material-symbols-outlined" id="errorIcon1">error</span>
+                                        <% } %>
                                     </div>
+                                    <% if (locals.passwordChangeSuccessMsg) { %>
+                                        <div class="myAccount_form_successMsg">
+                                            <span class="material-symbols-outlined">check_circle</span><p><%= passwordChangeSuccessMsg %></p>
+                                        </div> 
+                                    <% } %>
                                     <div class="buttonDiv">
                                         <button class="myAccount_button" type='submit'>GUARDAR NUEVA CONTRASEÑA</button>
                                     </div>
@@ -118,7 +132,7 @@
                 <% if (locals.errorsMapped) { %>
                     <div class="validationError">
                         <% if (errorsMapped.emailAlreadyRegistered) { %>
-                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.emailAlreadyRegistered.msg %></p>
+                            <span class="material-symbols-outlined">error</span><p>Error: La dirección de correo electrónico <u><%= errorsMapped.emailAlreadyRegistered.msg %></u> ya está registrada</p>
                         <% } else if (errorsMapped.firstName_edit) { %>
                             <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.firstName_edit.msg %> </p>
                         <% } else if (errorsMapped.lastName_edit) { %>
@@ -127,10 +141,14 @@
                             <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.birthDate_edit.msg %> </p>
                         <% } else if (errorsMapped.email_edit) { %>
                             <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.email_edit.msg %> </p>
-                        <% } else if (errorsMapped.password_edit) { %>
-                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.password_edit.msg %> </p>
+                        <% } else if (errorsMapped.oldPasswordError) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.oldPasswordError.msg %> </p>
+                        <% } else if (errorsMapped.oldPassword_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.oldPassword_edit.msg %> </p>
+                        <% } else if (errorsMapped.newPassword_edit) { %>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.newPassword_edit.msg %> </p>
                         <% } else { %>
-                            <span class="material-symbols-outlined">error</span><p>Error: <%= //errorsMapped.passwordCheck_edit.msg %></p>
+                            <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.newPasswordCheck_edit.msg %> </p>
                         <% } %>  
                     </div>
                 <% } %>
