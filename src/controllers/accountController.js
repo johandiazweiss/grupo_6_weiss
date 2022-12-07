@@ -203,7 +203,15 @@ const accountController = {
 
 
     deleteAccount: (req, res) => {
-        res.send("delete account");
+        let currentUser = req.session.userLogged;
+        req.session.destroy();
+        res.clearCookie("userEmail");
+        db.Users.destroy({
+            where: {email: currentUser.email}
+        })
+        .then(()=>{
+            res.redirect("/cuenta/register");
+        })
     }
 
 }

@@ -22,9 +22,9 @@ router.post("/login",formValidations.loginValidations, accountController.login);
 router.get("/logout", authMiddleware, accountController.logout);
 
 router.get("/detalles", authMiddleware, accountController.accountDetailsView);
-router.put("/detalles/editar-cuenta", formValidations.editAccountValidations, accountController.editAccount);
-router.put("/detalles/change-password", formValidations.changePasswordValidations, accountController.changePassword);
-router.delete("/detalles/eliminar-cuenta", accountController.deleteAccount);
+router.put("/detalles/editar-cuenta", authMiddleware, formValidations.editAccountValidations, accountController.editAccount);
+router.put("/detalles/change-password", authMiddleware, formValidations.changePasswordValidations, accountController.changePassword);
+router.delete("/detalles/eliminar-cuenta", authMiddleware, accountController.deleteAccount);
 
 
 
