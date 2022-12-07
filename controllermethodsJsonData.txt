@@ -44,3 +44,27 @@ createUser: (req, res) => {
             res.render("./accountViews/registro_weiss.ejs", { title: "Registrarse | Weiss Ahumados", errorsMapped, persisted});
         }
     },
+
+
+
+
+
+     if(validationErrors.isEmpty()){
+            if(formData.email_edit == currentUser.email){
+                return db.Users.update({
+                    first_name: formData.firstName_edit,
+                    last_name: formData.lastName_edit,
+                    birth_date: formData.birthDate_edit,
+                }, {where: {email: currentUser.email}}, {return: true})
+                .then(()=>{
+                    db.Users.findOne({
+                        include: [{association: "roles"}],
+                        where:{email: currentUser.email}
+                    })
+                    .then((user)=>{
+                        req.session.userLogged = user;
+                        res.redirect("/cuenta/detalles")
+                    })
+                })
+            }
+        }

@@ -17,8 +17,14 @@ const mainController = {
 
     },
 
-    contacto: (req, res) => {},
-    sucursales: (req, res) => {},
+    contacto: (req, res) => {
+        res.render("./mainViews/contacto.ejs", {title: "Contacto | Weiss Ahumados"})
+    },
+
+    sucursales: (req, res) => {
+        res.render("./mainViews/sucursales.ejs", {title: "Sucursales | Weiss Ahumados"})
+    },
+
     search: (req, res) => {},
 
 }

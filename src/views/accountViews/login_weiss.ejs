@@ -15,7 +15,7 @@
                             <section class="login_sec">
                                 <div class="form_group_login">
                                     <input class="<%= (locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_login" id="nombre" value="<%= locals.persisted && persisted.email_login ? persisted.email_login : ""%>">
-                                    <label class="form_labels_reg" for="nombre">Email</label>
+                                    <label class="form_labels_reg" for="nombre">Correo electrónico</label>
                                     <% if ((locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError)) { %>
                                         <span class="material-symbols-outlined" id="errorIcon">error</span>
                                     <% } %>

@@ -8,7 +8,7 @@
             <% if (locals.currentUser) { %>
                 <li class="login_toggle"><a class="account-item" href="/cuenta/userActual"><span><%=currentUser.first_name%></span><i class="fa-solid fa-circle-user"></i></a>
                     <ul class="login_dropdown">
-                        <li id="login_dropdownOptions"><a href="/cuenta/userActual">Mi cuenta</a></li>
+                        <li id="login_dropdownOptions"><a href="/cuenta/detalles">Mi cuenta</a></li>
                         <li id="login_dropdownOptions"><a href="/cuenta/logout">Salir <span class="material-symbols-outlined">
                             logout
                             </span></a></li>
@@ -27,11 +27,11 @@
             <li><a href="/envios">Envíos</a></li>
             <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="/productos">Productos <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="/productos/categoria1">categoria 1</a></li>
-                    <li><a href="/productos/categoria2">categoria 2</a></li>
-                    <li><a href="/productos/categoria3">categoria 3</a></li>
-                    <li><a href="/productos/categoria4">categoria 4</a></li>
-                    <li><a href="/productos/categoria5">categoria 5</a></li>
+                    <li><a href="/productos/Quesos">Quesos</a></li>
+                    <li><a href="/productos/Carnes">Carnes</a></li>
+                    <li><a href="/productos/Pescados">Pescados</a></li>
+                    <li><a href="/productos/Especias">Especias</a></li>
+                    <li><a href="/productos/Otros">Otros</a></li>
                 </ul>
             </li>
             <li><a href="/">Home</a></li>
@@ -41,13 +41,13 @@
         </div>
         <ul class="navbar-list2">
             <li><a href="/nosotros">Nosotros</a></li>
-            <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="">Sucursales <i class="fa-solid fa-angle-down"></i></a>
+            <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="/sucursales">Sucursales <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="">Sucursal 1</a></li>
-                    <li><a href="">Sucursal 2</a></li>
+                    <li><a href="/sucursales/#beer">Sucursal 1</a></li>
+                    <li><a href="/sucursales/#local">Sucursal 2</a></li>
                 </ul>
             </li>
-            <li><a href="">Contacto</a></li>
+            <li><a href="/contacto">Contacto</a></li>
             
         </ul>
         <div class="mini-home"><a href="/">HOME <i class="fa-solid fa-house-chimney"></i></a></div>
