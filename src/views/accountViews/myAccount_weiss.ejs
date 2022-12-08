@@ -126,6 +126,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="pageContent_footer">
+                        <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+                       </div>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                    </div>
+                    
                 </div>
             
 
@@ -149,12 +159,15 @@
                             <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.newPassword_edit.msg %> </p>
                         <% } else { %>
                             <span class="material-symbols-outlined">error</span><p>Error: <%= errorsMapped.newPasswordCheck_edit.msg %> </p>
-                        <% } %>  
+                        <% } %>
+                        <br>
+                 
+                       <% } %>
+                  
                     </div>
-                <% } %>
-
-
-            </main>
+                    
+                
+                
 
 
             <%- include("../partials/footerPartial.ejs") %>

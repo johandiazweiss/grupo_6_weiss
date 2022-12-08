@@ -595,9 +595,7 @@ header {
 article {
   font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
-.linea_principal{
-border-top: solid 2px black;
-}
+
 .Img_descripcion{
   display: flex;
   flex-wrap: wrap;
