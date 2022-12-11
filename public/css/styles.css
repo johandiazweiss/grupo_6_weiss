@@ -630,9 +630,7 @@ header {
 /*-----------productDetail---------------------------------------------------------------------------------------------------------------------*/
 
 
-.linea_principal {
-  border-top: solid 2px black;
-}
+
 
 .Img_descripcion {
   display: flex;
@@ -1151,7 +1149,7 @@ header {
 /*---------------myaccount---------------------------------------------------------------------------*/
 
 .main_myAccount {
-  margin: 0px auto 90px auto;
+  margin: 0px auto 100px auto;
   font-family: "Assistant", sans-serif;
 }
 
