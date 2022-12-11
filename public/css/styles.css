@@ -755,12 +755,30 @@ display: block;
   display: flex;
   flex-direction: column;
   margin: 70px;
-  width: 170px;
+  width: 240px;
+  
+  text-align: center;
 }
+.contacto2{
+  display: flex;
+  flex-direction: column;
+  margin: 70px;
+  width: 240px;
+  text-align: center;
+  
+}
+
 .font_img{
   text-align: center;
   font-size: 90px;
   color: #4d4b4a;
+  text-align: center;
+}
+.font_img2{
+  text-align: center;
+  font-size: 90px;
+  color: #4d4b4a;
+  padding-left: 20px;
 }
 .contacto_text{
   color: #4d4b4a;
@@ -772,7 +790,13 @@ display: block;
 }
 .contacto_text:hover{
   color: #39b54a;
-  font-size: 20px;
+  font-size: 18px;
+}
+.font_img2:hover{
+  color: #39b54a;
+}
+.mapa{
+ 
 }
 
 
