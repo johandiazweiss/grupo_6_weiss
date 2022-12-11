@@ -790,6 +790,49 @@ header {
   font-size: 20px;
   margin-bottom: 40px;
 }
+/*-----------------------------------Contacto----------------------------------------------------- */
+.myAccount_all2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-left: #E4E4E4 solid 1.5px;
+  border-right: #E4E4E4 solid 1.5px;
+  height: 300px;
+}
+.centrado_texto2{
+  bottom: 250px;
+}
+.alinear_contacto{
+  display: flex;
+  flex-wrap: wrap;
+  color: #4d4b4a;
+  margin: 30px;
+  
+}
+.contacto{
+  display: flex;
+  flex-direction: column;
+  margin: 70px;
+  width: 170px;
+}
+.font_img{
+  text-align: center;
+  font-size: 90px;
+  color: #4d4b4a;
+}
+.contacto_text{
+  color: #4d4b4a;
+  font-size: 16px;
+  text-align: center;
+}
+.font_img:hover{
+  color: #39b54a;
+}
+.contacto_text:hover{
+  color: #39b54a;
+  font-size: 20px;
+}
+
 
 /* Nosotros y terminos y condiciones ---------------------------------------------------------------------------*/
 .centrado_texto {
@@ -807,9 +850,6 @@ header {
   font-size: 25px;
 }
 
-.mail {
-  font-size: 30px;
-}
 
 /*-----------login/register styles-----------------------------------------------------------------------------------------------------------------------------*/
 
@@ -1108,7 +1148,7 @@ header {
   display: none;
 }
 
-/*---------------myaccount-------------------*/
+/*---------------myaccount---------------------------------------------------------------------------*/
 
 .main_myAccount {
   margin: 0px auto 90px auto;
@@ -1122,8 +1162,6 @@ header {
   margin: 0px 0px 50px 0px;
   border-left: #E4E4E4 solid 1.5px;
   border-right: #E4E4E4 solid 1.5px;
-
-
 }
 
 .myAccount_menu {
