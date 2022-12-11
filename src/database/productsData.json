@@ -361,6 +361,25 @@
         "offers": "10",
         "crafting": "ahumados con 5 sabores ahumados x 50 grs cada uno,envasados al vacío",
         "addinfo": "250 grs"
+    },
+    {
+        "id": 34,
+        "title": "",
+        "price": "500.00",
+        "description": "",
+        "image": "default.png",
+        "category": "Elija una categoría",
+        "crafting": "",
+        "addinfo": ""
+    },
+    {
+        "id": 35,
+        "title": "",
+        "price": "",
+        "description": "",
+        "image": "default.png",
+        "category": "Elija una categoría",
+        "crafting": "",
+        "addinfo": ""
     }
-
 ]

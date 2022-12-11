@@ -5,32 +5,147 @@
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-            <main>
-                <h2>Crear producto nuevo</h2>
-                <form class="productCreate_form" action="/productos/admin/create" method="post"
-                    enctype="multipart/form-data">
+            <main class="productForms_main">
+                <div class="page_title">
+                    <h1 class="main_titles">Crear producto nuevo</h1>
+                </div>
+                <div class="page_content">
+                    <form class="productCreate_form" action="/productos/admin/create" method="post"
+                        enctype="multipart/form-data">
+                        <div class="createProduct_all">
+                            <section class="createProductForm_sec1">
+                                <h3 class="productForm_subtitles">Información general del producto</h3>
+                                <div class="createProductInput_group">
+                                    <label for="product_title">Nombre del producto*</label>
+                                    <input class="createProduct_input" type="text" name="product_title" value="<%= locals.persistedData && persistedData.product_title ? persistedData.product_title : "" %>">
+                                    <% if (locals.errorsMapped && errorsMapped.product_title) { %>
+                                        <div class="createProduct_formError">
+                                            <span class="material-symbols-outlined">error</span>
+                                            <p>Error: <%= errorsMapped.product_title.msg %></p>
+                                        </div>
+                                    <% } %>
 
+                                </div>
+                                <div class="createProductInput_group">
+                                    <label for="product_category">Categoría*</label>
+                                    <select class="createProduct_select" name="product_category">
+                                        <option selected disabled>Elija una categoría</option>
+                                        <% for(category of categories){ %>
+                                            <option <%= locals.persistedData && persistedData.product_category == category.id ? "selected" : ""  %> value="<%= category.id %>"><%= category.name %></option>
+                                            <% } %>
+                                    </select>
+                                    <% if (locals.errorsMapped && errorsMapped.product_category) { %>
+                                        <div class="createProduct_formError">
+                                            <span class="material-symbols-outlined">error</span>
+                                            <p>Error: <%= errorsMapped.product_category.msg %></p>
+                                        </div>
+                                    <% } %>
 
-                    <input type="text" name="product_title" placeholder="Nombre del producto" required>
-                    <input type="file" name="product_image">
-                    <textarea name="product_description" placeholder="Descripción del producto"></textarea required>
-                    <textarea name="product_crafting" placeholder="Elaboración del producto"></textarea required>
-                    <textarea name="product_additionalInfo" placeholder="Información adicional del producto"></textarea required>
-                    <select name="product_category">
-                        <option selected>Elija una categoría</option>
-                        <option value="categoria1">Categoria 1</option>
-                        <option value="categoria2">Categoria 2</option>
-                        <option value="categoria3">Categoria 3</option>
-                    </select>
-                    <input type="text" name="product_price" placeholder="$$precio" required>
-                    <input type="text" name="product_offers" placeholder="Ofertas/descuentos">
-                    <button type="submit">Guardar producto</button>
-                    <button type="reset">Resetear campos</button>
+                                </div>
+                                <div class="createProductInput_group">
+                                    <label for="product_description">Descripción*</label>
+                                    <textarea  maxlength="550" class="createProduct_textarea" name="product_description"><%= locals.persistedData && persistedData.product_description? persistedData.product_description : "" %></textarea>
+                                    <% if (locals.errorsMapped && errorsMapped.product_description) { %>
+                                        <div class="createProduct_formError">
+                                            <span class="material-symbols-outlined">error</span>
+                                            <p>Error: <%= errorsMapped.product_description.msg %></p>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <div class="createProductInput_group">
+                                    <label for="product_crafting">Fabricación*</label>
+                                    <textarea maxlength="550" class="createProduct_textarea" name="product_crafting"><%= locals.persistedData && persistedData.product_crafting? persistedData.product_crafting : "" %></textarea>
+                                    <% if (locals.errorsMapped && errorsMapped.product_crafting) { %>
+                                        <div class="createProduct_formError">
+                                            <span class="material-symbols-outlined">error</span>
+                                            <p>Error: <%= errorsMapped.product_crafting.msg %></p>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <div class="createProductInput_group">
+                                    <label for="product_additionalInfo">Información adicional*</label>
+                                    <textarea maxlength="350" class="createProduct_textarea" name="product_additionalInfo"><%= locals.persistedData && persistedData.product_additionalInfo? persistedData.product_additionalInfo : "" %></textarea>
+                                    <% if (locals.errorsMapped && errorsMapped.product_additionalInfo) { %>
+                                        <div class="createProduct_formError">
+                                            <span class="material-symbols-outlined">error</span>
+                                            <p>Error: <%= errorsMapped.product_additionalInfo.msg %></p>
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <fieldset class="images_fieldset">
+                                    <legend class="productForm_subtitles">Cargar imagenes del producto</legend>
+                                    <% if (locals.errorsMapped) { %>
+                                     <div class="createProduct_formError">
+                                        <span class="material-symbols-outlined">Error</span><p> Atención: vuelve a cargar las imágenes</p>
+                                    </div>
+                                    <% } %>
+                                    
+                                    <div class="createProductInput_group">
+                                        <label for="product_image1">Imagen del artículo*</label>
+                                        <input class="createProduct_file" type="file" name="product_image1">
+                                        <% if (locals.errorsMapped && errorsMapped.product_image1) { %>
+                                            <div class="createProduct_formError">
+                                                <span class="material-symbols-outlined">error</span>
+                                                <p>Error: <%= errorsMapped.product_image1.msg %></p>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                    <div class="createProductInput_group">
+                                        <label for="product_image2">Imagen del detalle*</label>
+                                        <input class="createProduct_file" type="file" name="product_image2">
+                                        <% if (locals.errorsMapped && errorsMapped.product_image2) { %>
+                                            <div class="createProduct_formError">
+                                                <span class="material-symbols-outlined">error</span>
+                                                <p>Error: <%= errorsMapped.product_image2.msg %></p>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </fieldset>
+                            </section>
 
+                            <section class="createProductForm_sec2">
+                                <h3 class="productForm_subtitles">Precio, descuentos & Ofertas</h3>
+                                <div class="createProduct_priceDiscount">
+                                    <div class="createProduct_groupPrice">
+                                        <label for="product_price">Precio*</label>
+                                        <input class="createProduct_priceInput" type="number" step="0.01" name="product_price" value="<%= locals.persistedData && persistedData.product_price ? persistedData.product_price : "" %>">
+                                        <% if (locals.errorsMapped && errorsMapped.product_price) { %>
+                                            <div class="createProduct_formError">
+                                                <span class="material-symbols-outlined">error</span>
+                                                <p>Error: <%= errorsMapped.product_price.msg %></p>
+                                            </div>
+                                        <% } %>
+                                        
+                                    </div>
+                                    <div class="createProduct_groupPrice"> 
+                                        <label for="product_discount">Descuento (opcional)</label>
+                                        <select class="createProduct_discountInput" name="product_discount">
+                                            <option selected value="0">Descuento a aplicar</option>
+                                            <option <%= locals.persistedData && persistedData.product_discount == "15" ? "selected" : "" %> value="15">15% OFF</option>
+                                            <option <%= locals.persistedData && persistedData.product_discount == "25" ? "selected" : "" %> value="25">25% OFF</option>
+                                            <option <%= locals.persistedData && persistedData.product_discount == "30" ? "selected" : "" %> value="30">30% OFF</option>
+                                            <option <%= locals.persistedData && persistedData.product_discount == "50" ? "selected" : "" %> value="50">50% OFF</option>
+                                        </select>
+                                       
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4>Ofertas (opcional)</h4>
+                                    <div class="createProduct_groupOffers">
+                                        <label><input type="radio" name="product_offer" value="2" <%= locals.persistedData && persistedData.product_offer == "2" ? "checked" : "" %>> 2 unidades por el precio de 1</label>
+                                        <label><input type="radio" name="product_offer" value="3" <%= locals.persistedData && persistedData.product_offer == "3" ? "checked" : "" %>> 3 unidades por el precio de 2</label>
+                                        <label><input type="radio" name="product_offer" value="false" <%= locals.persistedData && persistedData.product_offer == "false" ? "checked" : "" %>> Sin ofertas</label>
+                                    </div>
+                                </div>
+                                <div class="createProduct_buttonsGroup">
+                                    <button class="createProduct_buttons" type="submit">GUARDAR PRODUCTO</button>
+                                    <button class="createProduct_buttons" type="reset">RESETEAR CAMPOS</button>
+                                </div>
+                            </section>
 
-
-
-                </form>
+                        </div>
+                    </form>
+                </div>
             </main>
 
 

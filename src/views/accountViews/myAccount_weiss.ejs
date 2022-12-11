@@ -13,6 +13,11 @@
                     <div class="myAccount_all">
                         <div class="myAccount_menu">
                             <ul>
+                                <% if (locals.adminCheck) { %>
+                                 <a href="">
+                                    <li id="adminUserButtons">ADMIN USER</li>
+                                </a>
+                                <% } %>
                                 <a href="/lista-de-deseos">
                                     <li>Lista de deseos</li>
                                 </a>

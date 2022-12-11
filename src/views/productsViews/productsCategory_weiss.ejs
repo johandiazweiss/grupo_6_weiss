@@ -5,7 +5,7 @@
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-        <main>
+        <main class="main_productsAll">
 
             <div class="page_title">
                 <h1 class="main_titles">Productos de la <%= productsCategory %> </h1>
@@ -14,60 +14,49 @@
 
             <div class="page_content">
                 <div class="articles">
-                    <% for (product of productsOfCategory){%> 
-
-                    <article class="product_article">
-                        <div class="product_image">
-                            <div class="article_addCart"><a href=""><i class="fa-solid fa-cart-plus"></i></a></div>
-                            <div class="article_addWish"><a href=""><i class="fa-solid fa-heart"></i></a></div>
-                            <% if (product.offers != "") {%>
-                                <h4 class="article_offerRibbon">¡OFERTA!</h4> 
-                            <% } %> 
-                            <a href="/productos/detalle/<%= product.id %>"><img class="article_img" src="/img productos_weiss/productosImages/<%= product.image %>"  alt="imagen-producto"></a>
-                        </div>
-                        <div>
-                            <p class="article_category"><%= product.category %></p>
-                            <a href="/productos/detalle/<%= product.id %>">
-                                <p class="article_name"><%= product.title %></p>
-                            </a>
-                            <div class="product_price">
-                                <% if (product.offers == "") { %>
-                                    <h5 class="article_price">$<%= toThousand(product.price) %></h5>
-                                <% } else if (isNaN(product.offers)) { %>
-                                    <h5 class="article_offer"><%=product.offers%></h5> 
-                                    <h5 class="article_price">$<%= toThousand(product.price) %></h5>
-                                <% } else { %>
-                                    <h5 class="article_offer"><%=product.offers%> % OFF</h5>
-                                    <p>$<%= toThousand(product.price) %></p>
-                                    <h5 class="article_price">$<%= toThousand(product.price-(product.price*product.offers/100)) %></h5>
-                                <% } %>     
+                    <% for (product of productList){ %> 
+                        <article class="product_article">
+                            <div class="product_image">
+                                <div class="article_addCart"><a href=""><i class="fa-solid fa-cart-plus"></i></a></div>
+                                <div class="article_addWish"><a href=""><i class="fa-solid fa-heart"></i></a></div>
+                                <% if (product.offer_twoForOne || product.offer_threeForTwo || product.discount != "0") {%>
+                                    <h4 class="article_offerRibbon">¡OFERTA!</h4> 
+                                <% } %> 
+                                <a href="/productos/detalle/<%= product.id %>"><img class="article_img" src="/img productos_weiss/productosImages/<%= product.image_1 %>"  alt="imagen de artículo-<%= product.name %>"></a>
                             </div>
-                        </div>
-                    </article>
-                    <% } %> 
-
-
-
+                            <div>
+                                <p class="article_category"><%= productsCategory %></p>
+                                <a href="/productos/detalle/<%= product.id %>">
+                                <p class="article_name"><%= product.name %></p>
+                                </a>
+                                <div class="product_price">
+                                    <% if (product.discount != "0") { %>
+                                        <h5 class="article_offer"><%=product.discount%> % OFF</h5>
+                                        <p>$<%= product.price %></p>
+                                        <h5 class="article_price">$<%= product.price-(product.price*product.discount/100) %></h5>
+                                        
+                                    <% } %>
+                                    <% if (product.offer_twoForOne) { %>
+                                        <h5 class="article_offer">2 unidades por el precio de 1</h5> 
+                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                    <% } %>
+                                    <% if (product.offer_threeForTwo) { %>
+                                        <h5 class="article_offer">3 unidades por el precio de 2</h5> 
+                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                    <% } %>
+                                    <% if (!product.offer_threeForTwo && !product.offer_twoForOne && product.discount == 0) { %>
+                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                    <% } %>
+                                         
+                                </div>
+                            </div>
+                        </article>
+                        <% } %>   
                 </div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                
                 <div class="pageContent_footer">
                     <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
-                   </div>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                </div>
             </div>
         </main>
 

@@ -8,6 +8,9 @@
             <% if (locals.currentUser) { %>
                 <li class="login_toggle"><a class="account-item" href="/cuenta/userActual"><span><%=currentUser.first_name%></span><i class="fa-solid fa-circle-user"></i></a>
                     <ul class="login_dropdown">
+                        <% if (locals.adminCheck) { %>
+                            <li id="login_dropdownOptions"><p>ADMIN USER</p></li>
+                        <% } %>
                         <li id="login_dropdownOptions"><a href="/cuenta/detalles">Mi cuenta</a></li>
                         <li id="login_dropdownOptions"><a href="/cuenta/logout">Salir <span class="material-symbols-outlined">
                             logout

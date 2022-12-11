@@ -1,33 +1,39 @@
-const fs = require("fs");
-const path = require("path");
+const { validationResult } = require("express-validator");
+const db = require("../database/models/index.js");
 
-let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productsController = {
     productsView: (req, res) => {
-        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
-        let productsList;
-        productosJSON == "" ? productsList = [] : productsList = JSON.parse(productosJSON);
-        if (productsList == "") {
-            res.render("./mainViews/undefinedView_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos" });
-        }
-        else{
-            productsList.sort(function (a, b){
-                if (a.title.toLowerCase() > b.title.toLowerCase()){
-                    return +1;
-                }
-                else if(a.title.toLowerCase() < b.title.toLowerCase()){
-                    return -1;
-                }
-                else{
-                    return 0;
-                }
+        let page  = req.query.page;
+        let limit = parseInt(req.query.lim);
+        let offset = parseInt(req.query.off);
+        console.log(limit)
+        console.log(offset)
+        
+        if(page == undefined){
+            return db.Products.findAll({
+                include: [{ association: "categories" }],
+                limit: 5,
+                offset: 0
+                
             })
-            res.render("./productsViews/productos_weiss.ejs", {productsList, title: "Nuestros Productos | Weiss Ahumados", toThousand});
+            .then(products=>{
+                res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products}); 
+            }) 
+            
         }
+        return db.Products.findAll({
+            include: [{ association: "categories" }],
+            limit: limit,
+            offset: offset
+        })
+        .then(products=>{
+            res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products}); 
+        })   
+       
+
+ 
     },
 
 
@@ -52,84 +58,68 @@ const productsController = {
 
     productsCategoryView: (req, res) => {
         let productsCategory = req.params.categoria;
-        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
-        let productsList;
-        productosJSON == "" ? productsList = [] : productsList = JSON.parse(productosJSON);
-        let productsOfCategory = productsList.filter(product=>{
-            return product.category == productsCategory;
+        db.Categories.findOne({
+            include: [{ association: "products" }],
+            where: {name : productsCategory}
         })
-        if (productsOfCategory == "") {
-            res.render("./mainViews/undefinedView_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos" });
-        }
-        else{
-            productsOfCategory.sort(function (a, b){
-                if (a.title.toLowerCase() > b.title.toLowerCase()){
-                    return +1;
-                }
-                else if(a.title.toLowerCase() < b.title.toLowerCase()){
-                    return -1;
-                }
-                else{
-                    return 0;
-                }
-            })
-            res.render("./productsViews/productsCategory_weiss.ejs", { productsOfCategory, productsCategory, title: productsCategory+" | Weiss Ahumados", toThousand });
-        }
+        .then(productsOfCategory=>{
+            //let productList = productsOfCategory[0].products;
+            res.send(productsOfCategory)
+            //res.render("./productsViews/productsCategory_weiss.ejs", {  title: productsCategory + " | Weiss Ahumados", productList, productsCategory});
+        })
+        
+
+       
+        
+        
     },
 
 
     productsCreateView: (req, res) => {
-        res.render("./productsViews/createProductForm_weiss.ejs", { title: "admin" });
+        db.Categories.findAll()
+            .then(categories => {
+                res.render("./productsViews/createProductForm_weiss.ejs", { title: "admin", categories });
+            })
     },
 
     createProduct: (req, res) => {
         let productData = req.body;
-        let productList;
-        let imageFileName;
-        req.file == undefined ? imageFileName = "default.png" : imageFileName = req.file.filename;
-
-        if (productosJSON == "") {
-            productList = [];
-            let newProduct = {
-                id: 1,
-                title: productData.product_title,
-                price: productData.product_price,
+        let validationErrors = validationResult(req);
+        if (validationErrors.isEmpty()) {
+            let img1 = req.files.product_image1 ? req.files.product_image1[0].filename : "default.png" ;
+            let img2 = req.files.product_image1 ? req.files.product_image1[0].filename : "default.png" ;
+            return db.Products.create({
+                name: productData.product_title,
+                category_id: productData.product_category,
                 description: productData.product_description,
-                image: imageFileName,
-                category: productData.product_category,
-                offers: productData.product_offers,
-                crafting: productData.product_crafting,
-                addinfo: productData.product_additionalInfo
-            }
-            productList.push(newProduct);
-            fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(productList));
-            res.redirect("/productos");
-        }
-        else {
-            productList = JSON.parse(productosJSON);
-            let newProduct = {
-                id: productList.length + 1,
-                title: productData.product_title,
+                crafting_info: productData.product_crafting,
+                additional_info: productData.product_additionalInfo,
+                offer_twoForOne: productData.product_offer == 2,
+                offer_threeForTwo: productData.product_offer == 3,
                 price: productData.product_price,
-                description: productData.product_description,
-                image: imageFileName,
-                category: productData.product_category,
-                offers: productData.product_offers,
-                crafting: productData.product_crafting,
-                addinfo: productData.product_additionalInfo
-            }
-            productList.push(newProduct);
-            fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(productList));
-            res.redirect("/productos");
+                image_1: img1,
+                image_2: img2,
+                discount: productData.product_discount
+            })
+            .then(product=>{
+                res.redirect("/")
+            })   
         }
+        return db.Categories.findAll()
+        .then(categories => {
+            let errorsMapped = validationErrors.mapped();
+            let persistedData = req.body;
+            res.render("./productsViews/createProductForm_weiss.ejs", { title: "admin", categories, errorsMapped, persistedData });
+        })
     },
+
 
     productsEditView: (req, res) => {
         let productId = req.params.id;
         let productList;
         productosJSON == "" ? productList = [] : productList = JSON.parse(productosJSON);
         let productFinded = productList.find(product => product.id == productId);
-        res.render("./productsViews/editProductForm_weiss.ejs", {  title: "admin",  productId, productFinded });
+        res.render("./productsViews/editProductForm_weiss.ejs", { title: "admin", productId, productFinded });
     },
 
     editProduct: (req, res) => {
@@ -173,9 +163,16 @@ const productsController = {
         }
         fs.writeFileSync(path.resolve(__dirname, "../database/productsData.json"), JSON.stringify(updatedProductList));
         res.redirect("/productos/detalle/" + productId);
- 
+
 
     }
 }
 
 module.exports = productsController;
+
+
+
+
+
+
+//req.files.product_image1[0].filename

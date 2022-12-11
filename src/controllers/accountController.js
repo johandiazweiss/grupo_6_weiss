@@ -1,11 +1,6 @@
-const fs = require("fs");
-const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models/index.js");
-
-
-
 
 
 const accountController = {
@@ -221,5 +216,3 @@ module.exports = accountController;
 
 
 
-
-//msg: "La dirección de correo electrónico "+formData.email_edit+" ya está registrada"

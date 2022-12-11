@@ -7,6 +7,7 @@ const session = require("express-session");
 const cookieParser = require('cookie-parser')
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const userInCookieMiddleware = require("./middlewares/userInCookieMiddleware.js");
+const adminLoggedMiddleware = require("./middlewares/adminLoggedMiddleware.js");
 
 //---------------Recursos estáticos----
 app.use(express.static(path.resolve (__dirname , "../public")));
@@ -44,6 +45,7 @@ app.use(userInCookieMiddleware);
 
 
 app.use(userLoggedMiddleware);
+app.use(adminLoggedMiddleware);
 
 
 app.use("/", mainRouter);

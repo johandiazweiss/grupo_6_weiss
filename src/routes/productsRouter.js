@@ -3,7 +3,7 @@ const router = express.Router();
 
 const path = require("path");
 const multer = require("multer");
-
+const formValidations = require("../middlewares/formValidations.js");
 const adminAuthMiddleware = require("../middlewares/adminAuthMiddleware.js");
 
 
@@ -38,7 +38,7 @@ router.get("/:categoria", productsController.productsCategoryView);
 router.get("/detalle/:id", productsController.productDetailView);
 
 router.get("/admin/create", adminAuthMiddleware, productsController.productsCreateView);
-router.post("/admin/create", upload.single("product_image"), productsController.createProduct);
+router.post("/admin/create", upload.fields([{ name: 'product_image1', maxCount: 1 }, { name: 'product_image2', maxCount: 1 }]), formValidations.createProductValidations,  productsController.createProduct);
 
 router.get("/detalle/:id/admin/edit", adminAuthMiddleware, productsController.productsEditView);
 router.put("/detalle/:id/admin/edit",  upload.single("edit_image") , productsController.editProduct);
