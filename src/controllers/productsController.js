@@ -1,3 +1,4 @@
+
 const { validationResult } = require("express-validator");
 const db = require("../database/models/index.js");
 
@@ -8,18 +9,20 @@ const productsController = {
         let page  = req.query.page;
         let limit = parseInt(req.query.lim);
         let offset = parseInt(req.query.off);
-        console.log(limit)
-        console.log(offset)
         
         if(page == undefined){
             return db.Products.findAll({
                 include: [{ association: "categories" }],
-                limit: 5,
+                limit: 8,
                 offset: 0
                 
             })
             .then(products=>{
-                res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products}); 
+                if(products.length == 0){
+                    return res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos",  title: "Nuestros Productos | Weiss Ahumados"});
+                }
+                //res.send(products)
+                return res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products}); 
             }) 
             
         }
@@ -29,7 +32,10 @@ const productsController = {
             offset: offset
         })
         .then(products=>{
-            res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products}); 
+            if(products.length == 0){
+                return res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos", title:  " Productos | Weiss Ahumados" });
+            }
+            return res.render("./productsViews/productos_weiss.ejs", { title: "Nuestros Productos | Weiss Ahumados", products, page}); 
         })   
        
 
@@ -39,17 +45,14 @@ const productsController = {
 
 
     productDetailView: (req, res) => {
-        let productosJSON = fs.readFileSync(path.resolve(__dirname, "../database/productsData.json"), { encoding: "utf-8" });
         let productId = req.params.id;
-        let productList;
-        productosJSON == "" ? productList = [] : productList = JSON.parse(productosJSON);
-        let productFinded = productList.find(product => product.id == productId);
-        if (productFinded == undefined) {
-            res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos", title: "Undefined" });
-        }
-        else {
-            res.render("./productsViews/productDetail_weiss.ejs", { productFinded, title: productFinded.title + " | Weiss Ahumados" });
-        }
+        db.Products.findByPk(productId)
+        .then(productFinded=>{
+            if(!productFinded){
+                return res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos", title: "Producto no encontrado | Weiss Ahumados" });
+            }
+            return  res.render("./productsViews/productDetail_weiss.ejs", { productFinded, title: productFinded.title + " | Weiss Ahumados" })
+        })
     },
 
 
@@ -58,20 +61,16 @@ const productsController = {
 
     productsCategoryView: (req, res) => {
         let productsCategory = req.params.categoria;
-        db.Categories.findOne({
-            include: [{ association: "products" }],
-            where: {name : productsCategory}
+        db.Products.findAll({
+            include: [{ association: "categories",  where: {name: productsCategory}}]
+            
         })
         .then(productsOfCategory=>{
-            //let productList = productsOfCategory[0].products;
-            res.send(productsOfCategory)
-            //res.render("./productsViews/productsCategory_weiss.ejs", {  title: productsCategory + " | Weiss Ahumados", productList, productsCategory});
+            if(productsOfCategory.length == 0){
+                return res.render("./mainViews/undefinedView_weiss.ejs", { undefinedText: "Producto indefinido/No se encuentran productos cargados en la base de datos", title: productsCategory + " | Weiss Ahumados" });
+            }
+            return res.render("./productsViews/productsCategory_weiss.ejs", {  title: productsCategory + " | Weiss Ahumados", productsOfCategory, productsCategory});
         })
-        
-
-       
-        
-        
     },
 
 

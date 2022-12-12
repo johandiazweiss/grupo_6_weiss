@@ -8,13 +8,17 @@
         <main class="main_productsAll">
 
             <div class="page_title">
-                <h1 class="main_titles">Productos de la <%= productsCategory %> </h1>
+                <h1 class="main_titles">Categoría: <%= productsCategory %> </h1>
 
             </div>
 
             <div class="page_content">
+                <div class="product_filters-count">
+                    <p class="showing">Mostrando <%= productsOfCategory.length %> producto/s</p>
+                    <p class="orderBy">Ordenar por <span class="material-symbols-outlined">toc</span></p>
+                </div>
                 <div class="articles">
-                    <% for (product of productList){ %> 
+                    <% for (product of productsOfCategory){ %> 
                         <article class="product_article">
                             <div class="product_image">
                                 <div class="article_addCart"><a href=""><i class="fa-solid fa-cart-plus"></i></a></div>

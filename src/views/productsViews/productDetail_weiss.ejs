@@ -5,62 +5,57 @@
 
     <body>
         <%- include("../partials/headerPartial.ejs") %>
-            <main class="main_myAccount">
+            <main class="main_productDetail">
                 <div class="page_title">
-                    <h1 class="main_titles">
-                        <%= productFinded.category %>
-                    </h1>
                 </div>
                 <div class="page_content">
-                    <div class="myAccount_all">
-                        <div class="centrado_texto">
-                            <article class="Img_descripcion">
-
-                                <img class="img_product"
-                                    src="/img productos_weiss/productosImages/<%= productFinded.image %>"
-                                    alt="imagenProducto">
-
-                                <div class="detail_product">
-                                    <h3 class="detailTitle">
-                                        <%= productFinded.title %>
-                                    </h3>
-                                    <div class="precio">
-                                        <h3 class="detailPrice">$<%= productFinded.price %>
-                                        </h3>
-                                        <h3 class="detailOffers">
-                                            <%= productFinded.offers %>% OFF
-                                        </h3>
-                                    </div>
-                                    <!-- <div class="carrito">
-                                        <a class="agregar_carrito" href="">Agregar al carrito</a>
-                                        <input type="number">
-                                    </div> -->
-                                    <div class="limites_lorem">
-                                        <p class="detailDescription">
-                                            <%= productFinded.description %>
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                            <div class="centrar_efectoLinea">
-                                <h3 class="efecto_linea1">Elaboración</h3>
-                                <p class="detailCrafting">
-                                    <%= productFinded.crafting%>
-                                </p>
-                                <h3 class="efecto_linea2">Información adicional</h3>
-                                <p class="detailAddinfo">
-                                    <%= productFinded.addinfo%>
-                                </p>
+                    <div class="productDetail_all">
+                        <section class="productDetail_sec1">
+                            <div class="productDetail_imgCont">
+                                <img src="/img productos_weiss/productosImages/queso-hierbas.jpg" alt="logo-weiss">
                             </div>
-                            </article>
 
-                        </div>
+
+                        </section>
+                        <section class="productDetail_sec2">
+                            <div class="productDetail_info">
+                                <h4 class="productDetail_path">Home / Categoría / producto</h4>
+                                <h2 class="productDetail_title">Producto tal de Prueba</h2>
+                                <div>
+                                    <div class="productDetail_discountSec">
+                                        <h2 class=productDetail_originalPrice>$20000.00</h2>
+                                        <h2 class="productDetail_discount">50% OFF</h2>
+                                    </div>
+                                    <p class="productDetail_offer">2 unidades al precio de 1</p>
+                                    <h2 class="productDetail_finalPrice">$10000.00</h2>
+                                    <div class="productDetail_buttonSec">
+                                        <a class="productDetail_a" href="">
+                                            <div class="productDetail_addButton">
+                                                <p>AGREGAR AL CARRITO</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <p class="productDetail_description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+
+                                </div>
+                            </div>
+
+                        </section>
                     </div>
+
+
+
+
+
+
+
+
                     <div class="pageContent_footer">
                         <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
                     </div>
-                   <br>
-                   <br>
+
                 </div>
             </main>
 
