@@ -4,6 +4,7 @@ const accountController = require("../controllers/accountController.js");
 const formValidations = require("../middlewares/formValidations.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
+const adminAuthMiddleware = require("../middlewares/adminAuthMiddleware.js");
 
 
 
@@ -14,6 +15,7 @@ const db = require("../database/models/index.js");
 
 router.get("/login", guestMiddleware ,accountController.loginView);
 router.get("/register", guestMiddleware, accountController.registerView);
+router.get("/detalles/admin", adminAuthMiddleware , accountController.adminView);
 
 
 

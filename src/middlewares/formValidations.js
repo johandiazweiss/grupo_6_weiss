@@ -51,7 +51,7 @@ const formValidations = {
 
     createProductValidations: [
         check("product_title").notEmpty().withMessage("Este campo es obligatorio").custom((value, { req }) => {
-             return db.Products.findOne({
+            return db.Products.findOne({
                 where: { name: req.body.product_title }
             })
             .then((product) => {
@@ -62,13 +62,7 @@ const formValidations = {
                 return true
             }
             }) 
-
         }), 
-
-
-
-
-
         check("product_category").notEmpty().withMessage("Este campo es obligatorio"),
         check("product_description").notEmpty().withMessage("Este campo es obligatorio").isLength({ max: 500 }).withMessage("Máximo: 500 caracteres"),
         check("product_crafting").notEmpty().withMessage("Este campo es obligatorio").isLength({ max: 500 }).withMessage("Máximo: 500 caracteres"),
@@ -94,6 +88,33 @@ const formValidations = {
         })
 
 
+    ],
+
+    editProductValidations: [
+        check("productEdit_title").notEmpty().withMessage("Este campo es obligatorio").custom((value, { req }) => {
+            return db.Products.findByPk(req.params.id)
+            .then(product=>{
+                if(product.name == req.body.productEdit_title){
+                    return true
+                }
+                return db.Products.findOne({
+                    where: { name: req.body.productEdit_title }
+                })
+                .then( product => {
+                    if (product) {
+                        throw new Error("Ya existe un producto con este nombre en la base de datos");
+                    }
+                    else {
+                        return true
+                    } 
+                })
+            }) 
+        }), 
+        check("productEdit_category").notEmpty().withMessage("Este campo es obligatorio"),
+        check("productEdit_description").notEmpty().withMessage("Este campo es obligatorio").isLength({ max: 500 }).withMessage("Máximo: 500 caracteres"),
+        check("productEdit_crafting").notEmpty().withMessage("Este campo es obligatorio").isLength({ max: 500 }).withMessage("Máximo: 500 caracteres"),
+        check("productEdit_additionalInfo").notEmpty().withMessage("Este campo es obligatorio").isLength({ max: 300 }).withMessage("Máximo: 300 caracteres"),
+        check("productEdit_price").notEmpty().withMessage("Este campo es obligatorio").isFloat({ max: 999999.99 }).withMessage("El máximo es 999.999"),
     ]
 
 

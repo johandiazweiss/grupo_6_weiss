@@ -25,7 +25,7 @@ app.use(methodOverride ("_method"));
 
 //---------------Servidor local-----
 
-app.listen(process.env.PORT || 3000, ()=>console.log ("Server running on port 3000"));
+app.listen(process.env.PORT || 3001, ()=>console.log ("Server running on port 3000"));
 
 //----------Middlewares (los más importantes)----*/
 
@@ -38,6 +38,8 @@ const mainRouter = require("./routes/mainRouter");
 const productsRouter = require("./routes/productsRouter");
 const accountRouter = require("./routes/accountRouter");
 const shoppingRouter = require("./routes/shoppingRouter");
+const ApiProductsRouter= require("./Api rest/ApiEndpoints/ApiProductsRouter");
+const ApiCustomersRouter= require("./Api rest/ApiEndpoints/ApiCustomersRouter");
 
 app.use(cookieParser());
 app.use(session({secret: "weissEcommerce", saveUninitialized: false, resave: false}));
@@ -52,6 +54,9 @@ app.use("/", mainRouter);
 app.use("/productos", productsRouter);
 app.use("/cuenta", accountRouter);
 app.use("/carrito", shoppingRouter);
+
+app.use("/api/productos",  ApiProductsRouter);
+app.use("/api/customers", ApiCustomersRouter);
 
 
 

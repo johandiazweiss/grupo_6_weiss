@@ -6,7 +6,7 @@
         <ul class="wishlist-account-cart"> 
             
             <% if (locals.currentUser) { %>
-                <li class="login_toggle"><a class="account-item" href="/cuenta/userActual"><span><%=currentUser.first_name%></span><i class="fa-solid fa-circle-user"></i></a>
+                <li class="login_toggle"><a class="account-item" href="/cuenta/detalles"><span><%=currentUser.first_name%></span><i class="fa-solid fa-circle-user"></i></a>
                     <ul class="login_dropdown">
                         <% if (locals.adminCheck) { %>
                             <li id="login_dropdownOptions"><p>ADMIN USER</p></li>
@@ -28,7 +28,7 @@
         <div class="mini-menu"><a href=""><i class="fa-solid fa-bars"></i> MENU</a></div>
         <ul class="navbar-list1">
             <li><a href="/envios">Envíos</a></li>
-            <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="/productos">Productos <i class="fa-solid fa-angle-down"></i></a>
+            <li class="dropdown-menu_toggle"><a class="dropdown-menu_titles" href="/productos/page/1">Productos <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="/productos/carnes">Carnes</a></li>
                     <li><a href="/productos/pescados">Pescados</a></li>

@@ -132,10 +132,16 @@ const accountController = {
                         let currentUser = req.session.userLogged
                         res.render("./accountViews/myAccount_weiss.ejs", { title: "Mi cuenta | Weiss Ahumados", updateSuccessMsg, currentUser });
                     })
+                    .catch(() => {
+                        res.send("Error: Algo salió mal");
+                    })
+                })
+                .catch(() => {
+                    res.send("Error: Algo salió mal");
                 })
             }
             return db.Users.findOne({
-                where: {email: formData.email_edit}
+            where: {email: formData.email_edit}
             })
             .then(user=>{
                 if(user){
@@ -165,6 +171,12 @@ const accountController = {
                         }
                         res.render("./accountViews/myAccount_weiss.ejs", { title: "Mi cuenta | Weiss Ahumados", updateSuccessMsg, currentUser });
                     })
+                    .catch(() => {
+                        res.send("Error: Algo salió mal");
+                    })
+                })
+                .catch(() => {
+                    res.send("Error: Algo salió mal");
                 })
             })
         }
@@ -185,6 +197,9 @@ const accountController = {
                 .then(()=>{
                     let passwordChangeSuccessMsg = "La contraseña ha sido actualizada correctamente";
                     res.render("./accountViews/myAccount_weiss.ejs", { title: "Mi cuenta | Weiss Ahumados", passwordChangeSuccessMsg});
+                })
+                .catch(() => {
+                    res.send("Error: Algo salió mal");
                 })
             }
             let errorsMapped = {oldPasswordError: { msg: "La contraseña actual es incorrecta" }};
@@ -207,7 +222,14 @@ const accountController = {
         .then(()=>{
             res.redirect("/cuenta/register");
         })
-    }
+        .catch(() => {
+            res.send("Error: Algo salió mal");
+        })
+    },
+    adminView: (req, res)=>{
+        res.render("./accountViews/adminView_weiss.ejs", { title: "Mi cuenta (admin) | Weiss Ahumados"})
+
+    } 
 
 }
 

@@ -6,28 +6,39 @@
     <body>
         <%- include("../partials/headerPartial.ejs") %>
             <main class="main_productDetail">
-                <div class="page_title">
-                </div>
                 <div class="page_content">
                     <div class="productDetail_all">
                         <section class="productDetail_sec1">
                             <div class="productDetail_imgCont">
-                                <img src="/img productos_weiss/productosImages/queso-hierbas.jpg" alt="logo-weiss">
+                                <img src="/img productos_weiss/productosImages/<%= productFinded.image_1 %> " alt="logo-weiss">
                             </div>
 
 
                         </section>
                         <section class="productDetail_sec2">
                             <div class="productDetail_info">
-                                <h4 class="productDetail_path">Home / Categoría / producto</h4>
-                                <h2 class="productDetail_title">Producto tal de Prueba</h2>
+                                <a href="/" class="productDetail_path">Home</a> <span class="productDetail_path1">/</span> <a href="/productos/page/1" class="productDetail_path">Productos</a> <span class="productDetail_path1">/</span> <a href="/productos/<%= productFinded.categories.name.toLowerCase() %>" class="productDetail_path"><%= productFinded.categories.name %> </a> <span class="productDetail_path1">/</span> <a href="" class="productDetail_pathProduct"><%= productFinded.name %></a>
+                                <h2 class="productDetail_title"><%= productFinded.name %></h2>
                                 <div>
-                                    <div class="productDetail_discountSec">
-                                        <h2 class=productDetail_originalPrice>$20000.00</h2>
-                                        <h2 class="productDetail_discount">50% OFF</h2>
+                                    <% if (productFinded.discount != 0) { %>
+                                     <div class="productDetail_discountSec">
+                                        <h2 class=productDetail_originalPrice><%= formatter.format(productFinded.price) %> </h2>
+                                        <h2 class="productDetail_discount"><%= productFinded.discount %>% OFF</h2>
                                     </div>
-                                    <p class="productDetail_offer">2 unidades al precio de 1</p>
-                                    <h2 class="productDetail_finalPrice">$10000.00</h2>
+                                    <% } %>
+                                    <% if (productFinded.offer_twoForOne) { %> 
+                                     <p class="productDetail_offer">¡2 unidades al precio de 1!</p>
+                                    <% } %>
+                                    <% if (productFinded.offer_threeForTwo) { %> 
+                                     <p class="productDetail_offer">¡3 unidades al precio de 2!</p>
+                                    <% } %> 
+                                    <% if (productFinded.discount != 0) { %>
+                                     <h2 class="productDetail_finalPrice"><%= formatter.format(productFinded.price-(productFinded.price*productFinded.discount/100)) %> </h2>  
+                                    <% } %> 
+                                    <% if (productFinded.discount == 0) { %>
+                                        <h2 class="productDetail_finalPrice"><%= formatter.format(productFinded.price) %> </h2>  
+                                    <% } %> 
+                                    
                                     <div class="productDetail_buttonSec">
                                         <a class="productDetail_a" href="">
                                             <div class="productDetail_addButton">
@@ -36,8 +47,26 @@
                                         </a>
                                     </div>
                                     <p class="productDetail_description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        <%= productFinded.description %> 
                                     </p>
+                                    <div class="productDetail_share-wishlistSec">
+                                        <a href=""><i class="fa-regular fa-heart"></i> Agregar a la lista de deseos</a>
+                                    </div>
+                                    <% if (locals.adminCheck) { %>
+                                        <div class="productDetail_adminButtons">
+                                        <a class="productDetail_a" href="/productos/detalle/<%= productFinded.id %>/admin/edit ">
+                                            <div class="productDetail_adminEditButton">
+                                                <p>EDITAR PRODUCTO</p>
+                                            </div>
+                                        </a>
+                                        <a class="productDetail_a" href="">
+                                            <form action="/productos/detalle/<%= productFinded.id %> /admin/delete?_method=DELETE" method="post">
+                                                <button type="submit" class="productDetail_adminDeleteButton">ELIMINAR PRODUCTO</button>
+                                            </form> 
+                                        </a>
+                                        </div>
+                                       
+                                    <% } %>
 
                                 </div>
                             </div>
@@ -53,7 +82,8 @@
 
 
                     <div class="pageContent_footer">
-                        <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+                        
+                        <a class="main_goBackHome" href="/productos/<%= productFinded.categories.name %> "><i class="fa-solid fa-arrow-left"></i> <%= productFinded.categories.name %> </a>
                     </div>
 
                 </div>
@@ -61,6 +91,7 @@
 
 
             <%- include("../partials/footerPartial.ejs") %>
+            
     </body>
 
 </html>

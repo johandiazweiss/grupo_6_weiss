@@ -7,14 +7,22 @@
     <main class="main_productsAll">
 
         <div class="page_title">
-            <h1 class="main_titles">Productos</h1>
-
+            <div class="main_arrowTitle"><a href="/"><span class="material-symbols-outlined"> keyboard_backspace</span></a></div>
+            <h1 class="main_titles"> Productos</h1>
+            <p class="main_underTitle" >Home / Productos</p>
         </div>
 
         <div class="page_content">
             <div class="product_filters-count">
-                <p class="showing">Mostrando <%= products.length %> productos</p>
+                <p class="showing">Mostrando <%= products.length %> producto/s</p>
                 <p class="orderBy">Ordenar por <span class="material-symbols-outlined">toc</span></p>
+            </div>
+            <div class="filter">
+                <ul class="filter-list" >
+                    <li><a id="<%= locals.op  ? "": "opAct"%>" href="/productos/page/<%= page %>">Nombre</a></li>
+                    <li><a id="<%= locals.op && op == "asc" ? "opAct": ""%>"  href="?orderby=price&op=asc">Precio: de más bajo a más alto</a></li>
+                    <li><a id="<%= locals.op && op == "desc" ? "opAct": ""%>" href="?orderby=price&op=desc">Precio: de más alto a más bajo</a></li>
+                </ul> 
             </div>
             <div class="articles">
                 <% for (product of products){ %> 
@@ -35,20 +43,25 @@
                             <div class="product_price">
                                 <% if (product.discount != "0") { %>
                                     <h5 class="article_offer"><%=product.discount%> % OFF</h5>
-                                    <p>$<%= product.price %></p>
-                                    <h5 class="article_price">$<%= product.price-(product.price*product.discount/100) %></h5>
+                                    <p><%= formatter.format(product.price) %></p>
+                                    <h5 class="article_price"><%= formatter.format(product.price-(product.price*product.discount/100)) %></h5>
                                     
                                 <% } %>
                                 <% if (product.offer_twoForOne) { %>
                                     <h5 class="article_offer">2 unidades por el precio de 1</h5> 
-                                    <h5 class="article_price">$<%= product.price %></h5>    
+                                    
                                 <% } %>
                                 <% if (product.offer_threeForTwo) { %>
                                     <h5 class="article_offer">3 unidades por el precio de 2</h5> 
-                                    <h5 class="article_price">$<%= product.price %></h5>    
+                                      
                                 <% } %>
+
+                                <% if ((product.offer_threeForTwo || product.offer_twoForOne) && product.discount == 0) { %>
+                                    <h5 class="article_price"><%= formatter.format(product.price) %></h5>    
+                                <% } %>
+                                
                                 <% if (!product.offer_threeForTwo && !product.offer_twoForOne && product.discount == 0) { %>
-                                    <h5 class="article_price">$<%= product.price %></h5>    
+                                    <h5 class="article_price"><%= formatter.format(product.price) %></h5>    
                                 <% } %>
                                      
                             </div>
@@ -61,19 +74,19 @@
                 <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
                 <div class="pageNumbers">
                     <ul class="pageNumberNav">
-                        <a  class="<%= locals.page == undefined || page == 1 ? "actualPage": "" %>"  href="/productos?page=1&lim=8&off=0">
+                        <a  class="<%= locals.page && page == 1 ? "actualPage": "" %>"  href="/productos/page/1<%= ord !=undefined? "?orderby="+ord+"&op="+op : "" %>">
                             <li>1</li>
                         </a>
-                        <a class="<%= locals.page && page == 2 ? "actualPage": "" %>" href="/productos?page=2&lim=8&off=8">
+                        <a class="<%= locals.page && page == 2 ? "actualPage": "" %>" href="/productos/page/2<%= ord !=undefined? "?orderby="+ord+"&op="+op : "" %>">
                             <li>2</li>
                         </a>
-                        <a class="<%= locals.page && page == 3 ? "actualPage": "" %>" href="/productos?page=3&lim=8&off=16">
+                        <a class="<%= locals.page && page == 3 ? "actualPage": "" %>" href="/productos/page/3<%= ord !=undefined? "?orderby="+ord+"&op="+op : "" %>">
                             <li>3</li>
                         </a>
-                        <a class="<%= locals.page && page == 4 ? "actualPage": "" %>" href="/productos?page=4&lim=8&off=24">
+                        <a class="<%= locals.page && page == 4 ? "actualPage": "" %>" href="/productos/page/4<%= ord !=undefined? "?orderby="+ord+"&op="+op : "" %>">
                             <li>4</li>
                         </a>
-                        <a class="<%= locals.page && page == 5 ? "actualPage": "" %>" href="/productos?page=5&lim=5&off=32">
+                        <a class="<%= locals.page && page == 5 ? "actualPage": "" %>" href="/productos/page/5<%= ord !=undefined? "?orderby="+ord+"&op="+op: "" %>">
                             <li>5</li>
                         </a>
                     </ul>
@@ -85,6 +98,14 @@
 
 
     <%- include("../partials/footerPartial.ejs") %>
+    <script>
+        let filtroToggle = document.querySelector(".orderBy")
+        let filtro = document.querySelector(".filter")
+        filtroToggle.addEventListener("click", function(){
+           
+            filtro.classList.toggle('filterMod')
+       })
+    </script>
 </body>
 
     

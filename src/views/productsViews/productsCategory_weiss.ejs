@@ -8,14 +8,22 @@
         <main class="main_productsAll">
 
             <div class="page_title">
-                <h1 class="main_titles">Categoría: <%= productsCategory %> </h1>
-
+                <div class="main_arrowTitle"><a href="/productos/page/1"><span class="material-symbols-outlined"> keyboard_backspace</span></a></div>
+                <h1 class="main_titles"> <%= categoryTitle.name %>  </h1>
+                <p class="main_underTitle" >Home / Productos / Categoría</p>
             </div>
 
             <div class="page_content">
                 <div class="product_filters-count">
                     <p class="showing">Mostrando <%= productsOfCategory.length %> producto/s</p>
                     <p class="orderBy">Ordenar por <span class="material-symbols-outlined">toc</span></p>
+                </div>
+                <div class="filter">
+                    <ul class="filter-list" >
+                        <li><a id="<%= ord == "name"  ? "opAct": "" %>" href="/productos/<%= categoryTitle.name %> ">Nombre</a></li>
+                        <li><a id="<%= ord == "price" && op == "asc" ? "opAct": ""%>"  href="?orderby=price&op=asc">Precio: de más bajo a más alto</a></li>
+                        <li><a id="<%= ord == "price" && op == "desc" ? "opAct": ""%>" href="?orderby=price&op=desc">Precio: de más alto a más bajo</a></li>
+                    </ul> 
                 </div>
                 <div class="articles">
                     <% for (product of productsOfCategory){ %> 
@@ -29,27 +37,32 @@
                                 <a href="/productos/detalle/<%= product.id %>"><img class="article_img" src="/img productos_weiss/productosImages/<%= product.image_1 %>"  alt="imagen de artículo-<%= product.name %>"></a>
                             </div>
                             <div>
-                                <p class="article_category"><%= productsCategory %></p>
+                                <p class="article_category"><%= product.categories.name %></p>
                                 <a href="/productos/detalle/<%= product.id %>">
                                 <p class="article_name"><%= product.name %></p>
                                 </a>
                                 <div class="product_price">
                                     <% if (product.discount != "0") { %>
                                         <h5 class="article_offer"><%=product.discount%> % OFF</h5>
-                                        <p>$<%= product.price %></p>
-                                        <h5 class="article_price">$<%= product.price-(product.price*product.discount/100) %></h5>
+                                        <p><%= formatter.format(product.price) %></p>
+                                        <h5 class="article_price"><%= formatter.format(product.price-(product.price*product.discount/100)) %></h5>
                                         
                                     <% } %>
                                     <% if (product.offer_twoForOne) { %>
                                         <h5 class="article_offer">2 unidades por el precio de 1</h5> 
-                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                            
                                     <% } %>
                                     <% if (product.offer_threeForTwo) { %>
                                         <h5 class="article_offer">3 unidades por el precio de 2</h5> 
-                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                           
                                     <% } %>
+
+                                    <% if ((product.offer_threeForTwo || product.offer_twoForOne) && product.discount == 0) { %>
+                                        <h5 class="article_price"><%= formatter.format(product.price) %></h5>    
+                                    <% } %>
+
                                     <% if (!product.offer_threeForTwo && !product.offer_twoForOne && product.discount == 0) { %>
-                                        <h5 class="article_price">$<%= product.price %></h5>    
+                                        <h5 class="article_price"><%= formatter.format(product.price) %></h5>    
                                     <% } %>
                                          
                                 </div>
@@ -59,7 +72,7 @@
                 </div>
                 
                 <div class="pageContent_footer">
-                    <a class="main_goBackHome" href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+                    <a class="main_goBackHome" href="/productos/page/1"><i class="fa-solid fa-arrow-left"></i> Home</a>
                 </div>
             </div>
         </main>
@@ -67,6 +80,14 @@
 
 
         <%- include("../partials/footerPartial.ejs") %>
+        <script>
+            let filtroToggle = document.querySelector(".orderBy")
+            let filtro = document.querySelector(".filter")
+            filtroToggle.addEventListener("click", function(){
+               
+                filtro.classList.toggle('filterMod')
+           })
+        </script>
     </body>
 
 </html>
