@@ -487,12 +487,46 @@ header {
   text-decoration: underline;
 
 }
-
-.main_sucursales{
-  margin-bottom: 80px;
-  font-family: "Assistant", sans-serif;
+/*---------------------------------------HOME--------------------------------------------------------*/
+.slider{
+  display: flex;
+  width: 90%;
+  height: 500px;
+  overflow: hidden;
+  margin-left: 70px;
 }
-
+.slider ul{
+    display: flex;
+    animation: cambio 20s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+  text-align: center;
+    width: 550px;
+    height:500px;
+}
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -120%;}
+    45%{margin-left: -120%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+    
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+.slider, .slider ul, .slider img{
+    height: 100vh;
+}
+}
 /*-----------productsArticles------------------------------------------------------------------------------------------------------------------------------*/
 .main_productsAll {
   margin-bottom: 80px;
@@ -1203,10 +1237,10 @@ header {
 .contacto {
   display: flex;
   flex-direction: column;
-  margin: 70px;
-  width: 240px;
-
+  margin: 50px;
+  width: 200px;
   text-align: center;
+  transition: all 300ms;
 }
 
 .contacto2 {
@@ -1219,37 +1253,30 @@ header {
 }
 
 .font_img {
+.font_img{
   text-align: center;
   font-size: 90px;
   color: #4d4b4a;
   text-align: center;
+  transition: all 300ms;
 }
-
-.font_img2 {
-  text-align: center;
-  font-size: 90px;
+.contacto_text{
   color: #4d4b4a;
-  padding-left: 20px;
-}
-
-.contacto_text {
-  color: #4d4b4a;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+  transition: all 200ms;
+  margin: 0;
+  padding: 0;
+}
+ .font_img:hover{
+  color: #39b54a;
+} 
+.contacto_text:hover{
+  color: #39b54a;
+  
 }
 
-.font_img:hover {
-  color: #39b54a;
-}
 
-.contacto_text:hover {
-  color: #39b54a;
-  font-size: 18px;
-}
-
-.font_img2:hover {
-  color: #39b54a;
-}
 
 
 
@@ -2073,10 +2100,20 @@ footer {
 
 /*------------------Queries-----------------------------------------------------------------------------------------------------*/
 
-@media (min-width: 340px) {
+@media (min-width: 320px) {
   .main_titles {
      font-size: 60px; 
   }
+
+  .myAccount_all2{
+    height: 600px;
+  }
+  .contacto {
+    margin: 10px;
+  }
+.alinear_contacto{
+  flex-direction: column;
+}
 }
 
 @media (min-width: 425px) {
@@ -2103,7 +2140,15 @@ footer {
   .createProduct_groupPrice {
     width: 48%;
   }
-
+  .myAccount_all2{
+    height: 600px;
+  }
+  .contacto {
+    margin: 10px;
+  }
+.alinear_contacto{
+  flex-direction: column;
+}
 
   .productDetail_path {
     font-size: 19px;
@@ -2161,12 +2206,6 @@ footer {
 
   #errorIcon1 {
     left: 93%;
-  }
-
-  .product_filters-count {
-
-    justify-content: space-between;
-    flex-direction: row;
   }
 }
 
@@ -2257,10 +2296,29 @@ footer {
     padding: 30px;
 
   }
+  .alinear_contacto{
+    display: flex;
 
+  }
+ .contacto {
+  margin: 20px 10px;
+  width: 200px;
+ }
+ .alinear_contacto{
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.font_img{
+  font-size: 80px;
+}
+.contacto_texto{
+font-size: 12px;
+}
   .article_addCart, .article_addWish{
     display: block;
 
+}
   }
 }
 
