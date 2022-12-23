@@ -696,7 +696,7 @@ header {
   margin: auto;
   padding: 40px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   font-size: 20px;
   color: #050505;
   font-weight: 600;
@@ -1253,7 +1253,7 @@ header {
 }
 
 .font_img {
-.font_img{
+
   text-align: center;
   font-size: 90px;
   color: #4d4b4a;
@@ -2319,8 +2319,8 @@ font-size: 12px;
     display: block;
 
 }
-  }
 }
+
 
 
 

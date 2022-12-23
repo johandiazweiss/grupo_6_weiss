@@ -8,9 +8,6 @@ const adminAuthMiddleware = require("../middlewares/adminAuthMiddleware.js");
 
 
 
-/*---------------------temp------------------*/
-const db = require("../database/models/index.js");
-
 
 
 router.get("/login", guestMiddleware ,accountController.loginView);
@@ -27,28 +24,6 @@ router.get("/detalles", authMiddleware, accountController.accountDetailsView);
 router.put("/detalles/editar-cuenta", authMiddleware, formValidations.editAccountValidations, accountController.editAccount);
 router.put("/detalles/change-password", authMiddleware, formValidations.changePasswordValidations, accountController.changePassword);
 router.delete("/detalles/eliminar-cuenta", authMiddleware, accountController.deleteAccount);
-
-
-
-
-//----------------------temp
-router.get("/userActual", (req, res)=>{
-    req.session.userLogged != undefined? res.send(req.session.userLogged) : res.send("no user logged");
-})
-
-
-
-router.get("/customersprueba", (req, res)=>{
-    db.Roles.findAll({
-        include: [{association: "users"}]
-    })
-    .then((roles)=>{
-        res.send(roles)
-    })
-    .catch(()=>{
-        res.send("Algo salió mal")
-    })
-})
 
 
 module.exports = router;
