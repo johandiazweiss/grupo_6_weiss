@@ -31,20 +31,6 @@ https://www.carrefour.com.ar/4647?map=productClusterIds
 https://www.hp.com/ar-es/home.html
 
 
-### Installing
-
-* Clone repository
-* Install all dependencies
-* Import database script
-
-
-### Executing 
-
-```
-npm run test
-```
-
-
 ## Authors
 Pedro Zarza - 
 Johan Diaz Weiss - 
