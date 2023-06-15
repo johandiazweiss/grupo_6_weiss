@@ -19,10 +19,10 @@ Facilidad para comprar los productos desde cualquier parte del país.
 
 
 ## Referencias/inspiraciones principales:
-https://tienda.havanna.com.ar/
-https://rapanui.com.ar/envio_a_todo_el_pais/
-https://bonafide.com.ar/categoria-producto/chocolate/
-https://www.mamuschka.com/
+<a href="https://tienda.havanna.com.ar/">Tienda Havanna</a>
+<a href="https://rapanui.com.ar/envio_a_todo_el_pais/">Rapanui</a>
+<a href="https://bonafide.com.ar/categoria-producto/chocolate/">Bonafide</a>
+<a href="https://www.mamuschka.com/">Mamuschka</a>
 --------------------------------------------------------------
 Otras: 
 https://www.despegar.com.ar/
@@ -46,7 +46,11 @@ npm run test
 
 
 ## Authors
-
+Pedro Zarza - 
+Johan Diaz Weiss - 
+Juan Climent -
+Ines Magnanini -
+Ignacio Ripoll 
 
 
 
