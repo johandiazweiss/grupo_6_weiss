@@ -1,4 +1,5 @@
-![alt text](https://github.com/johandiazweiss/grupo_6_weiss/blob/main/public/img%20productos_weiss/logo-weiss.png)
+
+<a href="#"><img src="https://github.com/johandiazweiss/grupo_6_weiss/blob/main/public/img%20productos_weiss/logo-weiss.png" alt="weiss_logo" width="300"></a>
 
 
 # Temática-objetivo:
