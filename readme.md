@@ -32,11 +32,15 @@ https://www.hp.com/ar-es/home.html
 
 
 ## Authors
+#### Agile methodologies: SCRUM
+
 Pedro Zarza - 
 Johan Diaz Weiss - 
 Juan Climent -
 Ines Magnanini -
 Ignacio Ripoll 
+
+
 
 
 
