@@ -15,13 +15,13 @@
                             <ul>
                                 <% if (locals.adminCheck) { %>
                                  <a href="/cuenta/detalles/admin">
-                                    <li id="adminUserButtons">ADMIN USER</li>
+                                    <li id="adminUserButtons">Administrador</li>
                                 </a>
                                 <% } %>
-                                <a href="/lista-de-deseos">
+                                <a href="#">
                                     <li>Lista de deseos</li>
                                 </a>
-                                <a href="/carrito">
+                                <a href="#">
                                     <li>Carrito</li>
                                 </a>
                                
@@ -40,8 +40,8 @@
                                 <div class="editPersonalInfo">
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && errorsMapped.firstName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="firstName_edit"
-                                            id="password" value="<%= currentUser.first_name %>">
-                                        <label class="form_labels_reg" for="password">Nombre</label>
+                                            id="password1" value="<%= currentUser.first_name %>">
+                                        <label class="form_labels_reg" for="password1">Nombre</label>
                                         <% if (locals.errorsMapped && errorsMapped.firstName_edit) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>
@@ -49,8 +49,8 @@
                                     </div>
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && errorsMapped.lastName_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="lastName_edit"
-                                            id="password" value="<%= currentUser.last_name %>">
-                                        <label class="form_labels_reg" for="password">Apellidos</label>
+                                            id="password2" value="<%= currentUser.last_name %>">
+                                        <label class="form_labels_reg" for="password2">Apellidos</label>
                                         <% if (locals.errorsMapped && errorsMapped.lastName_edit) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>
@@ -60,14 +60,14 @@
 
                                 <div class="form_group_reg">
                                     <input class="<%= locals.errorsMapped && errorsMapped.birthDate_edit ? "form_invalidEditInputs" : "myAccount_editInput" %>" type="date" name="birthDate_edit"
-                                        id="password" value="<%= currentUser.birth_date %>">
-                                    <label class="form_labels_reg" for="password">Fecha de nacimiento</label>
+                                        id="password3" value="<%= currentUser.birth_date %>">
+                                    <label class="form_labels_reg" for="password3">Fecha de nacimiento</label>
                                 </div>
 
                                 <div class="form_group_reg">
                                     <input class="<%= locals.errorsMapped && (errorsMapped.email_edit || errorsMapped.emailAlreadyRegistered)? "form_invalidEditInputs" : "myAccount_editInput" %>" type="text" name="email_edit"
-                                        id="password" value="<%= locals.persisted && persisted.email_edit? persisted.email_edit : currentUser.email %>">
-                                    <label class="form_labels_reg" for="password">Dirección de correo
+                                        id="password4" value="<%= locals.persisted && persisted.email_edit? persisted.email_edit : currentUser.email %>">
+                                    <label class="form_labels_reg" for="password4">Dirección de correo
                                         electrónico</label>
                                         <% if (locals.errorsMapped && (errorsMapped.email_edit || errorsMapped.emailAlreadyRegistered)) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
@@ -90,24 +90,24 @@
                                 <form action="/cuenta/detalles/change-password?_method=PUT" method="post">
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && (errorsMapped.oldPassword_edit || errorsMapped.oldPasswordError)? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="oldPassword_edit"
-                                            id="password" value="<%= locals.persisted && persisted.oldPassword_edit? persisted.oldPassword_edit : "" %>">
-                                        <label class="form_labels_reg" for="password">Contraseña actual</label>
+                                            id="password5" value="<%= locals.persisted && persisted.oldPassword_edit? persisted.oldPassword_edit : "" %>">
+                                        <label class="form_labels_reg" for="password5">Contraseña actual</label>
                                         <% if (locals.errorsMapped && (errorsMapped.oldPassword_edit || errorsMapped.oldPasswordError)) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>
                                     </div>
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && errorsMapped.newPassword_edit? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="newPassword_edit"
-                                            id="password" value="<%= locals.persisted && persisted.newPassword_edit? persisted.newPassword_edit : "" %>">
-                                        <label class="form_labels_reg" for="password">Nueva contraseña</label>
+                                            id="password6" value="<%= locals.persisted && persisted.newPassword_edit? persisted.newPassword_edit : "" %>">
+                                        <label class="form_labels_reg" for="password6">Nueva contraseña</label>
                                         <% if (locals.errorsMapped && errorsMapped.newPassword_edit) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>
                                     </div>
                                     <div class="form_group_reg">
                                         <input class="<%= locals.errorsMapped && errorsMapped.newPasswordCheck_edit? "form_invalidEditInputs" : "myAccount_editInput" %>" type="password" name="newPasswordCheck_edit"
-                                            id="password" value="<%= locals.persisted && persisted.newPasswordCheck_edit? persisted.newPasswordCheck_edit : "" %>">
-                                        <label class="form_labels_reg" for="password">Confirmar nueva contraseña</label>
+                                            id="password7" value="<%= locals.persisted && persisted.newPasswordCheck_edit? persisted.newPasswordCheck_edit : "" %>">
+                                        <label class="form_labels_reg" for="password7">Confirmar nueva contraseña</label>
                                         <% if (locals.errorsMapped && errorsMapped.newPasswordCheck_edit) { %>
                                             <span class="material-symbols-outlined" id="errorIcon1">error</span>
                                         <% } %>

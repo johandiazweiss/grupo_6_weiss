@@ -506,21 +506,20 @@ header {
 }
 .slider img{
   text-align: center;
-    width: 550px;
-    height:500px;
+    width: 325px
 }
 @keyframes cambio{
     0%{margin-left: 0;}
     20%{margin-left: 0;}
     
-    25%{margin-left: -120%;}
-    45%{margin-left: -120%;}
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
     
-    50%{margin-left: -200%;}
-    70%{margin-left: -200%;}
+    50%{margin-left: -150%;}
+    70%{margin-left: -150%;}
     
-    75%{margin-left: -300%;}
-    100%{margin-left: -300%;}
+    75%{margin-left: -200%;}
+    100%{margin-left: -200%;}
 }
 @media only screen and (min-width:320px) and (max-width:768px){
 .slider, .slider ul, .slider img{
@@ -960,6 +959,7 @@ header {
 
 .productDetail_a {
   text-decoration: none;
+  color: #FFFFFF;
 }
 
 .productDetail_addButton {
@@ -1051,167 +1051,6 @@ header {
 
 
 
-
-
-
-
-/* .Img_descripcion {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 30px;
-
-}
-
-.img_product {
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
-}
-
-.detail_product {
-  margin: 30px 80px;
-}
-
-.detail_product p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-.detailTitle {
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-
-.precio {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.detailPrice {
-  font-size: 30px;
-}
-
-.detailOffers {
-  position: relative;
-  color: #39b54a;
-  margin-left: 6px;
-  font-size: 20px;
-  top: 0.3em;
-}
-
-.carrito {
-  display: block;
-}
-
-.agregar_carrito {
-  font-size: 20px;
-  text-decoration-line: none;
-  padding: 0px 3px;
-  color: white;
-  border: solid 1px black;
-  background-color: #4d4b4a;
-  transition: all 300ms;
-
-}
-
-.agregar_carrito:hover {
-  background-color: white;
-  color: #4d4b4a;
-
-}
-
-.limites_lorem {
-  display: flex;
-  overflow: hidden;
-  max-width: 600px;
-}
-
-.detailDescription {
-  display: block;
-  font-size: 20px;
-  padding-top: 20px;
-  border-top: solid 2px black;
-
-}
-
-.centrar_efectoLinea {
-  display: block;
-  text-align: left;
-  margin-left: 105px;
-  margin-top: 80px;
-}
-
-.efecto_linea1 {
-  display: inline-block;
-  position: relative;
-  color: #4d4b4a;
-  margin: 20px 0px;
-  font-size: 25px;
-
-}
-
-.efecto_linea1::after {
-  content: '';
-  position: absolute;
-  width: 840%;
-  height: 2px;
-  background-color: black;
-  top: 0.6em;
-  right: -850%;
-}
-
-.efecto_linea1::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 2px;
-  background-color: black;
-  top: 0.6em;
-  left: -105px;
-}
-
-.efecto_linea2 {
-  display: inline-block;
-  position: relative;
-  color: #4d4b4a;
-  margin: 20px 0px;
-  font-size: 25px;
-}
-
-.efecto_linea2::after {
-  content: '';
-  position: absolute;
-  width: 420%;
-  height: 2px;
-  background-color: black;
-  top: 0.6em;
-  right: -424%;
-}
-
-.efecto_linea2::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 2px;
-  background-color: black;
-  top: 0.6em;
-  left: -105px;
-}
-
-.detailCrafting {
-  font-size: 20px;
-  margin-bottom: 40px;
-
-}
-
-.detailAddinfo {
-  font-size: 20px;
-  margin-bottom: 40px;
-} */
-
 /*-----------------------------------Contacto----------------------------------------------------- */
 .myAccount_all2 {
   display: flex;
@@ -1285,7 +1124,6 @@ header {
   display: block;
   color: #4d4b4a;
   margin: 10%;
-  font-family: 'Baloo Bhaijaan 2', sans-serif;
 }
 
 .centrado_texto p {
@@ -1595,6 +1433,55 @@ header {
   left: 90%;
   display: none;
 }
+
+/*on-time validation--------------*/
+
+.on_timeValidation1, .on_timeValidation2{
+  color: #d51515;
+  font-size: 14px;
+  position: relative;
+  top: -10px;
+  display: none;  
+  animation: on_timeAnim 300ms 1 forwards;
+}
+
+@keyframes on_timeAnim {
+
+  100% {
+    transform: translateY(10px); 
+    visibility: visible;
+  }
+
+}
+
+.validationError-on_time {
+  position: fixed;
+  width: 100%;
+  bottom: -95px;
+  display: none;
+  background-color: rgba(229, 191, 134, 1);
+  padding: 25px;
+  color: #FFFFFF;
+  animation: validationErrorAnim 500ms 1 forwards ease-in-out;
+}
+
+.validationError-on_time p {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 0px 0px 0px 30px;
+
+}
+
+.validationError-on_time span {
+  position: absolute;
+  top: 25px;
+
+
+}
+
+
+
+
 
 /*---------------myaccount---------------------------------------------------------------------------*/
 
@@ -2078,6 +1965,25 @@ footer {
 
 
 }
+
+/*--------------------------administrador de productos--------------*/
+
+.adminProductListElement{
+  display: flex;
+  padding: 22px;
+  justify-content: space-between;
+  align-items: center;
+  border: #E4E4E4 solid 1px ;
+}
+.main_adminProductsList{
+  margin-bottom: 80px;
+  font-family: "Assistant", sans-serif;
+
+}
+
+
+
+
 /*--------------------------extras---------------*/
 .not-found-view{
   background-color: whitesmoke;

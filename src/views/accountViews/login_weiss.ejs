@@ -10,24 +10,28 @@
                 </div>
                 <div class="page_content">
 
-                    <form action="/cuenta/login" method="POST" id="form">
+                    <form action="/cuenta/login" method="POST" id="loginForm">
                         <div class="formLogin">
                             <section class="login_sec">
                                 <div class="form_group_login">
-                                    <input id="emailLogin" class="<%= (locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_login" id="nombre" value="<%= locals.persisted && persisted.email_login ? persisted.email_login : ""%>">
-                                    <label class="form_labels_reg" for="nombre">Correo electrónico*</label>
+                                    <span class="on_timeValidation1"></span>
+                                    <input id="emailLogin" class="<%= (locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="text" name="email_login"  value="<%= locals.persisted && persisted.email_login ? persisted.email_login : ""%>">
+                                    <label class="form_labels_reg" for="emailLogin">Correo electrónico*</label>
                                     <% if ((locals.errorsMapped && errorsMapped.email_login) || (locals.errorsMapped && errorsMapped.loginError)) { %>
                                         <span class="material-symbols-outlined" id="errorIcon">error</span>
                                     <% } %>
                                 </div>
+                        
 
                                 <div class="form_group_login">
+                                    <span class="on_timeValidation2"></span>
                                     <a class="form_textUnderInput" href="">¿Olvidaste tu contraseña?</a>
-                                    <input id="passwordLogin" class="<%= (locals.errorsMapped && errorsMapped.password_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="password" name="password_login" id="Contraseña" value="<%= locals.persisted && persisted.password_login ? persisted.password_login : ""%>">
-                                    <label class="form_labels_reg" for="Contraseña">Contraseña*</label>
+                                    <input id="passwordLogin" class="<%= (locals.errorsMapped && errorsMapped.password_login) || (locals.errorsMapped && errorsMapped.loginError) ? "form_invalidInputs" : "form_inputs_reg" %>" type="password" name="password_login"  value="<%= locals.persisted && persisted.password_login ? persisted.password_login : ""%>">
+                                    <label class="form_labels_reg" for="passwordLogin">Contraseña*</label>
                                     <% if ((locals.errorsMapped && errorsMapped.password_login) || (locals.errorsMapped && errorsMapped.loginError)) { %>
                                         <span class="material-symbols-outlined" id="errorIconCorrection">error</span>
                                     <% } %>
+                                   
                                 </div>
                                 <div class="form_group_login">
                                     <label><input type="checkbox" value="on" name="rememberUser_login"> Recordar mi usuario</label>
@@ -61,6 +65,10 @@
 
                     </div>
                 <% } %>
+
+                <div class="validationError-on_time">
+                    <span class="material-symbols-outlined">error</span><p> Error: Revisa los campos </p>
+                </div>
 
             </main>
             <%- include("../partials/footerPartial.ejs") %>

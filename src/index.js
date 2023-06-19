@@ -4,7 +4,7 @@ const path = require("path");
 
 const methodOverride = require("method-override");
 const session = require("express-session");
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const userInCookieMiddleware = require("./middlewares/userInCookieMiddleware.js");
 const adminLoggedMiddleware = require("./middlewares/adminLoggedMiddleware.js");
@@ -15,7 +15,7 @@ app.use(express.static(path.resolve (__dirname , "../public")));
 app.set("view engine", "ejs");
 app.set("views", "./src/views/");
 
-//-------------configuración body-parser-----
+//------------- body-parser config-----
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 //----------------------method-override------
@@ -26,9 +26,6 @@ app.use(methodOverride ("_method"));
 //---------------Servidor local-----
 
 app.listen(process.env.PORT || 3000, ()=>console.log ("Server running on port 3000"));
-
-//----------Middlewares (los más importantes)----*/
-
 
 
 

@@ -227,7 +227,7 @@ const accountController = {
         })
     },
     adminView: (req, res)=>{
-        res.render("./accountViews/adminView_weiss.ejs", { title: "Mi cuenta (admin) | Weiss Ahumados"})
+        res.render("./accountViews/adminDeProductos_weiss.ejs", { title: "Mi cuenta (admin) | Weiss Ahumados"})
 
     } 
 
