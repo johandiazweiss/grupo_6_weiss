@@ -51,24 +51,6 @@ window.onload = function () {
   }
   passwordLogin.addEventListener("keyup", onTime_password);
   passwordLogin.addEventListener("blur", onTime_password);
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   loginForm.addEventListener("submit", function (e) {
     let errors = [];
